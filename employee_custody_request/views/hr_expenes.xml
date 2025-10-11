@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_hr_expense_sheet_form_inherit_custody" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.form.inherit.custody</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_journal_id']" position="after">
+                <field name="custody_bank_journal_id" attrs="{'invisible': [('payment_mode', '!=', 'custody')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='custody_bank_journal_id']" position="after">
+                <field name="custody_partner_id" attrs="{'invisible': [('payment_mode', '!=', 'custody')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

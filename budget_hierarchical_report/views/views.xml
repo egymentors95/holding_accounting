@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="Hierarchical Report assets" inherit_id="web.assets_backend" active="True">
+            <xpath expr="." position="inside">
+                <link href="/budget_hierarchical_report/static/src/css/jquery-simple-tree-table.css" rel="stylesheet"/>
+                <link href="/budget_hierarchical_report/static/src/css/datatables.min.css" rel="stylesheet"/>
+                <link href="/budget_hierarchical_report/static/src/css/dataTables.jqueryui.min.css" rel="stylesheet"/>
+                <link href="/budget_hierarchical_report/static/src/css/buttons.jqueryui.min.css" rel="stylesheet"/>
+
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/jquery-simple-tree-table.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/datatables.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/dataTables.jqueryui.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/buttons.jqueryui.min.js"></script>
+                <!-- <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/pdfmake.min.js"></script> -->
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/dataTables.buttons.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/jszip.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/buttons.html5.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/buttons.colVis.min.js"></script>
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/lib/buttons.print.min.js"></script>
+                
+                <script type="text/javascript" src="/budget_hierarchical_report/static/src/js/hierarchical_report.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

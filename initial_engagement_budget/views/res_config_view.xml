@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- model.name inherit form view -->
+    <record id="purchase_requisition_custom_setting" model="ir.ui.view">
+        <field name="name">model.name.inherit.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase_requisition_custom.purchase_requisition_custom_setting"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-string='Purchase']" position="inside">
+                <h2>Initial Engagement Budget</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-md-6 o_setting_box" title="Activate Initial Engagement Budget">
+                        <div class="o_setting_left_pane">
+                            <div class="mt16">
+                                <field name="activate_initial_engagement" class="o_light_label"/>
+                            </div>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="activate_initial_engagement"/>
+                            <div class="text-muted">
+                                Initial Engagement Budget
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

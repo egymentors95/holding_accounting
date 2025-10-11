@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="action_report_budget_xlsx"
+        model="crossovered.budget.lines"
+        name="account_budget_custom.budget_xslx_report"
+        file="account_budget_custom.budget_xslx_report"
+        string="Budget XLSX"
+        report_type="xlsx"
+        menu="True"/>
+</odoo>

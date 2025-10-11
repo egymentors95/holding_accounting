@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_form_inherit_odex25_account_accountant_test" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.odex25_account_accountant</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_id']" position="after">
+                <field name="analytic_account_id" attrs="{'invisible':[('partner_type','!=','GL')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_payment_form_inherit_odex25_account_accountant" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.odex25_account_accountant</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="priority" eval="120"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="replace">
+                <header>
+                    <!-- Outbound payment buttons -->
+                    <button name="action_draft" type="object" string="Set to Draft"
+                            attrs="{'invisible': ['|', ('payment_type', '!=', 'outbound'), ('state', 'not in', ['cancel'])]}"
+                            class="oe_highlight"/>
+                    <button name="action_depart_manager" type="object" string="Department Manager"
+                            attrs="{'invisible': ['|', ('payment_type', '!=', 'outbound'), ('state', 'not in', ['draft'])]}"
+                            groups="odex25_account_payment_fix.group_depart_manager" class="oe_highlight"/>
+                    <button name="action_accounting_manager" type="object" string="Accounting Manager"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '!=', 'outbound'),
+                              ('state', 'not in', ['depart_manager'])]}"
+                            groups="odex25_account_payment_fix.group_accounting_manager" class="oe_highlight"/>
+                    <button name="action_general_manager" type="object" string="General Manager"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '!=', 'outbound'),
+                              ('state', 'not in', ['accounting_manager'])]}"
+                            groups="odex25_account_payment_fix.group_general_manager" class="oe_highlight"/>
+                    <button name="action_post" type="object" string="Posted"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '!=', 'outbound'),
+                              ('state', 'not in', ['general_manager'])]}"
+                            groups="odex25_account_payment_fix.group_posted" class="oe_highlight"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '!=', 'outbound'),
+                              ('state', 'not in', ['draft', 'depart_manager', 'accounting_manager', 'general_manager', 'posted'])]}"
+                            groups="odex25_account_payment_fix.group_cancel"
+                            class="oe_highlight"/>
+
+                    <!-- Inbound or other payment types -->
+                    <button name="action_draft" type="object" string="Set to Draft"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '=', 'outbound'),
+                              ('state', 'not in', ['cancel'])]}" class="oe_highlight"/>
+                    <button name="action_post" type="object" string="Posted"
+                            attrs="{'invisible': ['|',
+                              ('payment_type', '=', 'outbound'),
+                              ('state', 'not in', ['draft'])]}" class="oe_highlight"/>
+
+                    <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible': ['|',
+                              ('payment_type', '=', 'outbound'),
+                              ('state', 'not in', ['draft', 'posted'])]}" class="oe_highlight"/>
+
+                    <!-- Statusbar: show different states conditionally -->
+                    <field name="state" widget="statusbar" invisible="1"/>
+                    <field name="state_a" widget="statusbar"
+                           statusbar_visible="draft,depart_manager,accounting_manager,general_manager,posted"
+                           attrs="{'invisible': [('payment_type', '!=', 'outbound')]}"/>
+                    <field name="state_b" widget="statusbar"
+                           statusbar_visible="draft,posted" attrs="{'invisible': [('payment_type', '=', 'outbound')]}"/>
+                </header>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_payment_inherit_search_view" model="ir.ui.view">
+        <field name="name">account.payment.search</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_search"/>
+        <field name="arch" type="xml">
+            <filter name="state_draft" position="after">
+                <filter string="Department Manager" name="state_depart_manager"
+                        domain="[('state', '=', 'depart_manager')]"/>
+                <filter string="Accounting Manager" name="state_accounting_manager"
+                        domain="[('state', '=', 'accounting_manager')]"/>
+                <filter string="General Manager" name="state_general_manager"
+                        domain="[('state', '=', 'general_manager')]"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

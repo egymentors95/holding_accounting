@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="setup_opening_move_wizard_form" model="ir.ui.view">
+            <field name="name">account.setup.opening.move.wizard.form</field>
+            <field name="model">account.financial.year.op</field>
+            <field name="inherit_id" ref="account.setup_financial_year_opening_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//sheet/group/group/div" position="after">
+                    <field name="period_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

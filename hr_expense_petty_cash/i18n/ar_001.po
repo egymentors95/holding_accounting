@@ -1,0 +1,1016 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_expense_petty_cash
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-15 06:14+0000\n"
+"PO-Revision-Date: 2023-10-15 06:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__invoice_count
+msgid "# Done of Invoices"
+msgstr "عدد الفواتير المعتمدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__expense_report_count
+msgid "# of Expenses Reports"
+msgstr "عدد تقارير المصروفات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__payment_count
+msgid "# of Payments"
+msgstr "عدد الدفعيات"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.report_expense_sheet
+msgid "<strong>Balance:</strong>"
+msgstr "الرصيد"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.report_expense_sheet
+msgid "<strong>Max Limit:</strong>"
+msgstr "<strong>الحد الأقصى:</strong>"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__hr_expense_sheet__clearance_type__account
+msgid "Accounting"
+msgstr "الحسابات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_needaction
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__active
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_state
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_type_icon
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__advantage_id
+msgid "Advantage"
+msgstr "الاستحقاقات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__petty_cash_limit
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__petty_cash_limit
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__petty_cash_limit
+msgid "Amount"
+msgstr "مبلغ العهدة"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#, python-format
+msgid "Amount can not be equal or less than zero"
+msgstr "لا يمكن أن يكون المبلغ مساوياً أو أقل من الصفر"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#, python-format
+msgid "Amount can not exceed the limit (%s)"
+msgstr "لا يمكن أن يتجاوز المبلغ الحد (%s)"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_configuration_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.module.category,name:hr_expense_petty_cash.asset_category
+msgid "Assets Managment"
+msgstr "إدارة الأصول"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_attachment_count
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__petty_cash_balance
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__petty_cash_balance
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_list
+msgid "Balance"
+msgstr "مصروف العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__clearance_type
+msgid "Clearance Type"
+msgstr "نوع تخليص العهد"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__hr_expense_sheet__petty_cash_type__close
+msgid "Close"
+msgstr "إقفال"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__company_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__type__continuous
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash_configuration__type__continuous
+msgid "Continuous"
+msgstr "مستديمة"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.actions.act_window,help:hr_expense_petty_cash.action_hr_expense_petty_cash
+msgid "Create New Expenses"
+msgstr "أنشاء مصروف جديد"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.actions.act_window,help:hr_expense_petty_cash.action_petty_cash_configuration
+msgid "Create a new petty cash Configuration"
+msgstr "أنشاء نوع عهده جديدة"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.actions.act_window,help:hr_expense_petty_cash.action_petty_cash
+msgid "Create a new petty cash holder"
+msgstr "إنشاء عهدة الية جديدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__create_uid
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__create_date
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__display_name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__state__draft
+msgid "Draft"
+msgstr "مبدئية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_hr_expense
+msgid "Expense"
+msgstr "المصروف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__journal_id
+msgid "Expense Journal"
+msgstr "دفتر يومية المصروف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__expense_limit
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__expense_limit
+msgid "Expense Limit"
+msgstr "الحد الأقصى للمصروف"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#: model:ir.model,name:hr_expense_petty_cash.model_hr_expense_sheet
+#, python-format
+msgid "Expense Report"
+msgstr "تقرير المصروف"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Expense Reports"
+msgstr "تقارير المصروفات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.actions.act_window,name:hr_expense_petty_cash.action_hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__petty_cash_expenses
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_expense
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_expense_root
+msgid "Expenses"
+msgstr "مصروفات"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "Expenses amount can not exceed the expense limit %s"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "Expenses amount can not exceed the limit percent %s"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid ""
+"Expenses must have an expense journal specified to generate accounting "
+"entries."
+msgstr "يجب أن يكون للمصروفات دفتر يومية مصاريف محدد لإنشاء إدخالات محاسبية."
+
+#. module: hr_expense_petty_cash
+#: model:ir.actions.act_window,name:hr_expense_petty_cash.action_hr_expense_sheet_petty_cash
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_expense_sheet
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_expense_sheet_root
+msgid "Expenses sheet"
+msgstr "ورقة المصروفات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_follower_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_channel_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_partner_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__activity_type_icon
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Group By"
+msgstr "تجميع بـ"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move_line__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_employee__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_exception_icon
+msgid "Icon"
+msgstr "ايقون"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__activity_exception_icon
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى استثناء النشاط"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_needaction
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_unread
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_needaction
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_has_error
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_has_sms_error
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_has_error
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__invoice_ids
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__is_invoice_posted
+msgid "Invoice Posted"
+msgstr "تم الاستلام"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+#, python-format
+msgid "Invoices"
+msgstr "فواتير"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_is_follower
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__is_petty_cash
+msgid "Is Petty Cash"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__journal_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__journal_id
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "Kindly insert journal in petty cash %s."
+msgstr "يرجى إدراج دفتر اليومية في المصروفات النثرية٪ s."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash____last_update
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__write_uid
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__write_date
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_configuration_list
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_list
+msgid "Limit"
+msgstr "الحد الأقصى"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__parent_id
+#: model:res.groups,name:hr_expense_petty_cash.group_assets_manager
+#: model:res.groups,name:hr_expense_petty_cash.group_petty_cash_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__petty_cash_limit
+msgid "Max Limit"
+msgstr "الحد الأقصى"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_has_error
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__move_line_ids
+msgid "Move Line"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__name
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__name
+msgid "Name"
+msgstr "الإسم"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_configuration_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Name..."
+msgstr "الإسم..."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_summary
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_type_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__expense_report_count
+msgid "Number of  Expenses Reports"
+msgstr "عدد تقترير المصروفات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الأنشطة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__payment_count
+msgid "Number of Payments"
+msgstr "عدد الدفعيات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_needaction_counter
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_has_error_counter
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي تحتوي على خطأ في التسليم"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__message_unread_counter
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__is_paid
+msgid "Paid"
+msgstr "تم دفعها"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__payment_mode
+msgid "Paid By"
+msgstr "مدفوعة بواسطة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_hr_expense__address_id
+msgid "Partner-related data of the user"
+msgstr "بيانات المستخدم المتعلقة بالشريك"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#, python-format
+msgid "Payment"
+msgstr "دفع"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__payment_amount
+msgid "Payment Amount"
+msgstr "مبلغ الدفع"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_account_payment
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__hr_expense_sheet__clearance_type__payroll
+msgid "Payroll"
+msgstr "المرتبات"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__percent_to_reconcile
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__percent_to_reconcile
+msgid "Percent To Reconcile"
+msgstr "نسبة الصرف"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__petty_configuration_id
+msgid "Petty"
+msgstr "العهد"
+
+#. module: hr_expense_petty_cash
+#: model:ir.actions.act_window,name:hr_expense_petty_cash.action_petty_cash
+#: model:ir.model,name:hr_expense_petty_cash.model_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_bank_statement_line__is_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_bank_statement_line__petty_cash_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__is_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__petty_cash_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move_line__petty_cash_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__petty_cash_id
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__hr_expense__payment_mode__petty_cash
+#: model:ir.module.category,name:hr_expense_petty_cash.hr_petty_category
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash_root
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.hr_employee_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.hr_expense_sheet_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.hr_expense_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_list
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Petty Cash"
+msgstr "العهد المالية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__account_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__account_id
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Petty Cash Account"
+msgstr "حساب العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.actions.act_window,name:hr_expense_petty_cash.action_move_petty_cash
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash_bill
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash_bill_root
+msgid "Petty Cash Bill"
+msgstr "فواتير العهد"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+msgid "Petty Cash Clearance"
+msgstr "تخليص العهد"
+
+#. module: hr_expense_petty_cash
+#: model:ir.actions.act_window,name:hr_expense_petty_cash.action_petty_cash_configuration
+#: model:ir.model,name:hr_expense_petty_cash.model_petty_cash_configuration
+#: model:ir.ui.menu,name:hr_expense_petty_cash.menu_petty_cash_configuration
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_configuration_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_configuration_list
+msgid "Petty Cash Configuration"
+msgstr "ضبط العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_employee__petty_cash_count
+msgid "Petty Cash Count"
+msgstr "العهد المالية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__partner_id
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.hr_expense_sheet_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.hr_expense_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_search
+msgid "Petty Cash Holder"
+msgstr "المسؤول من العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__petty_cash_remaining
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__petty_cash_remaining
+msgid "Petty Cash Remaining"
+msgstr "المبلغ المتبقي من العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__petty_cash_type
+msgid "Petty Cash Type"
+msgstr "نوع العهده"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/account_move.py:0
+#, python-format
+msgid ""
+"Petty Cash balance is %s %s.\n"
+"Max amount to add is %s %s."
+msgstr ""
+"رصيد العهدة %s %s.\n"
+"أقصى مبلغ يمكن إضافتة هو  %s %s."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__payment_petty_cash_id
+msgid "Petty cash"
+msgstr "العهد المالية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__petty_cash_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__petty_cash_id
+msgid "Petty cash holder"
+msgstr "العهدة المالية"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/account_move.py:0
+#, python-format
+msgid "Please check Petty Cash on {}."
+msgstr "الرجاء التحقق من عهدة {}."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__state__closed
+msgid "Reconciled"
+msgstr "تسوية"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_hr_expense_sheet_form_inherit
+#, python-format
+msgid "Register Payment"
+msgstr "تسجيل دفعه"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__state__reject
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__address_id
+msgid "Related Partner"
+msgstr "الشريك"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_list
+msgid "Remaining"
+msgstr ""
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "Renew Petty cash"
+msgstr "تجديد العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__hr_expense_sheet__petty_cash_type__renew
+msgid "Replace"
+msgstr "استعاضة العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__replace_amount
+msgid "Replace Amount"
+msgstr "استبدل المبلغ"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__activity_user_id
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__activity_user_id
+msgid "Responsible User"
+msgstr "الموظف المسؤول"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__state__running
+msgid "Running"
+msgstr "جارية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__salary
+msgid "Salary"
+msgstr "المرتب"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__salary_rule_id
+msgid "Salary Rule"
+msgstr "قواعد هيكل المرتب"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__serial
+msgid "Serial"
+msgstr "متسلسل"
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Set to Draft"
+msgstr "إعادة لمبدئية"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_bank_statement_line__petty_cash_state
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__petty_cash_state
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__petty_cash_state
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__activity_state
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: hr_expense_petty_cash
+#: model_terms:ir.ui.view,arch_db:hr_expense_petty_cash.view_petty_cash_form
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__state__submitted
+msgid "Submitted"
+msgstr "مرسلة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__vat
+msgid "TIN"
+msgstr "الرقم الضريبي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash__type__temporary
+#: model:ir.model.fields.selection,name:hr_expense_petty_cash.selection__petty_cash_configuration__type__temporary
+msgid "Temporary"
+msgstr "مؤقتة"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/account_move.py:0
+#, python-format
+msgid "Temporary petty cash should pay only one time."
+msgstr "يتم الدفع للعهدة المؤقتة مره واحده فقط"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_hr_expense__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+"رقم التعريف الضريبي. أكمله إذا كان الاتصال خاضعًا لضرائب حكومية. تستخدم في "
+"بعض البيانات القانونية."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_hr_expense_sheet__journal_id
+msgid "The journal used when the expense is done."
+msgstr "دفتر اليومية المستخدم عند إتمام المصروفات."
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "There is no remaining Amount to transfer."
+msgstr "لا يوجد مبلغ متبقي للتحويل."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__total_replace_amount
+msgid "Total Petty Amount"
+msgstr "إجمالي مبلغ العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_bank_statement_line__transfer_amount
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__transfer_amount
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__transfer_amount
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__transfer_amount
+msgid "Transfer Amount"
+msgstr "مبلغ التحويل"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_bank_statement_line__transfer_expense_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_move__transfer_expense_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_account_payment__transfer_expense_ids
+msgid "Transfer From"
+msgstr "تحويل من"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__transfer_petty_id
+msgid "Transfer To"
+msgstr "تحويل الي"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__transfer_move_id
+msgid "Transfer journal entry"
+msgstr "تحويل دفتر اليومية"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "Transfer petty cash remining Amount from %s To %s"
+msgstr "تحويل المصروفات النثرية المتبقية من٪ s إلى٪ s"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "Transfer remining Amount From petty cash Expenses %s"
+msgstr "تحويل المبلغ المتبقي من المصروفات النثرية٪ s"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "Transfer remining Amount to petty cash %s"
+msgstr "تحويل المبلغ المتبقي إلى المصروفات النثرية٪ s"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense_sheet__type
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__type
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__type
+msgid "Type"
+msgstr "نوع العهدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__activity_exception_decoration
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_unread
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__message_unread_counter
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: hr_expense_petty_cash
+#: model:res.groups,name:hr_expense_petty_cash.group_assets_user
+#: model:res.groups,name:hr_expense_petty_cash.group_petty_cash_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_hr_expense__partner_id
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash__website_message_ids
+#: model:ir.model.fields,field_description:hr_expense_petty_cash.field_petty_cash_configuration__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: hr_expense_petty_cash
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash__website_message_ids
+#: model:ir.model.fields,help:hr_expense_petty_cash.field_petty_cash_configuration__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "You can not create in advantages when there is no contract."
+msgstr "لا يمكنك إنشاء مزايا للمرتب في حالة عدم وجود عقد."
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "You can not create report without product."
+msgstr "لا يمكنك إنشاء تقرير بدون إضافة منتج"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/petty_cash.py:0
+#, python-format
+msgid "You can not delete record in state not in draft"
+msgstr "لا يمكنك حذف سجل في حالة ليست في المسودة"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "You can only generate accounting entry for approved expense(s)."
+msgstr "يمكنك فقط إنشاء إدخال محاسبي للمصروفات المعتمدة."
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "You can't mix sample expenses and regular ones"
+msgstr "لا يمكنك المزج بين نفقات العينة والنفقات العادية"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid "You cannot create report from different petty cash."
+msgstr "لا يمكن إنشاء تقرير واحد لعهدة مالة متعددة"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "You cannot create report from many petty cash mode and other."
+msgstr "لا يمكن إنشاء تقرير لطرق دفع متعددة "
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "You cannot report expenses for different employees in the same report."
+msgstr "لا يمكنك الإبلاغ عن نفقات موظفين مختلفين في نفس التقرير."
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense.py:0
+#, python-format
+msgid "You cannot report twice the same line!"
+msgstr "لا يمكنك الإبلاغ عن نفس السطر مرتين!"
+
+#. module: hr_expense_petty_cash
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#: code:addons/hr_expense_petty_cash/models/hr_expense_sheet.py:0
+#, python-format
+msgid ""
+"You should select salary rule to move amount to advantages in employee "
+"contract "
+msgstr ""

@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-30 03:36+0000\n"
+"PO-Revision-Date: 2020-11-30 03:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:24
+#, python-format
+msgid "<p>Currency Rate created</p><ul>"
+msgstr "<p>تم إنشاء سعر تحويل جديد</p><ul>"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:73
+#, python-format
+msgid "<p>Currency Rate deleted</p>"
+msgstr "<p>تم حذف سعر تحويل</p>"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:46
+#, python-format
+msgid "<p>Currency Rate updated</p><ul>"
+msgstr "<p>تم تعديل سعر تحويل العملة</p><ul>"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:112
+#, python-format
+msgid "<p>Payment Term Lines created</p><ul>"
+msgstr "<p>تم إنشاء بند جديد لطريقة الدفع</p><ul>"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:161
+#, python-format
+msgid "<p>Payment Term Lines deleted</p>"
+msgstr "<p>تم حذف أحد البنود</p>"
+
+#. module: account_log
+#: code:addons/account_log/models/account_chatter.py:134
+#, python-format
+msgid "<p>Payment Term Lines updated</p><ul>"
+msgstr "<p>تم تعديل بند طرقة الدفع</p><ul>"

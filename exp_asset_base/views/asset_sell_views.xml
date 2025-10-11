@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="asset_sell_tree">
+        <field name="name">asset.sell.tree</field>
+        <field name="model">asset.sell</field>
+        <field name="arch" type="xml">
+            <tree string="Sell Asset">
+                <field name="asset_id"/>
+                <field name="action"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="asset_sell_form">
+        <field name="name">asset.sell.form</field>
+        <field name="model">asset.sell</field>
+        <field name="arch" type="xml">
+            <form string="Sell Asset">
+                <header>
+                    <button groups='exp_asset_base.group_assets_manager' name="act_confirm" states="draft" string="Confirm" type="object" class="oe_highlight"/>
+                    <button groups='exp_asset_base.group_assets_manager' name="act_approve" states="confirm" string="Approve" type="object" class="oe_highlight"/>
+                    <button groups="exp_asset_base.group_assets_manager" name="do_action" states="approve" string="Done" type="object" class="oe_highlight"/>
+                    <button groups="exp_asset_base.group_assets_manager" name="act_draft" states="confirm,approve" string="Set to Draft" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve,done"/>
+                </header>
+                <sheet>
+                    <field name="select_invoice_line_id" invisible="1"/>
+                    <field name="gain_or_loss" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="asset_id" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'form_view_ref': 'odex25_account_asset.view_account_asset_form'}"/>
+                            <field name="action" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="invoice_id" options="{'no_create': True}" attrs="{'invisible': [('action', '!=', 'sell')], 'required': [('action', '=', 'sell')],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="invoice_line_id" options="{'no_create': True}" attrs="{'invisible': [('select_invoice_line_id', '=', False)], 'required': [('select_invoice_line_id', '=', True)],'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="gain_account_id" attrs="{'invisible': [('gain_or_loss', '!=', 'gain')], 'required': [('gain_or_loss', '=', 'gain')],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="loss_account_id" attrs="{'invisible': [('gain_or_loss', '!=', 'loss')], 'required': [('gain_or_loss', '=', 'loss')],'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+     <record id="action_asset_sell" model="ir.actions.act_window">
+        <field name="name">Asset Sell</field>
+        <field name="res_model">asset.sell</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="asset_sell_menu"
+                  parent="menu_account_asset_operation"
+                  action="action_asset_sell"
+                  name="Assets Sell" sequence="4"/>
+
+</odoo>

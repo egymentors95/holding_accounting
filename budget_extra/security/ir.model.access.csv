@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_budget_general_classification,budget.general.classification,model_budget_general_classification,base.group_user,1,1,1,1
+access_budget_higher_management,budget.higher.management,model_budget_higher_management,base.group_user,1,1,1,1
+access_budget_management_classification,budget.management.classification,model_budget_management_classification,base.group_user,1,1,1,1
+access_budget_classification,budget.classification,model_budget_classification,base.group_user,1,1,1,1
+access_budget_sub_management,budget.sub.management,model_budget_sub_management,base.group_user,1,1,1,1
+access_budget_program,budget.program,model_budget_program,base.group_user,1,1,1,1
+access_budget_account_program,budget.account.program,model_budget_account_program,base.group_user,1,1,1,1
+access_budget_door,budget.door,model_budget_door,base.group_user,1,1,1,1

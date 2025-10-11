@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- <record id="odex25_accounting_group_exp_budget_override" model="res.groups">
+            <field name="name">Budget Override in Expense</field>
+        </record> -->
+    </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="search_template_extra_options" inherit_id="odex25_account_reports.search_template_extra_options">
+           <div class="dropdown-menu o_filter_menu" position="inside">
+                <a role="menuitem" class="dropdown-item js_account_report_bool_filter"
+                   t-if="options.get('full_hierarchy') != None" title="Full Hierarchy" data-filter="full_hierarchy">
+                    Show Full Hierarchy
+                </a>
+           </div>
+        </template>
+    </data>
+</odoo>

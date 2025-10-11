@@ -1,0 +1,797 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_budget_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210105\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-30 05:25+0000\n"
+"PO-Revision-Date: 2021-05-30 05:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__account_id
+msgid "Account"
+msgstr "البند"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__percentage
+msgid "Achievement"
+msgstr "الإنجاز"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/budget_confirmation.py:0
+#, python-format
+msgid "All lines should have accounts"
+msgstr ""
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__total_amount
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__amount
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__amount
+msgid "Amount"
+msgstr "مبلغ"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__beneficiary_id
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_crossovered_budget
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__from_crossovered_budget_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__to_crossovered_budget_id
+msgid "Budget"
+msgstr "الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_budget_confirmation
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__confirmation_id
+msgid "Budget Confirmation"
+msgstr "تصديق الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_budget_confirmation_line
+msgid "Budget Confirmation details"
+msgstr "تفاصيل تصديق الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.actions.act_window,name:account_budget_custom.action_budget_confirmation_form
+#: model:ir.ui.menu,name:account_budget_custom.menu_budget_confirmation
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_tree
+msgid "Budget Confirmations"
+msgstr "التحقق من الارتباط"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_tree
+msgid "Budget Confirmed Amount"
+msgstr  "مبلغ الموازنة المصدق"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "خط الموازنة"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_graph
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_pivot
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_tree
+#, python-format
+msgid "Budget Lines"
+msgstr "خطوط الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.actions.act_window,name:account_budget_custom.open_budget_operations
+#: model:ir.ui.menu,name:account_budget_custom.menu_budget_operations_form
+msgid "Budget Operation"
+msgstr "عمليات الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.ui.menu,name:account_budget_custom.menu_budget_operations
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_tree
+msgid "Budget Operations"
+msgstr "عمليات الموازنة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__from_budget_post_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__to_budget_post_id
+msgid "Budget Post"
+msgstr "البند"
+
+#. module: account_budget_custom
+#: model:ir.actions.report,name:account_budget_custom.action_report_budget_xlsx
+msgid "Budget XLSX"
+msgstr "الموازنة (اكسل)"
+
+#. module: account_budget_custom
+#: model:ir.ui.menu,name:account_budget_custom.main_budgets_menu
+msgid "Budgets"
+msgstr "الموازنات"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_confirmation__state__cancel
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+msgid "Check Budget"
+msgstr "التحقق من الارتباط"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__company_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__company_id
+msgid "Company"
+msgstr "مؤسسة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_crossovered_budget_lines__percentage
+msgid ""
+"Comparison between practical and theoretical amount. This measure tells you "
+"if you are below or over budget."
+msgstr ""
+"المقارنة بين القيمة الفعلية والنظرية. تحدد نسبة الانحراف في الإيرادات أو "
+"المصروفات في الموازنة."
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__budget_confirm_amount
+msgid "Confirmation Amount"
+msgstr  "مبلغ التصديق"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__analytic_account_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__analytic_account_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__budget_line_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__from_budget_line_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__to_budget_line_id
+msgid "Cost Center"
+msgstr "مركز التكلفة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__create_uid
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__create_uid
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__create_date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__create_date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__currency_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__currency_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__currency_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__date
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__operation_type__decrease
+msgid "Decrease"
+msgstr "تخفيض"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__department_id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__department_id
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "Department"
+msgstr "القسم"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__description
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__lines_ids
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+msgid "Details"
+msgstr "تفاصيل المطابقة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_report__display_name
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_xslx_report__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__res_id
+msgid "Document ID"
+msgstr "معرف المستند"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_confirmation__state__draft
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations
+msgid "From"
+msgstr "من"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "From Budget"
+msgstr "من موازنة"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "From Cost Center"
+msgstr "من مركز التكلفة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_report__id
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_xslx_report__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_needaction
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_has_error
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__operation_type__increase
+msgid "Increase"
+msgstr "تعزيز"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_report____last_update
+#: model:ir.model.fields,field_description:account_budget_custom.field_report_account_budget_custom_budget_xslx_report____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__write_uid
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__write_uid
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__write_date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__write_date
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__name
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__name
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "Name"
+msgstr "الاسم"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__new_balance
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation_line__new_balance
+msgid "New Balance"
+msgstr  "المبلغ بعد الخصم"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/budget_confirmation.py:0
+#, python-format
+msgid "No budget for "
+msgstr "لا يوجد موازنة ل "
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/budget_confirmation.py:0
+#, python-format
+msgid "No enough budget for "
+msgstr  "متبقي الموازنة لا يغطي  "
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__operation_type
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "Operation Type"
+msgstr "نوع العملية"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__practical_amount
+msgid "Practical Amount"
+msgstr "المبلغ الفعلي"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__provide
+msgid "Provide"
+msgstr "الدعومات"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_tree
+msgid "Provided Amount"
+msgstr "مبلغ الدعم"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__pull_out
+msgid "Pull Out"
+msgstr "المبلغ المحجوز/التخصيص"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_tree
+msgid "Pull Out Amount"
+msgstr "مبلغ السحب"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__ref
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__res_model
+msgid "Related Document Model Name"
+msgstr "اسم كائن المستند المرتبط"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__remain
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__remain
+msgid "Remain"
+msgstr "المبلغ المتبقي"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_crossovered_budget_line_tree
+msgid "Remain Amount"
+msgstr "المبلغ المتاح"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation_line__remain
+msgid "Remain in services budget for this cost center"
+msgstr "المبلغ قبل الخصم لهذه الخدمات على هذه المراكز"
+
+#. module: account_budget_custom
+#: model:ir.ui.menu,name:account_budget_custom.budget_reporting_menu
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__user_id
+msgid "Request user"
+msgstr "المستخدم الطالب"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__from_reserved
+msgid "Reserve?"
+msgstr "محجوز؟"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__reserved_amount
+msgid "Reserved Amount"
+msgstr "المبلغ المحجوز"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget__reserved_percent
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__reserved_percent
+msgid "Reserved Percent"
+msgstr "نسبة الحجز"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.crossovered_budget_view_form
+msgid "Reserved Percent %"
+msgstr "نسبة المحجوز %"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "Sorry, No data to Print"
+msgstr "لا يوجد بيانات ليتم طباعتها"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "State"
+msgstr "المحافظة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__state
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation_line__state
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_crossovered_budget_lines__theoritical_amount
+msgid "Theoretical Amount"
+msgstr "القيمة النظرية"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations
+msgid "To"
+msgstr "ألى"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "To Budget"
+msgstr "إلى موازنة"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "To Cost Center"
+msgstr "إلى مركز التكلفة"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations
+msgid "To Draft"
+msgstr "الرجوع الي مبدئي"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__total_amount
+msgid "Total amount"
+msgstr "إجمالي المبلغ"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation_line__amount
+msgid "Total amount in services request line"
+msgstr "المبلغ"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__operation_type__transfer
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__type__transfer
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_operations__type__unlock
+msgid "Unlock"
+msgstr "إعادة الفتح"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_confirmation__state__confirmed
+msgid "Waiting Financial Controller"
+msgstr "في إنتظار المدير المالي"
+
+#. module: account_budget_custom
+#: model:ir.model.fields.selection,name:account_budget_custom.selection__budget_confirmation__state__done
+msgid "Waiting Payment"
+msgstr "في إنتظار الدفع"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,help:account_budget_custom.field_budget_confirmation__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/account_budget.py:0
+#, python-format
+msgid "You can not take more than the remaining amount"
+msgstr "لا يمكن أخذ أكثر من المبلغ المتبقي"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/account_budget.py:0
+#, python-format
+msgid "You can not take more than the reserved amount."
+msgstr "لا يمكن أخذ اكثر من المبلغ المحجوز"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/budget_confirmation.py:0
+#, python-format
+msgid "You cannot copy a budget confirmation ."
+msgstr "لا يمكن نسخ تصديق الموازنة"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/budget_confirmation.py:0
+#, python-format
+msgid "You cannot delete a budget confirmation not in cancel state."
+msgstr "لا يمكن حذف تصديق موازنة غير ملغى"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "budget.confirmation"
+msgstr ""
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_budget_operations
+msgid "budget.operations"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/models/account_budget.py:0
+#, python-format
+msgid "remaining"
+msgstr "المتبقى"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_report_account_budget_custom_budget_report
+msgid "report.account_budget_custom.budget_report"
+msgstr ""
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_report_account_budget_custom_budget_xslx_report
+msgid "report.account_budget_custom.budget_xslx_report"
+msgstr ""
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_operations_search
+msgid "state"
+msgstr "الحالة"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__type
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_operations__type
+msgid "type"
+msgstr "النوع"
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "الإنجاز"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "المبلغ الفعلى"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "المبلغ المخطط"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "المبلغ النظرية"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "المـوازنـة"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "الموازنات"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "تاريخ الإنتهاء"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "تاريخ البدء"
+msgstr ""
+
+#. module: account_budget_custom
+#: code:addons/account_budget_custom/reports/budget_report_xlsx.py:0
+#, python-format
+msgid "وضع المـوازنـة"
+msgstr ""
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__exceed_budget
+msgid "Allow Exceed Budget"
+msgstr "السماح بتخطي الموازنة"
+
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_report_account_budget_custom_budget_report
+msgid "Budget Report"
+msgstr ""
+
+#. module: account_budget_custom
+#: model:res.groups,name:account_budget_custom.group_budget_user
+msgid "Budget User"
+msgstr "مسستخدم الموازنة"
+
+#. module: account_budget_custom
+#: model:res.groups,name:account_budget_custom.group_manager_budget
+msgid "Manager of Budget"
+msgstr "مدير الموازنة"
+
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.reject_wizard
+msgid "Close"
+msgstr "إلغاء"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_reject_wizard__origin
+msgid "Origin"
+msgstr "المصدر"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_reject_wizard__origin_name
+msgid "Origin Name"
+msgstr "الإسم المصدر"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.reject_wizard
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_budget_confirmation__reject_reason
+msgid "Reject Reason"
+msgstr "سبب الرفض"
+
+#. module: account_budget_custom
+#: model:ir.model.fields,field_description:account_budget_custom.field_reject_wizard__reject_reason
+msgid "Reject Reson"
+msgstr "سبب الرفض"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.view_budget_confirmation_search
+msgid "budget.confirmation"
+msgstr "تصديق الموازنة"
+
+#. module: account_budget_custom
+#: model_terms:ir.ui.view,arch_db:account_budget_custom.reject_wizard
+msgid "or"
+msgstr "أو"
+
+#. module: account_budget_custom
+#: model:ir.model,name:account_budget_custom.model_reject_wizard
+msgid "reject.wizard"
+msgstr ""
+
+

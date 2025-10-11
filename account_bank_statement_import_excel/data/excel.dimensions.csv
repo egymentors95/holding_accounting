@@ -1,0 +1,4 @@
+id,name,details_only,account_number_col,account_number_row,balance_col,company_id/id,credit_col,currency_col,currency_row,date_col,date_period_col,date_period_row,debit_col,details_row,balance_end_col,balance_end_row,note_col,balance_start_col,balance_start_row,type_col,date_format,debit_sign
+excel_dimensions_rajhi,Al Rajhi Bank,,10,8,6,,8,10,9,11,10,10,7,16,10,13,10,10,12,9,%d/%m/%Y,0
+excel_dimensions_inma,Inma Bank,,4,5,0,,4,0,5,15,0,2,5,17,9,7,6,0,7,0,%m/%d/%Y,1
+excel_dimensions_albilad,Albilad Bank,1,,,4,,3,,,0,,,2,1,,,5,,,,%d/%m/%Y,0

@@ -1,0 +1,323 @@
+<odoo>
+    <!-- Budget General Classification -->
+    <record id="view_budget_general_classification_tree" model="ir.ui.view">
+        <field name="name">budget.general.classification.tree</field>
+        <field name="model">budget.general.classification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_general_classification_form" model="ir.ui.view">
+        <field name="name">budget.general.classification.form</field>
+        <field name="model">budget.general.classification</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_general_classification" model="ir.actions.act_window">
+        <field name="name">General Classification</field>
+        <field name="res_model">budget.general.classification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_classifications" name="Budget Classifcations"
+              parent="account_budget_custom.menu_budget_operations"/>
+    <menuitem id="menu_budget_general_classification" name="General Classification" parent="menu_budget_classifications"
+              action="action_budget_general_classification"/>
+
+    <!-- Budget Higher Management -->
+    <record id="view_budget_higher_management_tree" model="ir.ui.view">
+        <field name="name">budget.higher.management.tree</field>
+        <field name="model">budget.higher.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_higher_management_form" model="ir.ui.view">
+        <field name="name">budget.higher.management.form</field>
+        <field name="model">budget.higher.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_higher_management" model="ir.actions.act_window">
+        <field name="name">Higher Management</field>
+        <field name="res_model">budget.higher.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_higher_management" name="Higher Management" parent="hr.menu_human_resources_configuration"
+              action="action_budget_higher_management" sequence="120"/>  <!--    xxx-->
+
+    <!-- Budget Management Classification -->
+    <record id="view_budget_management_classification_tree" model="ir.ui.view">
+        <field name="name">budget.management.classification.tree</field>
+        <field name="model">budget.management.classification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_management_classification_form" model="ir.ui.view">
+        <field name="name">budget.management.classification.form</field>
+        <field name="model">budget.management.classification</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_management_classification" model="ir.actions.act_window">
+        <field name="name">Management Classification</field>
+        <field name="res_model">budget.management.classification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_management_classification" name="Management Classification"
+              parent="menu_budget_classifications" action="action_budget_management_classification"/>
+
+    <!-- Budget Classification -->
+    <record id="view_budget_classification_tree" model="ir.ui.view">
+        <field name="name">budget.classification.tree</field>
+        <field name="model">budget.classification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_classification_form" model="ir.ui.view">
+        <field name="name">budget.classification.form</field>
+        <field name="model">budget.classification</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_classification" model="ir.actions.act_window">
+        <field name="name">Classification</field>
+        <field name="res_model">budget.classification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_classification" name="Classification" parent="menu_budget_classifications"
+              action="action_budget_classification"/>
+
+    <!-- Budget Sub Management -->
+    <record id="view_budget_sub_management_tree" model="ir.ui.view">
+        <field name="name">budget.sub.management.tree</field>
+        <field name="model">budget.sub.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_sub_management_form" model="ir.ui.view">
+        <field name="name">budget.sub.management.form</field>
+        <field name="model">budget.sub.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_sub_management" model="ir.actions.act_window">
+        <field name="name">Sub Management</field>
+        <field name="res_model">budget.sub.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_sub_management" name="Sub Management" parent="hr.menu_human_resources_configuration"
+              action="action_budget_sub_management" sequence="150"/>  <!--    xxx-->
+
+    <!-- Budget Program -->
+    <record id="view_budget_program_tree" model="ir.ui.view">
+        <field name="name">budget.program.tree</field>
+        <field name="model">budget.program</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_program_form" model="ir.ui.view">
+        <field name="name">budget.program.form</field>
+        <field name="model">budget.program</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_program" model="ir.actions.act_window">
+        <field name="name">Program</field>
+        <field name="res_model">budget.program</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_program" name="Program" parent="menu_budget_classifications"
+              action="action_budget_program"/>
+
+    <!-- Budget Account Program -->
+    <record id="view_budget_account_program_tree" model="ir.ui.view">
+        <field name="name">budget.account.program.tree</field>
+        <field name="model">budget.account.program</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_account_program_form" model="ir.ui.view">
+        <field name="name">budget.account.program.form</field>
+        <field name="model">budget.account.program</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_account_program" model="ir.actions.act_window">
+        <field name="name">Account Program</field>
+        <field name="res_model">budget.account.program</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_account_program" name="Account Program" parent="menu_budget_classifications"
+              action="action_budget_account_program"/>
+
+    <!-- Budget Door -->
+    <record id="view_budget_door_tree" model="ir.ui.view">
+        <field name="name">budget.door.tree</field>
+        <field name="model">budget.door</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_budget_door_form" model="ir.ui.view">
+        <field name="name">budget.door.form</field>
+        <field name="model">budget.door</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_door" model="ir.actions.act_window">
+        <field name="name">Door</field>
+        <field name="res_model">budget.door</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_budget_door" name="Door" parent="menu_budget_classifications" action="action_budget_door"/>
+
+    <record model="ir.ui.view" id="crossovered_budget_view_form">
+        <field name="name">crossovered.budget.view.inherit.form</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget_custom.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="general_classification_id"/>
+                <field name="higher_management_id"/>
+                <field name="management_classification_id"/>
+                <field name="classification_id"/>
+                <field name="sub_management_id"/>
+                <field name="program_id"/>
+                <field name="account_program_id"/>
+                <field name="door_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_crossovered_budget_line_search">
+        <field name="name">crossovered.budget.view.lines.inherit.form</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id" ref="odex25_account_budget.view_crossovered_budget_line_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='analytic_account_id']" position="after">
+                <field name="general_classification_id"/>
+                <field name="higher_management_id"/>
+                <field name="management_classification_id"/>
+                <field name="classification_id"/>
+                <field name="sub_management_id"/>
+                <field name="program_id"/>
+                <field name="account_program_id"/>
+                <field name="door_id"/>
+            </xpath>
+              <xpath expr="//group" position="inside">
+                  <filter name="group_general_classification_id" string="General Classification" domain="[]" context="{'group_by':'general_classification_id'}"/>
+                    <filter name="group_higher_management_id" string="Higher Management" domain="[]" context="{'group_by':'higher_management_id'}"/>
+                    <filter name="group_management_classification_id" string="Management Classification" domain="[]" context="{'group_by':'management_classification_id'}"/>
+                    <filter name="group_classification_id" string="Classification" domain="[]" context="{'group_by':'classification_id'}"/>
+                    <filter name="group_sub_management_id" string="Sub Management" domain="[]" context="{'group_by':'sub_management_id'}"/>
+                    <filter name="group_program_id" string="Program" domain="[]" context="{'group_by':'program_id'}"/>
+                    <filter name="group_account_program_id" string="Account Program" domain="[]" context="{'group_by':'account_program_id'}"/>
+                    <filter name="group_door_id" string="Door" domain="[]" context="{'group_by':'door_id'}"/>
+                    <filter name="analytic_account_filter" string="Analytic Account" domain="[]" context="{'group_by':'analytic_account_id'}"/>
+              </xpath>
+        </field>
+    </record>
+
+
+</odoo>

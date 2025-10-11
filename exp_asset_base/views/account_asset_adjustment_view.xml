@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="asset_adjustment_line_tree">
+        <field name="name">account.asset.adjustment.line.tree</field>
+        <field name="model">account.asset.adjustment.line</field>
+        <field name="arch" type="xml">
+            <tree string="Asset Adjustment">
+                <field name="asset_id"/>
+                <field name="serial_no"/>
+                <field name="barcode"/>
+                <field name="adjustment_id"/>
+                <field name="asset_status"/>
+                <field name="exist"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="asset_adjustment_tree">
+        <field name="name">account.asset.adjustment.tree</field>
+        <field name="model">account.asset.adjustment</field>
+        <field name="arch" type="xml">
+            <tree string="Asset Adjustment">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="type"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="asset_adjustment_form">
+        <field name="name">account.asset.adjustment.form</field>
+        <field name="model">account.asset.adjustment</field>
+        <field name="arch" type="xml">
+            <form string="Asset Adjustment">
+                <header>
+                    <button name="act_progress" states="draft" string="Start" type="object" class="oe_highlight"/>
+                    <button name="act_done" states="in_progress" groups='exp_asset_base.group_assets_manager' string="Confirm" type="object" class="oe_highlight"/>
+                    <button name="act_cancel" states="in_progress" groups="exp_asset_base.group_assets_manager" string="Reject" type="object"/>
+                    <button name="act_draft" states="cancel" groups='exp_asset_base.group_assets_manager' string="Set to Draft" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="_barcode_scanned" widget="barcode_handler"/>
+                            <field name="barcode" nolabel="1" placeholder="Barcode..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="product_id"
+                                   attrs="{'invisible': [('type', '!=', 'product')],
+                                           'required': [('type', '=', 'product')]}"/>
+                            <field name="model_id"
+                                   attrs="{'invisible': [('type', '!=', 'model')],
+                                           'required': [('type', '=', 'model')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                            <field name="adjustment_line_ids" nolabel="1">
+                                <tree editable="top"
+                                      decoration-success="exist==True" create="0" delete="0">
+                                    <field name="asset_id" readonly="1"/>
+                                    <field name="serial_no"/>
+                                    <field name="barcode"/>
+                                    <field name="asset_status2"
+                                           attrs="{'readonly': [('exist', '=', False)],
+                                                   'required':[('exist', '=', True)]}"/>
+                                    <field name="exist"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asset_adjustment" model="ir.actions.act_window">
+        <field name="name">Asset Adjustment</field>
+        <field name="res_model">account.asset.adjustment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

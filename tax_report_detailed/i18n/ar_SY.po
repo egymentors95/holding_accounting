@@ -1,0 +1,235 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tax_report_detailed
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-14 03:35+0000\n"
+"PO-Revision-Date: 2020-04-14 03:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_amount_exclude
+msgid "Amount Without Tax"
+msgstr "المبلغ بدون ضرائب"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.view_tax_report_details_search
+msgid "Budget"
+msgstr "الموازنة"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_wiz_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_create_uid
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_create_date
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_date
+msgid "Date"
+msgstr "تاريخ العملية"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_date_from
+msgid "Date From"
+msgstr "تاريخ البدء"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_date_to
+msgid "Date To"
+msgstr "تاريخ الانتهاء"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_desc
+msgid "Desription"
+msgstr "وصف"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_report_tax_report_detailed_report_tax_details_xlsx_display_name
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_display_name
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_fiscal_position_id
+#: model:ir.ui.view,arch_db:tax_report_detailed.view_tax_report_details_search
+msgid "Fiscal Position"
+msgstr "الأوضاع المالية"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.view_tax_report_details_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_report_tax_report_detailed_report_tax_details_xlsx_id
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_id
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_num
+msgid "Invoice No"
+msgstr "الفاتورة"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_report_tax_report_detailed_report_tax_details_xlsx___last_update
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details___last_update
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_write_uid
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_write_date
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_wiz_view_form
+msgid "Preview It!"
+msgstr "عرض"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_wiz_view_form
+msgid "Print it!"
+msgstr "طباعة"
+
+#. module: tax_report_detailed
+#: selection:tax.report.details,record_type:0
+msgid "Purchase"
+msgstr "مشتريات"
+
+#. module: tax_report_detailed
+#: selection:tax.report.details,record_type:0
+msgid "Sales"
+msgstr "مبيعات"
+
+#. module: tax_report_detailed
+#: selection:tax.report.details,record_type:0
+msgid "In Refund"
+msgstr "مردودات المشتريات"
+
+#. module: tax_report_detailed
+#: selection:tax.report.details,record_type:0
+msgid "Out Refund"
+msgstr "مردودات المبيعات"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_vat
+msgid "TIN"
+msgstr "رقم التعريف الضريبي"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.view_tax_report_details_search
+msgid "Tax"
+msgstr "الضريبة"
+
+#. module: tax_report_detailed
+#: model:ir.actions.act_window,name:tax_report_detailed.act_tax_report_details_view
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_details_view_form
+msgid "Tax Details"
+msgstr "تفاصيل الضرائب"
+
+#. module: tax_report_detailed
+#: model:ir.actions.act_window,name:tax_report_detailed.action_tax_report_wiz_view
+#: model:ir.ui.menu,name:tax_report_detailed.menu_action_tax_report_wiz_view
+msgid "Tax Details Report"
+msgstr "تقرير تفاصيل الضرائب"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,help:tax_report_detailed.field_tax_report_details_vat
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
+msgstr "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_tax_id
+msgid "Tax Name"
+msgstr "اسم الضريبة"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_details_view_tree
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_wiz_view_form
+msgid "Tax Report"
+msgstr "تقرير الضريبة"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_record_type
+msgid "Tax Type"
+msgstr "نوع الضريبة"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_amount_tax
+msgid "Tax amount"
+msgstr "مبلغ الضريبة"
+
+#. module: tax_report_detailed
+#: model:ir.actions.report,name:tax_report_detailed.report_tax_details_xlsx
+msgid "Tax report"
+msgstr "التقرير الضريبي"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_details_total_amount
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.view_tax_report_details_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: tax_report_detailed
+#: model:ir.model.fields,field_description:tax_report_detailed.field_tax_report_wiz_fiscal_position_ids
+msgid "fiscal Position"
+msgstr "الأوضاع المالية"
+
+#. module: tax_report_detailed
+#: model:ir.ui.view,arch_db:tax_report_detailed.tax_report_wiz_view_form
+msgid "or"
+msgstr "أو"
+
+#. module: tax_report_detailed
+#: model:ir.model,name:tax_report_detailed.model_report_tax_report_detailed_report_tax_details_xlsx
+msgid "report.tax_report_detailed.report_tax_details_xlsx"
+msgstr "report.tax_report_detailed.report_tax_details_xlsx"
+
+#. module: tax_report_detailed
+#: model:ir.model,name:tax_report_detailed.model_tax_report_details
+msgid "tax.report.details"
+msgstr "tax.report.details"
+
+#. module: tax_report_detailed
+#: model:ir.model,name:tax_report_detailed.model_tax_report_wiz
+msgid "tax.report.wiz"
+msgstr "tax.report.wiz"

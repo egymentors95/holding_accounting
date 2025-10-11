@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_expense_sheet" inherit_id="hr_expense.report_expense_sheet">
+        <xpath expr="//table" position="before">
+            <t t-if="o.payment_mode=='petty_cash'">
+                <div class="row mt32 mb32">
+                <div class="col-2">
+                    <strong>Max Limit:</strong>
+                    <p t-field="o.petty_cash_id.petty_cash_limit"/>
+                </div>
+                <div class="col-2">
+                    <strong>Balance:</strong>
+                    <p t-field="o.petty_cash_id.petty_cash_balance"/>
+                </div>
+            </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_budget_confirmation,account.budget.confirmation,model_budget_confirmation,account.group_account_readonly,1,0,0,0
+access_account_budget_confirmation_accountant,account.budget.confirmation accountant,model_budget_confirmation,account.group_account_user,1,1,1,1
+access_account_budget_confirmation_line,account.budget.confirmation.line,model_budget_confirmation_line,account.group_account_readonly,1,0,0,0
+access_account_budget_confirmation_line_accountant,account.budget.confirmation.line accountant,model_budget_confirmation_line,account.group_account_user,1,1,1,1
+access_account_budget_operation,account.budget.operation,model_budget_operations,account.group_account_readonly,1,0,0,0
+access_account_budget_operation_accountant,account.budget.operation accountant,model_budget_operations,account.group_account_user,1,1,1,1
+
+access_reject_wizard_user,reject.wizard group_account_user,model_reject_wizard,account.group_account_user,1,1,1,1

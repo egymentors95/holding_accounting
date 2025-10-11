@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_account_payment_form_inherited" model="ir.ui.view">
+            <field name="name">account.payment.inherited.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="clear_check" string="Clear Check" type="object"
+                            attrs="{'invisible': ['|','|', ('clear', '=', True), ('cheque', '=', False),('state', '!=', 'posted')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_method_id']" position="after">
+                    <field name="clear" invisible="1"/>
+                    <field name="cheque" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='move_id']" position="after">
+                    <field name="clear_move_id"
+                           attrs="{'invisible': ['|',('cheque', '=', False),('clear_move_id', '=', False)], 'readonly':True}"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_bank_id']" position="after">
+                    <field name="agent_id"
+                           attrs="{'invisible': [('cheque', '=', False)], 'required': [('cheque', '=', True)], 'readonly':[('state', '!=', 'draft')]}"/>
+                    <field name="cheque_collection_type"
+                           attrs="{'invisible': [('cheque', '=', False)], 'required': [('cheque', '=', True)], 'readonly':[('state', '!=', 'draft')]}"/>
+                    <field name="payment_method_no"
+                           attrs="{'invisible': [('cheque', '=', False)], 'required': [('cheque', '=', True)], 'readonly':[('state', '!=', 'draft')]}"/>
+                    <field name="payment_method_date" string="PDC date"
+                           attrs="{'invisible': [('cheque', '=', False)], 'required': [('cheque', '=', True)], 'readonly':[('state', '!=', 'draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_payment_search" model="ir.ui.view">
+            <field name="name">account.payment.search</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_internal_transfer']" position="after">
+                    <field name="payment_method_id" string="Payment Methods"/>
+                    <separator/>
+                    <filter string="Checks"
+                            name="checks"
+                            domain="[('cheque', '=', True)]"/>
+                    <filter string="Outstanding Checks"
+                            name="outstanding"
+                            domain="[('clear', '=', False),('cheque', '=', True)]"/>
+                    <filter string="Cleared Checks"
+                            name="clear"
+                            domain="[('clear', '=', True),('cheque', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_payment_method_type_tree" model="ir.ui.view">
+            <field name="name">account.method.payment.tree</field>
+            <field name="model">account.payment.method</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Payment Method">
+                    <field name="name"/>
+                    <field name="payment_type"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_payment_method_type_form" model="ir.ui.view">
+            <field name="name">account.method.payment.form</field>
+            <field name="model">account.payment.method</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Payment Method">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="payment_type"/>
+                            <field name="code"/>
+                            <field name="cheque"/>
+                            <field name="sequence"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_payment_method_type_search" model="ir.ui.view">
+            <field name="name">account.method.payment.search</field>
+            <field name="model">account.payment.method</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Payment Method">
+                    <field name="name"/>
+                    <field name="payment_type"/>
+                    <field name="code"/>
+                    <separator/>
+                    <filter string="Type" name="type" domain="[]" context="{'group_by': 'payment_type'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_payment_method_type_view">
+            <field name="name">Payment Methods</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment.method</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_payment_method_type_search"/>
+        </record>
+
+        <menuitem id="menu_act_open_payment_method_type_view" name="Payment Methods" parent="account.root_payment_menu"
+                  action="act_open_payment_method_type_view"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--    todo start -->
+    <!--    add new security group for hr petty cash-->
+    <record model="ir.module.category" id="hr_petty_category">
+        <field name="name">Petty Cash</field>
+    </record>
+    <record id="group_petty_cash_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="hr_expense_petty_cash.hr_petty_category"/>
+    </record>
+    <record id="group_petty_cash_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="hr_expense_petty_cash.hr_petty_category"/>
+        <field name="implied_ids" eval="[(4, ref('hr_expense_petty_cash.group_petty_cash_user'))]"/>
+    </record>
+    <!--    add assets group -->
+    <record model="ir.module.category" id="asset_category">
+        <field name="name">Assets Managment</field>
+    </record>
+    <record id="group_assets_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="hr_expense_petty_cash.asset_category"/>
+    </record>
+    <record id="group_assets_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="hr_expense_petty_cash.asset_category"/>
+        <field name="implied_ids" eval="[(4, ref('hr_expense_petty_cash.group_assets_user'))]"/>
+    </record>
+</odoo>

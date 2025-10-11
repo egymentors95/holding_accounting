@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_form" model="ir.ui.view">
+            <field name="name">account.account.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <field name="user_type_id" position="after">
+                    <field name="parent_id" context="{'show_view':True}"/>
+                    <field name="level" required="1" readonly="0"/>
+                    <field name="automticAccountsCodes" invisible="1"/>
+                    <field name="auto_code" invisible="1"/>
+                </field>
+<!--                 <field name="deprecated" position="attributes">
+                    <attribute name="groups">account_chart_of_accounts.group_chart_of_account_deprecated</attribute>
+                </field> -->
+                <div class="oe_inline oe_edit_only" position="replace">
+                    <h1 class="oe_inline oe_edit_only">
+                        <field name="code" placeholder="code" force_save="1"
+                               attrs="{'readonly':[('automticAccountsCodes','=',True)]}"/> -
+                        <field name="name" placeholder="name"/>
+                    </h1>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_account_list" model="ir.ui.view">
+            <field name="name">account.account.list</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="decoration-bf">internal_type=='view'</attribute>
+                </xpath>
+                <field name="code" position="before">
+                    <field name="automticAccountsCodes" invisible="1"/>
+                    <field name="auto_code" invisible="1"/>
+                </field>
+                <xpath expr="//field[@name='code']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('automticAccountsCodes','=',True)]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <field name="user_type_id" position="after">
+                    <field name="parent_id" context="{'show_view':True}"/>
+                    <field name="level"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_search" model="ir.ui.view">
+            <field name="name">account.account.search</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="user_type_id"/>
+                    <field name="level"/>
+                </field>
+                <field name="root_id" position="replace">
+                    <field name="parent_id" string="Hierarchical Chart" icon="fa-filter"/>
+                </field>
+            </field>
+        </record>
+
+
+        <template id="assets_backend" name="account assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/scss"
+                      href="/account_chart_of_accounts/static/src/scss/account_searchpanel.scss"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

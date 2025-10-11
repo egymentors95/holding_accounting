@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* petty_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-17 03:27+0000\n"
+"PO-Revision-Date: 2024-11-17 03:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: petty_invoice
+#: model_terms:ir.ui.view,arch_db:petty_invoice.view_account_invoice_filter
+msgid "Created By"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: petty_invoice
+#: model:ir.model,name:petty_invoice.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: petty_invoice
+#: model_terms:ir.ui.view,arch_db:petty_invoice.view_account_invoice_filter
+msgid "Not Paid by Petty Cash"
+msgstr "غير منصرف من العهد"
+
+#. module: petty_invoice
+#: model:ir.model.fields,field_description:petty_invoice.field_account_bank_statement_line__is_petty_paid
+#: model:ir.model.fields,field_description:petty_invoice.field_account_move__is_petty_paid
+#: model:ir.model.fields,field_description:petty_invoice.field_account_payment__is_petty_paid
+#: model_terms:ir.ui.view,arch_db:petty_invoice.view_account_invoice_filter
+msgid "Paid by Petty Cash"
+msgstr "منصرفه من العهد"
+
+#. module: petty_invoice
+#: model:ir.model.fields,field_description:petty_invoice.field_account_bank_statement_line__petty_employee_id
+#: model:ir.model.fields,field_description:petty_invoice.field_account_move__petty_employee_id
+#: model:ir.model.fields,field_description:petty_invoice.field_account_payment__petty_employee_id
+#: model_terms:ir.ui.view,arch_db:petty_invoice.view_account_invoice_filter
+msgid "Petty Cashier"
+msgstr "موظف العهد"

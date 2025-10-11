@@ -1,0 +1,23 @@
+<!-- Inherit Form View to Modify it -->
+<odoo>
+    <record id="account_move_view" model="ir.ui.view">
+        <field name="name">account.move.inherit.form.attachment</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="get_attachments" type="object"
+                        class="oe_stat_button"
+                        icon="fa-file-text-o">
+                    <field name="attach_no" widget="statinfo" string="Documents"/>
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='other_info']" position="inside">
+                <group invisible="1" name="model_info" string='Model Info'>
+                    <field  invisible="1" readonly="1" name='res_model'/>
+                    <field  invisible="1" readonly="1" name='res_id'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

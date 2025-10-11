@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record id="view_mrp_production_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.production.form</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="asset_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_mrp_workcenter_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.workcenter.form</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_info']/group[1]/group[3]" position="after">
+                    <group>
+                        <div class="o_row">
+                            <label for="labor_costs"/>
+                            <field name="labor_costs"/>
+                            <label for="labor_account_id"/>
+                            <field name="labor_account_id"/>
+                        </div>
+                        <div class="o_row">
+                            <label for="electricity_costs"/>
+                            <field name="electricity_costs"/>
+                            <label for="electricity_account_id"/>
+                            <field name="electricity_account_id"/>
+                        </div>
+                        <div class="o_row">
+                            <label for="rental_costs" string="Other Expenses"/>
+                            <field name="rental_costs"/>
+                            <label for="rental_account_id" string="Other Expenses Account"/>
+                            <field name="rental_account_id"/>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+
+        </record>
+    </data>
+</odoo>

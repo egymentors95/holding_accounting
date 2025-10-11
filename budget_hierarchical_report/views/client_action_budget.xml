@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="budget_client_action_hierarchical_report" model="ir.actions.client">
+      <field name="name">Budget Hierarchical Report</field>
+      <field name="tag">budget_hierarchical_report.hierarchical_chart</field>
+      <field name="context" eval="{'model': 'crossovered.budget.lines'}"/>
+    </record>
+
+
+    <menuitem id="budget_hierarchical_report_menu"
+              name="Budget Hierarchical Report"
+              action="budget_client_action_hierarchical_report"
+              parent="account_budget_custom.budget_reporting_menu"/>
+
+    </data>
+</odoo>

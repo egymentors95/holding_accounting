@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.move.paid.petty.inherit.select</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="petty_employee_id"/>
+                <field name="is_petty_paid"/>
+                <filter name="is_petty_paid" string="Paid by Petty Cash"
+                        domain="[('is_petty_paid', '=',True)]"/>
+                <filter name="not_petty_paid" string="Not Paid by Petty Cash"
+                        domain="[('is_petty_paid', '=', False)]"/>
+
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter name="group_by_created_by" string="Created By" context="{'group_by':'create_uid'}"/>
+                <filter name="group_by_petty_employee_id" string="Petty Cashier"
+                        context="{'group_by':'petty_employee_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.paid.petty.inherit.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="is_petty_paid" readonly="1" attrs="{'invisible': [('move_type', '!=','in_invoice')]}"/>
+                <field name="petty_employee_id" readonly="1" attrs="{'invisible': [('move_type', '!=','in_invoice')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

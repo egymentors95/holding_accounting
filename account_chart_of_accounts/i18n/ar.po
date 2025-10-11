@@ -1,0 +1,185 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_chart_of_accounts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210105\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-26 05:04+0000\n"
+"PO-Revision-Date: 2021-05-26 05:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_chart_of_accounts
+#: model:ir.model,name:account_chart_of_accounts.model_account_account
+msgid "Account"
+msgstr "حساب"
+
+#. module: account_chart_of_accounts
+#: model:ir.model,name:account_chart_of_accounts.model_account_account_type
+msgid "Account Type"
+msgstr "نوع الحساب"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__auto_code
+msgid "Auto Code"
+msgstr "الكود التلقائي"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Auto Coding"
+msgstr "الترميز التلقائي"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__automticAccountsCodes
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__automticAccountsCodes
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__automticAccountsCodes
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Automaticly Generate Accounts Codes"
+msgstr "إنشاء كود الحسابات تلقائياً"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Chart of Account"
+msgstr "الشجرة المحاسبية"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__chart_account_padding
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__chart_account_padding
+msgid "Chart of accounts Padding"
+msgstr "الخانات المحفوظة في شجرة الحسابات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__chart_account_length
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__chart_account_length
+msgid "Chart of accounts length"
+msgstr "طول شجرة الحسابات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__child_ids
+msgid "Child Accounts"
+msgstr "الحسابات الفرعية"
+
+#. module: account_chart_of_accounts
+#: model:ir.model,name:account_chart_of_accounts.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model,name:account_chart_of_accounts.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__display_name
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account_type__display_name
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__display_name
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Fixed Length"
+msgstr "طول ثابت"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.view_account_search
+msgid "Hierarchical Chart"
+msgstr "هيكل شجرة الحسابات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__id
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account_type__id
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__id
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account_type__internal_group
+msgid "Internal Group"
+msgstr "مجموعة داخلية"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account____last_update
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account_type____last_update
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company____last_update
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Length"
+msgstr "طول الشجرة"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__level
+msgid "Level"
+msgstr "المستوى"
+
+#. module: account_chart_of_accounts
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Padding"
+msgstr "عدد الخانات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__parent_id
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,help:account_chart_of_accounts.field_account_account_type__internal_group
+msgid ""
+"The 'Internal Group' is used to filter accounts based on the internal group "
+"set on the account type."
+msgstr ""
+"خيار 'المجموعة الداخلية' يُستخدم لتصنيف الحسابات حسب المجموعة الداخلية "
+"المُختارة في نوع الحساب."
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,help:account_chart_of_accounts.field_account_account_type__type
+msgid ""
+"The 'Internal Type' is used for features available on different types of "
+"accounts: liquidity type is for cash or bank accounts, payable/receivable is"
+" for vendor/customer accounts."
+msgstr ""
+"يُستخدم 'النوع الداخلي' للخصائص المتاحة على الأنواع المختلفة للحسابات: النوع"
+" الجاري للحسابات النقدية أو البنكية, والدائنة أو المدينة لحسابات "
+"المورد/العميل."
+
+#. module: account_chart_of_accounts
+#: code:addons/account_chart_of_accounts/models/account_account.py:0
+#, python-format
+msgid "This account level is greater than the chart of account length."
+msgstr "هذا الحساب في مستوى اكبر من طول شجرة الحسابات"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_account_account_type__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: account_chart_of_accounts
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_company__useFiexedTree
+#: model:ir.model.fields,field_description:account_chart_of_accounts.field_res_config_settings__useFiexedTree
+#: model_terms:ir.ui.view,arch_db:account_chart_of_accounts.res_config_settings_view_form
+msgid "Use Fixed Length Chart of accounts"
+msgstr "إستخدام شجرة حسابات محددة الطول"
+
+#. module: account_chart_of_accounts
+#: model:account.account.type,name:account_chart_of_accounts.data_account_type_view
+#: model:ir.model.fields.selection,name:account_chart_of_accounts.selection__account_account_type__internal_group__view
+#: model:ir.model.fields.selection,name:account_chart_of_accounts.selection__account_account_type__type__view
+msgid "View"
+msgstr "إجمالي"

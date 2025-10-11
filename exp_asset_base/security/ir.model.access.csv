@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_manufacturer,account.asset.manufacturer,model_account_asset_manufacturer,account.group_account_readonly,1,0,0,0
+access_asset_manufacturer_manager,account.asset.manufacturer,model_account_asset_manufacturer,account.group_account_manager,1,1,1,1
+access_asset_location,account.asset.location,model_account_asset_location,account.group_account_readonly,1,0,0,0
+access_asset_location_manager,account.asset.location,model_account_asset_location,account.group_account_manager,1,1,1,1
+access_asset_adjustment,account.asset.adjustment,model_account_asset_adjustment,account.group_account_readonly,1,0,0,0
+access_asset_adjustment_manager,account.asset.adjustment,model_account_asset_adjustment,account.group_account_manager,1,1,1,1
+access_asset_adjustment_line,account.asset.adjustment.line,model_account_asset_adjustment_line,account.group_account_readonly,1,0,0,0
+access_asset_adjustment_line_manager,account.asset.adjustment.line,model_account_asset_adjustment_line,account.group_account_manager,1,1,1,1
+access_account_asset_modify,access.account.asset.modify,model_account_asset_modify,account.group_account_user,1,1,1,1
+access_asset_pause,access.asset.pause,model_asset_pause,account.group_account_user,1,1,1,1
+access_asset_sell,access.asset.sell,model_asset_sell,account.group_account_user,1,1,1,1
+access_asset_state_operation5_manager,account.state.4multi.operation,model_asset_state2,,1,1,1,1

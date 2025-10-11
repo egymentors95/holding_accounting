@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="account_move_inherit_form_view" model="ir.ui.view">
+        <field name="name">view.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='journal_div']" position="after">
+                <label for="payment_purpose" attrs="{'invisible': [('has_in_payment', '=', False)]}"/>
+                <div name="payment_purpose_div" class="d-flex" attrs="{'invisible': [('has_in_payment', '=', False)]}">
+                    <field name="payment_purpose"/>
+                </div>
+                <field name="has_in_payment" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_invoice_inherit_tree_view" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_partner_display_name'][1]" position="after">
+                <field name="purpose"
+                       invisible="context.get('default_move_type', '') != 'in_invoice'"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_move_inherit_tree_view" model="ir.ui.view">
+        <field name="name">account.move.inherit.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="payment_purpose" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

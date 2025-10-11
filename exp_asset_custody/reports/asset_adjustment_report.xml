@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="asset_adjustment_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                        <t t-set="total_debit" t-value="0"/>
+                        <t t-set="total_credit" t-value="0"/>
+                        <t t-set="o" t-value="doc"/>
+                        <div class="page" style="font-size: 12pt !important;">
+                            <center>
+                                <h3>
+                                    Assets Adjustment Report
+                                </h3>
+                            </center>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="borderless" style="width: 100%;">
+                                <tr>
+                                    <td  style="width:15%;">
+                                        <p style="font-weight: bold !important;">Description:</p>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td style="width:15%;">
+                                        <p style="font-weight: bold !important;">Date:</p></td>
+                                    <td>
+                                        <span t-field="o.date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:15%;">
+                                        <p style="font-weight: bold !important;">Type:</p></td>
+                                    <td>
+                                        <span t-field="o.type"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Barcode</th>
+                                        <th>Serial No</th>
+                                        <th>Location</th>
+                                        <th>Department</th>
+                                        <th>Employee</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.adjustment_line_ids.filtered(lambda r: r.exist == True)" t-as="l">
+                                        <td>
+                                            <span t-field="l.asset_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.barcode"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.serial_no"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.location_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.department_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.employee_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_status"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <p>
+                                <h4>Missing Assets:</h4>
+                            </p>
+                            <table style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Barcode</th>
+                                        <th>Serial No</th>
+                                        <th>Location</th>
+                                        <th>Department</th>
+                                        <th>Employee</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.adjustment_line_ids.filtered(lambda r: r.exist == False)" t-as="l">
+                                        <td>
+                                            <span t-field="l.asset_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.barcode"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.serial_no"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.location_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.department_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_id.employee_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="l.asset_status"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <p>
+                                <h4>Signatures:</h4>
+                            </p>
+                            <table style="width:100%;height:200px;">
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                    <td>
+                                        <span/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <style>
+                                @font-face {
+                                font-family: 'ae_AlMohanad';
+                                src: local('ae_AlMohanad'), local('ae_AlMohanad'),
+                                url('/account_gl_custom/static/fonts/ae_AlMohanad.ttf') format('truetype');
+                                }
+                                *{
+                                font-family: ae_AlMohanad;
+                                }
+                                table {
+                                border-collapse: collapse;
+                                }
+                                table{
+                                border: 1px solid black;
+                                }
+                                td{
+                                border: 1px solid grey;
+                                padding: 5px 5px 5px 5px;
+                                }
+                                th{
+                                border: 1px solid grey;
+                                padding: 5px 5px 5px 5px;
+                                font-weight: bold;
+                                text-align:center;
+                                background-color: #f5f5f5;
+                                }
+                                table.borderless,table.borderless td,table.borderless tr{
+                                border: none !important;
+                                }
+
+                            </style>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+    <report id="action_asset_adjustment_report"
+            model="account.asset.adjustment"
+            string="Asset Adjustment"
+            report_type="qweb-pdf"
+            name="exp_asset_custody.asset_adjustment_report"
+            file="exp_asset_custody.asset_adjustment_report"
+            paperformat="base.paperformat_euro"
+            attachment_use="False"
+    />
+</odoo>

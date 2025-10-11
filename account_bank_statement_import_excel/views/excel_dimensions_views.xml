@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- excel.dimensions form view -->
+        <record id="excel_dimensions_view_form" model="ir.ui.view">
+            <field name="name">excel.dimensions.view.form</field>
+            <field name="model">excel.dimensions</field>
+            <field name="arch" type="xml">
+                <form string="Excel Dimensions">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" attrs="{'readonly':False}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="debit_sign"/>
+                            </group>
+                            <group>
+                                <field name="details_only"/>
+                            </group>
+                        </group>
+                        <group  attrs="{'invisible':[('details_only','=',True)]}">
+                            <group>
+                                <field name="account_number_row"/>
+                                <field name="account_number_col"/>
+                            </group>
+                            <group>
+                                <field name="currency_row"/>
+                                <field name="currency_col"/>
+                            </group>
+                            <group>
+                                <field name="date_period_row"/>
+                                <field name="date_period_col"/>
+                            </group>
+                            <group>
+                                <field name="balance_start_row"/>
+                                <field name="balance_start_col"/>
+                            </group>
+                            <group>
+                                <field name="balance_end_row"/>
+                                <field name="balance_end_col"/>
+                            </group>
+                        </group>
+                        <group string="Details">
+                            <group>
+                                <field name="details_row"/>
+                            </group>
+
+                            <group>
+                                <field name="debit_col"/>
+                            </group>
+
+                            <group>
+                                <field name="credit_col"/>
+                            </group>
+
+                            <group>
+                                <field name="balance_col"/>
+                            </group>
+
+                            <group>
+                                <field name="type_col"/>
+                            </group>
+
+                            <group>
+                                <field name="note_col"/>
+                            </group>
+
+                            <group>
+                                <field name="date_col"/>
+                            </group>
+
+                            <group>
+                                <field name="date_format"/>
+                            </group>
+                        </group>
+
+                        <group string="Legends for supported Date Formats">
+                            <div>%b - Abbreviated month name.</div>
+                            <div>%B - Full month name."</div>
+                            <div>%d - Day of the month [01,31]."</div>
+                            <div>%y - Year without century [00,99]."</div>
+                            <div>%Y - Year with century."</div>
+                            <div>%m - Month number [01,12]."</div>
+                        </group>
+                        <group string="Examples">
+                            <div>1. %b, %B         ==&gt; Dec, December</div>
+                            <div>3. %y, %Y         ==&gt; 08, 2008</div>
+                            <div>4. %d, %m         ==&gt; 05, 12</div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- excel.dimensions action window -->
+        <record id="excel_dimensions_action" model="ir.actions.act_window">
+            <field name="name">Bank Statement Excel Dimensions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">excel.dimensions</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="bank_statement_excel_dimensions_menu_categ" action="excel_dimensions_action" name="Bank Statement Excel Dimensions" parent="account.account_management_menu"/>
+
+        <record model="ir.ui.view" id="account_journal_form">
+            <field name="name">account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="excel_dimension" attrs="{'invisible':[('type','!=', 'bank')],
+                                                          'required':[('type','=', 'bank')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

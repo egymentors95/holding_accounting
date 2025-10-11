@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="account_journal_entry_pdf">
+        <t t-call="web.html_container" t-translation="off">
+            <t t-call="hr_base.hr_layout">
+                <style>
+                    @font-face {font-family: "Sakkal Majalla"; src:
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.eot"); src:
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.eot?#iefix")
+                    format("embedded-opentype"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.woff2") format("woff2"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.woff") format("woff"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.ttf") format("truetype");
+                    }
+
+                </style>
+                <div class="page" style="font-family:'Sakkal Majalla'!important;font-size:19pt;direction:rtl">
+                    <t t-set="total_debit" t-value="0"/>
+                    <t t-set="total_credit" t-value="0"/>
+                    <t t-foreach="docs" t-as="o">
+
+                        <div style="text-align:right;margin-right:5%;margin-left:5%;">
+                            <p style="text-align:center;font-weight: bold;">
+                                <span>قيد تسوية</span>
+                            </p>
+                            <table class="table table-condensed table-bordered"
+                                   style="border: 1px solid black;border-collapse:collapse;">
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;vertical-align:bottom;width:15%;border: 1px solid black;border-collapse;background:#f9ebea"
+                                        rowspan="4">
+                                        <span>مدخل البيانات</span>
+                                    </td>
+                                    <td style="text-align:center;width:75%;border: 1px solid black;border-collapse:collapse;background:#f9ebea;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;"
+                                        colspan="4">
+                                        <table class="table table-borderless"
+                                               style="border-spacing:0px;padding:0px;margin:0px;;width:100%;;font-family:'Sakkal Majalla'!important"
+                                               dir="rtl">
+                                            <tr style="border:0;">
+                                                <td style="text-align:right;border:0;width:50%;padding:0px;margin:0px;">
+                                                    <span>رقم القيد :</span>
+                                                    <span t-esc="o.name"/>
+                                                </td>
+                                                <td style="border:0;width:50%;padding:0px;margin:0px;direction:ltr">
+                                                    <span>بتاريخ :</span>
+                                                    <span t-esc="o.date"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:0;">
+                                                <td style="text-align:right;border:0;width:50%;padding:0px;margin:0px;direction:ltr">
+                                                    <span t-esc="o.ref"/>
+                                                    <span>: البيان</span>
+
+                                                </td>
+                                                <td style="right;border:0;width:50%;padding:0px;margin:0px;direction:ltr">
+                                                    <span>الموافق :</span>
+                                                    <span t-esc="o.compute_hijri_date(o.date)"/>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:20%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        رقم الحساب
+                                    </td>
+
+                                    <td style="text-align:center;width:40%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        إسم الحساب
+                                    </td>
+                                    <td style="text-align:center;width:15%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        مدين
+                                    </td>
+                                    <td style="text-align:center;width:15%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        دائن
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;" t-foreach="o.line_ids" t-as="l">
+                                    <td style="text-align:center;width:20%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        <span t-field="l.account_id.code"/>
+                                    </td>
+
+                                    <td style="text-align:center;width:40%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        <span t-field="l.account_id.name"/>
+                                    </td>
+                                    <td style="text-align:center;width:15%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        <span t-field="l.debit"/>
+                                        <t t-set="total_debit" t-value="total_debit+l.debit"/>
+                                    </td>
+                                    <td style="text-align:center;width:15%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        <span t-field="l.credit"/>
+                                         <t t-set="total_credit" t-value="total_credit+l.credit"/>
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        الإسم
+                                    </td>
+
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;"
+                                        colspan="2">
+                                        <span t-esc="user.name"/>
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                    </td>
+
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        التوقيع
+                                    </td>
+
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;"
+                                        colspan="2">
+
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                    </td>
+
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        التاريخ
+                                    </td>
+
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;"
+                                        colspan="2">
+                                        <span t-esc="o.create_date.date()"/>
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;"
+                                        colspan="3">
+                                        الإجمالي
+                                    </td>
+
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                         <span t-esc="total_debit" style="font-weight: bold;"/>
+                                    </td>
+                                    <td style="text-align:center;width:25%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        <span t-esc="total_credit" style="font-weight: bold;"/>
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <table class="table table-borderless"
+                                   style="border-spacing:0px;padding:1px;margin:0px;;width:100%;;font-family:'Sakkal Majalla'!important"
+                                   dir="rtl">
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;font-weight: bold">
+                                        <span>المدقق :</span>
+                                    </td>
+                                </tr>
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>الإسم :</span>
+
+                                    </td>
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>التوقيع :</span>
+
+                                    </td>
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>التاريخ :</span>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table class="table table-condensed table-bordered"
+                                   style="border: 1px solid black;border-collapse:collapse;">
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:10%;border: 1px solid black;border-collapse:collapse;; padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        المختص بالحساب
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        مدير الإدارة المالية
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        المراقب المالي
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        وكيل الجامعة
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        رئيس الجامعة
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:10%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        الإسم
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:10%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        التوقيع
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                </tr>
+
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;width:10%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+                                        التاريخ
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                    <td style="text-align:center;width:18%;border: 1px solid black;border-collapse:collapse;padding-top: 4px;padding-bottom: 4px;padding-left: 4px;padding-right: 4px;">
+
+                                    </td>
+                                </tr>
+
+
+                            </table>
+
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

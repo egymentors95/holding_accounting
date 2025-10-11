@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_account_payment_pdf" model="ir.actions.report">
+        <field name="model">account.payment</field>
+        <field name="name">Account Payment Report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">naif_account_report.account_payment_pdf</field>
+        <field name="report_file">naif_account_report.account_payment_pdf</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+    </record>
+
+        <record id="action_account_journal_entry_pdf" model="ir.actions.report">
+        <field name="model">account.move</field>
+        <field name="name">Journal Entries</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">naif_account_report.account_journal_entry_pdf</field>
+        <field name="report_file">naif_account_report.account_journal_entry_pdf</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+    </record>
+
+</odoo>

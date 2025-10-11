@@ -1,0 +1,30 @@
+<odoo>
+    <record id="sequence_request_pledge_ref" model="ir.sequence">
+        <field name="name">sequence request pledge</field>
+        <field name="code">hr.request.pledge</field>
+        <field name="prefix">PRT</field>
+        <field name="padding">5</field>
+    </record>
+
+
+<!--    <record id="action_account_report_partner_ledger_inherited" model="ir.actions.client">-->
+<!--        <field name="name">Partner Ledger</field>-->
+<!--        <field name="tag">account_report</field>-->
+<!--        <field name="context" eval="{'model': 'account.partner.ledger'}"/>-->
+<!--    </record>-->
+
+<!--    <record id="action_report_partner_ledger_inherited_test" model="ir.actions.server">-->
+<!--        <field name="name">General Ledger</field>-->
+<!--        <field name="model_id" ref="model_hr_employee"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">-->
+<!--            action = model.action_open_partner_ledger_test()-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <menuitem id="menu_action_account_report_partner_ledger_request_pledge"-->
+<!--              name="Partner Ledger"-->
+<!--              action="action_report_partner_ledger_inherited_test"-->
+<!--              parent="hr_expense.menu_hr_expense_reports"-->
+<!--              sequence="1"/>-->
+
+</odoo>

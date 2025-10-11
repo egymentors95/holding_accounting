@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_petty_cash_form" model="ir.ui.view">
+        <field name="name">petty.cash.form</field>
+        <field name="model">petty.cash</field>
+        <field name="arch" type="xml">
+            <form string="Petty Cash">
+                <header>
+                    <button name="act_submit" string="Submit" type="object"
+                            class="oe_highlight" states="draft"
+                            groups="account.group_account_user"/>
+                    <button name="act_confirm" string="Confirm" states="submitted"
+                            type="object" class="oe_highlight" groups="hr_expense_petty_cash.group_petty_cash_manager"/>
+<!--                    <button name="act_confirm2" string="Confirm" states="submitted"-->
+<!--                            type="object" class="oe_highlight"-->
+                            groups="hr_expense_petty_cash.group_petty_cash_manager"/>
+                    <button name="act_draft" string="Set to Draft" type="object" class="oe_highlight"
+                            groups="hr_expense_petty_cash.group_petty_cash_manager" attrs="{'invisible': ['|', ('state', '!=', 'running'), ('is_invoice_posted', '=', True)]}"/>
+                    <button name="act_reject" string="Reject" type="object" states="submitted"
+                            groups="hr_expense_petty_cash.group_petty_cash_manager"/>
+                    <!--                            groups="account.group_account_manager"/>-->
+                    <button name="act_draft" states="reject" string="Set to Draft"
+                            groups="hr_expense_petty_cash.group_petty_cash_manager" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,running,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" states="running,closed" name="open_invoice" type="object"
+                                icon="fa-pencil">
+                            <field string="Invoices" name="invoice_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" states="running,closed" name="open_payment" type="object"
+                                icon="fa-pencil">
+                            <field string="Payments" name="payment_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button"
+                                attrs="{'invisible': [('is_invoice_posted', '!=', True)]}"
+                                name="open_expense_report" type="object"
+                                icon="fa-pencil">
+                            <field string="Expense Reports" name="expense_report_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="serial"/>
+                            <field name="name" nolabel="1" required="1" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <widget
+                            name="web_ribbon"
+                            title="Archived"
+                            bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="is_paid" invisible="1"/>
+                        <field name="is_invoice_posted" invisible="1"/>
+                        <field name="active" invisible="1"/>
+                        <group name="data">
+                            <field name="petty_configuration_id" required="1"/>
+                            <field name="date"/>
+                            <field name="type" readonly="1" force_save="1"/>
+                            <field
+                                    name="partner_id"
+                                    context="{'default_supplier': True, 'default_customer': False}"
+                            />
+                            <field name="account_id" readonly="1" force_save="1"/>
+                            <field name="journal_id" readonly="1" force_save="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group name="petty_cash">
+                            <field name="petty_cash_limit"/>
+                            <field name="expense_limit" readonly="1" force_save="1"/>
+                            <label for="percent_to_reconcile"/>
+                            <div>
+                                <field name="percent_to_reconcile" readonly="1" force_save="1" class="oe_inline"/>%
+                            </div>
+                            <field name="replace_amount" attrs="{'invisible': [('replace_amount', '&lt;', 0)]}"/>
+                            <field name="total_replace_amount"
+                                   attrs="{'invisible': [('total_replace_amount', '&lt;', 0)]}"/>
+                            <!--                            <field name="petty_cash_balance"-->
+                            <!--                                   attrs="{'invisible': [('petty_cash_balance', '&lt;', 0)]}"/>-->
+                            <!--                            <field name="petty_cash_balance" style="color: red;"-->
+                            <!--                                   attrs="{'invisible': [('petty_cash_balance','&gt;=', 0)]}"/>-->
+                            <field name="petty_cash_expenses"/>
+                            <field name="petty_cash_remaining" style="font-weight: bold;"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <!--    inherit account move form -->
+    <!-- Inherit Form View to Modify it -->
+
+<!--    <record id="hr_expense_sheet_view_form2" model="ir.ui.view">-->
+<!--        <field name="name">hr_expense_sheet_form2.extend</field>-->
+<!--        <field name="model">hr.expense.sheet</field>-->
+<!--        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//button[@name='aprrove_expense_sheets']" position="attributes">-->
+<!--                <attribute name="groups">hr_expense_petty_cash.group_petty_cash_manager</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//button[@name='reset_expense_sheets']" position="attributes">-->
+<!--                <attribute name="groups">hr_expense_petty_cash.group_petty_cash_manager</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+    <!--    end-->
+    <record id="view_petty_cash_list" model="ir.ui.view">
+        <field name="name">petty.cash.list</field>
+        <field name="model">petty.cash</field>
+        <field name="arch" type="xml">
+            <tree string="Petty Cash" decoration-muted="state == 'closed'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="type"/>
+                <field name="account_id"/>
+                <field name="journal_id"/>
+                <field name="petty_cash_limit" sum="Limit"/>
+                <field name="petty_cash_balance" sum="Balance"/>
+                <field name="petty_cash_remaining" sum="Remaining"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_petty_cash_kanban" model="ir.ui.view">
+        <field name="name">petty.cash.kanban</field>
+        <field name="model">petty.cash</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="partner_id"/>
+                <field name="petty_cash_balance"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>
+                                        <field name="partner_id"/>
+                                    </strong>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <field name="petty_cash_balance"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="view_petty_cash_search" model="ir.ui.view">
+        <field name="name">petty.cash.search</field>
+        <field name="model">petty.cash</field>
+        <field name="arch" type="xml">
+            <search string="Petty Cash">
+                <field name="partner_id"/>
+                <filter
+                        string="Archived"
+                        name="inactive"
+                        domain="[('active','=',False)]"
+                />
+                <filter
+                        string="Journal"
+                        name="journal"
+                        domain="[('journal_id','!=',False)]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                            name="partner"
+                            string="Petty Cash Holder"
+                            context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                            name="account"
+                            string="Petty Cash Account"
+                            context="{'group_by' : 'account_id'}"
+                    />
+                    <filter
+                            name="journal"
+                            string="Journal"
+                            context="{'group_by' : 'journal_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_petty_cash" model="ir.actions.act_window">
+        <field name="name">Petty Cash</field>
+        <field name="res_model">petty.cash</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="view_petty_cash_search"/>
+        <field name="view_id" ref="view_petty_cash_list"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new petty cash holder
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Petty Cash"
+              id="menu_petty_cash_root"
+              action="action_petty_cash"
+              groups="hr_expense_petty_cash.group_petty_cash_manager,hr_expense_petty_cash.group_petty_cash_user"
+              web_icon="hr_expense_petty_cash,static/description/odoo_icon.png"
+              sequence="1"/>
+
+
+    <record id="hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr_employee.extend.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="get_pettycach"
+                        icon="fa-file">
+                    <field string="Petty Cash" name="petty_cash_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

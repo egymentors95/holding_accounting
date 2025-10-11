@@ -1,0 +1,278 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_bank_statement_import_excel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210105\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-18 03:19+0000\n"
+"PO-Revision-Date: 2021-05-18 03:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%B - Full month name.\""
+msgstr "%B - اسم الشهر بالكامل.\""
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%Y - Year with century.\""
+msgstr "%Y - السنة كاملة بالقرن.\""
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%b - Abbreviated month name."
+msgstr "%b - اسم الشهر المختصر"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%d - Day of the month [01,31].\""
+msgstr "%d - اليوم من الشهر [01,31].\""
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%m - Month number [01,12].\""
+msgstr "%m - رقم الشهر [01,12].\""
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "%y - Year without century [00,99].\""
+msgstr "%y - السنة مختصرة بدون القرن [00,99].\""
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "1. %b, %B         ==&gt; Dec, December"
+msgstr "1. %b, %B         ==&gt; ديسمبر"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "3. %y, %Y         ==&gt; 08, 2008"
+msgstr "3. %y, %Y         ==&gt; 08, 2008"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "4. %d, %m         ==&gt; 05, 12"
+msgstr "4. %d, %m         ==&gt; 05, 12"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.actions.act_window,name:account_bank_statement_import_excel.excel_dimensions_action
+#: model_terms:ir.ui.menu,name:account_bank_statement_import_excel.bank_statement_excel_dimensions_menu_categ
+msgid "Bank Statement Excel Dimensions"
+msgstr "ابعاد ملف الاكسل"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model,name:account_bank_statement_import_excel.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "بند كشف حساب المصرف"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_date_format
+msgid "Date Format"
+msgstr "تنسيق التاريخ"
+
+#. module: account_bank_statement_import_excel
+#: code:addons/account_bank_statement_import_excel/wizard/account_bank_statement_import.py:127
+#, python-format
+msgid "Determine excel dimension for this journal. "
+msgstr "الرجاء تحديد ابعاد ملف الاكسل الخاص بدفتر اليومية. "
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "Examples"
+msgstr "أمثلة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_account_journal_excel_dimension
+msgid "Excel Dimension"
+msgstr "أبعاد ملف الاكسل"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "Excel Dimensions"
+msgstr "أبعاد ملف الاكسل"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.view_account_bank_statement_import_form
+msgid "Excel files (xLS, XLSX)"
+msgstr "ملف اكسل"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model,name:account_bank_statement_import_excel.model_account_bank_statement_import
+msgid "Import Bank Statement"
+msgstr "استيراد كشف الحساب"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model,name:account_bank_statement_import_excel.model_account_journal
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل على"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_write_uid
+msgid "Last Updated by"
+msgstr "آخر تعديل بواسطة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_write_date
+msgid "Last Updated on"
+msgstr "آخر تعديل على"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "Legends for supported Date Formats"
+msgstr "تنسيقات التاريخ المدعومة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.ui.view,arch_db:account_bank_statement_import_excel.excel_dimensions_view_form
+msgid "Details"
+msgstr "تفاصيل المطابقة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_details_only
+msgid "Details Only"
+msgstr "التفاصيل فقط"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model,name:account_bank_statement_import_excel.model_excel_dimensions
+msgid "The Dimensions of the excel file used in bank statement import"
+msgstr "تستخدم أبعاد ملف الاكسل عند استيراد المطابقة البنكية"
+
+#. module: account_bank_statement_import_excel
+#: code:addons/account_bank_statement_import_excel/wizard/account_bank_statement_import.py:136
+#, python-format
+msgid "The following problem occurred during import. The file might not be valid.\n"
+"\n"
+" %s"
+msgstr "لا يمكن استيراد الملف نسبا لظهور المشكلة ادناه.\n"
+"\n"
+" %s"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_account_number_col
+msgid "account number column"
+msgstr "عمود رقم الحساب"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_account_number_row
+msgid "account number row"
+msgstr "صف رقم الحساب"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_balance_col
+msgid "balance column"
+msgstr "عمود الرصيد"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_company_id
+msgid "company"
+msgstr "الشركة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_credit_col
+msgid "credit column"
+msgstr "عمود الدائن"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_currency_col
+msgid "currency column"
+msgstr "عمود العملة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_currency_row
+msgid "currency row"
+msgstr "صف العملة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_date_col
+msgid "date column"
+msgstr "عمود التاريخ"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_date_period_col
+msgid "date period column"
+msgstr "عمود تاريخ الفترة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_date_period_row
+msgid "date period row"
+msgstr "صف تاريخ الفترة"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_debit_col
+msgid "debit column"
+msgstr "عمود المدين"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_details_row
+msgid "details row"
+msgstr "صف التفاصيل"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_balance_end_col
+msgid "ending balance column"
+msgstr "عمود الرصيد الختامي"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_balance_end_row
+msgid "ending balance row"
+msgstr "صف الرصيد الختامي"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_note_col
+msgid "note column"
+msgstr "عمود الملاحظات"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_balance_start_col
+msgid "starting balance column"
+msgstr "عمود الرصيد الإفتتاحي"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_balance_start_row
+msgid "starting balance row"
+msgstr "صف الرصيد الإفتتاحي"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_type_col
+msgid "type column"
+msgstr "عمود النوع"
+
+#. module: account_bank_statement_import_excel
+#: model_terms:ir.model.fields,field_description:account_bank_statement_import_excel.field_excel_dimensions_debit_sign
+msgid "Revert Debit Sign"
+msgstr "عكس اشارة المدين"

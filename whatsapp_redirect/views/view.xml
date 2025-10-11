@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="account_move_inherit_form_view" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="send_msg" string="Whatsapp" type="object" class="oe_stat_button" icon="fa-whatsapp"
+                            attrs="{'invisible':[('state','!=','posted')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="whatsapp_mrp_production" model="ir.ui.view">
+            <field name="name">mrp.production.form</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_unbuild']" position="before">
+                    <button name="send_msg" string="Whatsapp" type="object" class="oe_stat_button" icon="fa-whatsapp"
+                            attrs="{'invisible':[('state','!=','done')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

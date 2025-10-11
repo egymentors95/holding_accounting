@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="view_partner_form_bank" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="agreement_limit"/>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page name="credit_limit_info" string="Credit Limit Info"
+                          attrs="{'invisible' : [('agreement_limit','=',False)]}">
+                        <field name="limit_ids">
+                            <tree editable="bottom">
+                                <field name="vendor_id" optional="hide" column_invisible="1" invisible="1"/>
+                                <field name="currency_id" optional="hide" column_invisible="1" invisible="1"/>
+                                <field name="period"/>
+                                <field name="used_period"/>
+                                <field name="remaining_period"/>
+                                <field name="opening_balance" widget="monetary"/>
+                                <field name="upper_limit" widget="monetary"/>
+                                <field name="used_credit" widget="monetary"/>
+                                <field name="residual_credit" widget="monetary"/>
+                                <field name="note"/>
+                                <field name="attachment"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+
+    <t t-name="budget_hierarchical_report.hierarchical_chart_temp">
+        <div class="account_chart_list">
+        </div>
+    </t>
+
+    <t t-name="budget_hierarchical_report.chartList">
+        <div class="container body">
+            <div class="main_container">
+
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button type="button" id="expander" class="btn btn-danger">Expand All</button>
+                        <button type="button" id="collapser" class="btn btn-info">Collapse All</button>
+                    </div>
+                </div>
+
+                <table id="basic" class="table table-hover table-bordered">
+
+                    <thead class="thead-light">
+                        <th scope="col" style="width:20%;">Name</th>
+                        <th scope="col" style="width:10%;">Planned Amount</th>
+                        <th scope="col" style="width:10%;">Practical Amount</th>
+                        <th scope="col" style="width:10%;">Theoretical Amount</th>
+                        <th scope="col" style="width:10%;">Achievement</th>
+                    </thead>
+
+                    <t t-foreach="widget.chart_data" t-as="line">
+
+                        <t t-if="line['_name'] == 'account.account'">
+                            <tr t-att-data-node-id="line['id']" t-att-data-account-type="line['type']" t-att-data-clrLazy="true" t-att-data-node-pid="line['parent_id'][0]">
+                                <td class="open_group" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['name']"  />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['planned_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['practical_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['theoritical_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['percentage']" />
+                                </td>
+                            </tr>
+                        </t>
+
+                        <t t-if="line['_name'] == 'budget_lines'">
+                            <tr t-att-data-node-id="line['id']" t-att-data-account-type="line['type']" t-att-data-node-pid="line['parent_id'][0]" class="text-primary" >
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['name']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['planned_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['practical_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['theoritical_amount']" />
+                                </td>
+                                <td class="open_account" t-att-data-rec-id="line['id']">
+                                    <span t-esc="line['percentage']" />
+                                </td>
+                            </tr>
+                        </t>
+
+                    </t>
+                </table>
+
+            </div>
+        </div>
+    </t>
+</templates>

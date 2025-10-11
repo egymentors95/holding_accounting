@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    <!-- Server Action for Department Manager -->
+    <record id="action_account_multi_depart_manager" model="ir.actions.server">
+    <field name="name">Set to Department Manager (Multi)</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="groups_id" eval="[(4, ref('odex25_account_payment_fix.group_depart_manager'))]"/>
+    <field name="model_id" ref="account.model_account_payment"/>
+    <field name="binding_model_id" ref="account.model_account_payment"/>
+    <field name="binding_view_types">list</field>
+    <field name="code">
+if records:
+    action = records.action_multi_depart_manager()
+        </field>
+    </record>
+
+    <!-- Server Action for Accounting Manager -->
+    <record id="action_account_multi_accounting_manager" model="ir.actions.server">
+        <field name="name">Set to Accounting Manager (Multi)</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="groups_id" eval="[(4, ref('odex25_account_payment_fix.group_accounting_manager'))]"/>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+if records:
+    action = records.action_multi_accounting_manager()
+        </field>
+    </record>
+
+    <!-- Server Action for General Manager -->
+    <record id="action_account_multi_general_manager" model="ir.actions.server">
+        <field name="name">Set to General Manager (Multi)</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="groups_id" eval="[(4, ref('odex25_account_payment_fix.group_general_manager'))]"/>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+if records:
+    action = records.action_multi_general_manager()
+        </field>
+    </record>
+
+    <!-- Server Action for Post Payments -->
+    <record id="action_account_multi_post_payments" model="ir.actions.server">
+        <field name="name">Post Payments (Multi)</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="groups_id" eval="[(4, ref('odex25_account_payment_fix.group_posted'))]"/>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+if records:
+    action = records.action_multi_post_payments()
+        </field>
+    </record>
+    </data>
+</odoo>

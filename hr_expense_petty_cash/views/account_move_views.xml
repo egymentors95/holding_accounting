@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id="view_account_payment_form_petty_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_type" position="after">
+                <field name="is_petty_cash" invisible="1"/>
+            </field>
+            <field name="partner_type" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="destination_account_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="ref" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="date" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="payment_type" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+            <field name="amount" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>
+            </field>
+<!--              <field name="branch_id" position="attributes">-->
+<!--                <attribute name="attrs">{'readonly': [('is_petty_cash', '=', True)]}</attribute>-->
+<!--            </field>-->
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_move_form_inherit">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_vendor_bill_id']" position="after">
+                <field
+                        name="is_petty_cash"
+                        attrs="{'invisible': [('move_type', 'not in', ['in_invoice','in_refund', 'out_refund'])]}"
+                />
+                <field
+                        name="petty_cash_id"
+                        domain="[('partner_id', '=', partner_id), ('state', '=', 'running')]"
+                        attrs="{'invisible': [('is_petty_cash', '=', False)],
+                            'required': [('is_petty_cash', '=', True)]}"
+                />
+                <field
+                        name="transfer_expense_ids" widget="many2many_tags"
+                        attrs="{'invisible': [('transfer_expense_ids', '=', [])],
+                            'readonly': True}"
+                />
+                <field name="transfer_amount"/>
+            </xpath>
+            <xpath expr="//field[@name='price_unit']"  position="attributes">
+                     <attribute name="attrs">{'readonly': [('parent.is_petty_cash', '=', True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_move_petty_cash" model="ir.actions.act_window">
+        <field name="name">Petty Cash Bill</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="account.view_in_invoice_tree"/>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="context">{'default_move_type': 'in_invoice','default_is_petty_cash':True,'petty_cash':True}</field>
+        <field name="domain">[('move_type', '=', 'in_invoice'),('is_petty_cash','=',True)]</field>
+    </record>
+
+<!--    <menuitem id="menu_petty_cash_bill_root" parent="menu_petty_cash_root" name="Petty Cash Bill" sequence="2"/>-->
+<!--    <menuitem id="menu_petty_cash_bill" parent="menu_petty_cash_bill_root" name="Petty Cash Bill"-->
+<!--              action="action_move_petty_cash" sequence="2"/>-->
+
+</odoo>

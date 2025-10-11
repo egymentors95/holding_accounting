@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* initial_engagement_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-22 23:44+0000\n"
+"PO-Revision-Date: 2024-12-22 23:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,help:initial_engagement_budget.field_crossovered_budget_lines__remain
+msgid ""
+" ( مبلغ متاح - المبلغ المحجوز - مبلغ تعميد - المبلغ الفعلى - المحجوز المبدئي"
+" ) يكون صفر عند قابل الاشارة"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.purchase_request_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_bank_statement_line__payment_purpose
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_move__payment_purpose
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_payment__invoice_purpose
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_payment__payment_purpose
+msgid "Purpose"
+msgstr "مبررات طلب الشراء (الغرض)"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_payment__has_in_invoice
+msgid "Has In Invoice"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_bank_statement_line__has_in_payment
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_move__has_in_payment
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_account_payment__has_in_payment
+msgid "Has In Payment"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,help:initial_engagement_budget.field_crossovered_budget_lines__above_remain
+msgid ""
+" هي المبالغ التي تم صرفها بعد انتهاء رصيد المتبقى من الموازنة في حالة "
+"التجاوز الموازنة"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_res_company__activate_initial_engagement
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_res_config_settings__activate_initial_engagement
+msgid "Activate Initial Engagement"
+msgstr "تفعيل الربط المبدئي بالموازنات"
+
+#. module: initial_engagement_budget
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.purchase_requisition_custom_setting
+msgid "Activate Initial Engagement Budget"
+msgstr "تفعيل الربط المبدئي بالموازنات"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/account_budget.py:0
+#, python-format
+msgid "Amount of money that has been exceeded"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/account_budget.py:0
+#, python-format
+msgid "Amount of money that has been remained"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model:ir.model,name:initial_engagement_budget.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "بند الموازنة"
+
+#. module: initial_engagement_budget
+#: model:res.groups,name:initial_engagement_budget.initial_budget_engagement
+msgid "Initial Budget Engagement"
+msgstr "الربط المبدئي"
+
+#. module: initial_engagement_budget
+#: model:ir.model,name:initial_engagement_budget.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_crossovered_budget_lines__above_remain
+msgid "Exceed Amount"
+msgstr "التجاوز الموازنة"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request_line__expected_price
+msgid "Expected Price"
+msgstr "السعر التقديري شامل الضريبة "
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_crossovered_budget_lines__initial_engagement_amount
+#: model:ir.model.fields.selection,name:initial_engagement_budget.selection__purchase_request__state__initial
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.purchase_request_form
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.view_crossovered_budget_line_tree
+msgid "Initial Engagement"
+msgstr "الربط المبدئي"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request__initial_engagement_activate
+msgid "Initial Engagement Activate"
+msgstr "وضع الربط المبدئي"
+
+#. module: initial_engagement_budget
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.purchase_requisition_custom_setting
+msgid "Initial Engagement Budget"
+msgstr "الربط المبدئي للموازنات"
+
+#. module: initial_engagement_budget
+#: model:ir.model,name:initial_engagement_budget.model_purchase_request
+msgid "Purchase Request"
+msgstr "طلبات الشراء"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_crossovered_budget_lines__remain
+msgid "Remain of Christening"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model:ir.actions.act_window,name:initial_engagement_budget.action_budget_confirmation_form
+#: model:ir.ui.menu,name:initial_engagement_budget.menu_budget_confirmation
+msgid "Request Budget Confirmations"
+msgstr "الربط المبدئي"
+
+#. module: initial_engagement_budget
+#: model:ir.model,name:initial_engagement_budget.model_res_company
+msgid "Res Company SMS Configuration"
+msgstr ""
+
+#. module: initial_engagement_budget
+#: model_terms:ir.ui.view,arch_db:initial_engagement_budget.purchase_request_form
+msgid "Skip Budget"
+msgstr "تخطي الموازنة"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request__state
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request__state_a
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request__state_b
+msgid "State"
+msgstr "الحالة"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/purchase_request.py:0
+#, python-format
+msgid "The Expense account %s is assigned to more than one budget position %s"
+msgstr "حساب المصروف %s معين لأكثر من مركز موازنه %s"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/purchase_request.py:0
+#, python-format
+msgid "This product has no expense account"
+msgstr "هذا المنتج ليس له حساب مصروف"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request__total_amount
+#: model:ir.model.fields,field_description:initial_engagement_budget.field_purchase_request_line__line_total
+msgid "Total"
+msgstr "إجمالي"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/purchase_request.py:0
+#, python-format
+msgid "Total Amount MUST be greater than 0 !!!"
+msgstr "برجاء ادخال قيمة اكبر من 0"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/account_budget.py:0
+#, python-format
+msgid "Total amount of confirmed purchase requests for this budget line."
+msgstr "المبلغ الإجمالي لطلبات الشراء المؤكدة لهذا البند الميزاني."
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields.selection,name:initial_engagement_budget.selection__purchase_request__state__wait_for_send
+msgid "Wait For Sent"
+msgstr "فى انتظار الارسال"
+
+#. module: initial_engagement_budget
+#: code:addons/initial_engagement_budget/models/purchase_request.py:0
+#, python-format
+msgid "You must set a Vendor this PO"
+msgstr "برجاء ادخال مورد لهذا الطلب"
+
+#. module: initial_engagement_budget
+#: model:ir.model,name:initial_engagement_budget.model_purchase_request_line
+msgid "purchase request line"
+msgstr "بند طلب الشراء"
+
+#. module: initial_engagement_budget
+#: model:ir.model.fields,help:initial_engagement_budget.field_crossovered_budget_lines__initial_engagement_amount
+msgid "المبلغ الإجمالي لطلبات الشراء المؤكدة لهذا البند الميزاني."
+msgstr ""

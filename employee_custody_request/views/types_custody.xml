@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="custody_types_tree_view" model="ir.ui.view">
+            <field name="name">custody.types.tree</field>
+            <field name="model">custody.types</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="max_custody_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="custody_types_form_view" model="ir.ui.view">
+            <field name="name">custody.types.form</field>
+            <field name="model">custody.types</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+
+                            </group>
+                            <group>
+                                <field name="journal_id"/>
+                                <field name="max_custody_amount"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+            <record id="custody_types_action" model="ir.actions.act_window">
+                <field name="name">أنواع العهد</field>
+                <field name="res_model">custody.types</field>
+                <field name="view_mode">tree,form</field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                        إنشاء نوع عهد جديد
+                    </p>
+                    <p>
+                        قم بإنشاء وإدارة أنواع العهد المختلفة
+                    </p>
+                </field>
+            </record>
+
+
+             <menuitem
+            id="custody_types_menu"
+            parent="system_dashboard_classic.base_dashboard_root"
+            name="Custody Types"
+            action="custody_types_action"
+            sequence="-6" />
+    </data>
+</odoo>

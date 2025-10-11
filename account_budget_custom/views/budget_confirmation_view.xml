@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Reject Reason wizard-->
+    <record id="reject_wizard" model="ir.ui.view">
+        <field name="name">Reject Reason</field>
+        <field name="model">reject.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="origin" invisible="1"/>
+                <field name="reject_reason" required="1"/>
+                <footer>
+                    <div>
+                        <button name="action_reject" string="Reject" type="object" default_focus="1"
+                                class="oe_highlight"/>
+                        or
+                        <button string="Close" class="oe_link" special="cancel"/>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--
+    Budget Confirmations
+    -->
+    <record id="view_budget_confirmation_search" model="ir.ui.view">
+        <field name="name">budget.confirmation.search</field>
+        <field name="model">budget.confirmation</field>
+        <field name="arch" type="xml">
+            <search string="budget.confirmation">
+                <field name="name" filter_domain="[('name','ilike',self)]" string="Name"/>
+                <field name="date"/>
+                <field name="type"/>
+                <field name="beneficiary_id"/>
+                <field name="department_id"/>
+                <field name="total_amount"/>
+                <field name="state"/>
+                <separator/>
+                <filter name="type" string="Type" domain="[]" context="{'group_by': 'type'}"/>
+                <filter name="date" string="Date" domain="[]" context="{'group_by': 'date'}"/>
+                <filter name="beneficiary" string="Beneficiary" domain="[]" context="{'group_by': 'beneficiary_id'}"/>
+                <filter name="department" string="Department" domain="[]" context="{'group_by': 'department_id'}"/>
+                <filter name="state" string="State" domain="[]" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_budget_confirmation_tree" model="ir.ui.view">
+        <field name="name">budget.confirmation.tree</field>
+        <field name="model">budget.confirmation</field>
+        <field name="arch" type="xml">
+            <tree string="Budget Confirmations" create="0" delete="0">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="beneficiary_id"/>
+                <field name="department_id"/>
+                <field name="total_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_budget_confirmation_form">
+        <field name="name">budget.confirmation.form</field>
+        <field name="model">budget.confirmation</field>
+        <field name="arch" type="xml">
+            <form string="Budget Confirmations" create="0" delete="0">
+                <header>
+                    <button name="bdgt_dep_mngr" states="draft" string="Approve" type="object" class="oe_highlight"
+                            groups="account_budget_custom.group_budget_user"/>
+
+                    <button name="reject" states="draft" string="Reject" type="object" class="oe_highlight"
+                            groups="account_budget_custom.group_budget_user"/>
+
+                    <button name="confirm" states="bdgt_dep_mngr" string="Approve" type="object" class="oe_highlight"
+                            groups="account_budget_custom.group_department_manager_budget"/>
+
+                    <button name="reject" states="bdgt_dep_mngr" string="Reject" type="object" class="oe_highlight"
+                            groups="account_budget_custom.group_department_manager_budget"/>
+
+                    <button name="done" states="confirmed" string="Approve" type="object" class="oe_highlight"
+                            groups="account_budget_custom.group_manager_budget,account_budget_custom.group_department_manager_budget"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,bdgt_dep_mngr,confirmed,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date" readonly="1"/>
+                            <field name="beneficiary_id" options="{'no_create': True, 'no_open': True}"
+                                  readonly="1"/>
+                            <field name="department_id" options="{'no_create': True, 'no_open': True}"
+                                   readonly="1"/>
+                            <field name="exceed_budget" groups="account_budget_custom.group_manager_budget"/>
+                            <field name="analytic_account_id" invisible="1"/>
+                        </group>
+
+                        <group>
+                            <field name="type"/>
+                            <field name="ref" attrs="{'readonly':[('type','!=','purchase.order')]}"/>
+                            <field name="description" attrs="{'readonly':[('type','!=','purchase.order')]}"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                            <group>
+                                <field name="total_amount" readonly="1"/>
+                            </group>
+                            <field name="lines_ids" readonly="1"
+                                   options="{'no_create': True, 'no_open': True}">
+                                <tree editable="top">
+                                    <field name="crossovered_budget_id" readonly="1"/>
+                                    <field name="account_id" optional="show"/>
+                                    <field name="analytic_account_id" optional="show"/>
+                                    <field name="remain" optional="show"/>
+
+                                    <field name="amount" optional="show"/>
+                                    <field name="new_balance" optional="show"/>
+                                    <field name="description" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+   <record id="action_budget_confirmation_form" model="ir.actions.act_window">
+        <field name="name">Budget Confirmations</field>
+        <field name="res_model">budget.confirmation</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+</odoo>

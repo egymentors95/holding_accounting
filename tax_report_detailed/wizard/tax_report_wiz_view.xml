@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tax_report_wiz_view_form">
+            <field name="name">tax.report.wiz.form</field>
+            <field name="model">tax.report.wiz</field>
+            <field name="arch" type="xml">
+                <form string="Tax Report">
+                    <group>
+                        <group>
+                            <field name="date_period_type"/>
+                            <field name="fiscalyear_id"/>
+                            <field name="period_id"
+                                   attrs="{'invisible': [('date_period_type', '!=', 'fiscalyear_period')]}"/>
+                        </group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="government_type"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="compute_table_data"
+                                string="Preview It!"
+                                type="object"
+                                class="oe_highlight"/>
+                        or
+                        <button name="print_report"
+                                string="Print it!"
+                                type="object"
+                                class="oe_highlight"/>
+                        or
+                        <button special="cancel"
+                                string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_tax_report_wiz_view" model="ir.actions.act_window">
+            <field name="name">Tax Details Report</field>
+            <field name="res_model">tax.report.wiz</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem parent="account.menu_finance_reports"
+                  id="menu_action_tax_report_wiz_view"
+                  name="Tax Details Report"
+                  action="action_tax_report_wiz_view" sequence="60"/>
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="crossovered_budget_view_form">
+        <field name="name">crossovered.budget.view.inherit.form</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget_custom.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='final_amount']"
+                   position="after">
+                <field name="initial_engagement_amount" readonly="1" sum="Initial Engagement" widget="monetary"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="view_crossovered_budget_line_tree">
+        <field name="name">crossovered.budget.lines.inherit.tree</field>
+        <field name="model">crossovered.budget.lines</field>
+        <field name="inherit_id" ref="account_budget_custom.view_crossovered_budget_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='final_amount']"
+                   position="after">
+                <field name="initial_engagement_amount" readonly="1" sum="Initial Engagement" widget="monetary"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="action_budget_confirmation_form" model="ir.actions.act_window">
+        <field name="name">Request Budget Confirmations</field>
+        <field name="res_model">budget.confirmation</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+              (0, 0, {'view_mode': 'tree'}),(0, 0, {'view_mode': 'kanban'}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('account_budget_custom.view_budget_confirmation_form')})]"/>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('type','=','purchase.request')]</field>
+    </record>
+    <menuitem action="action_budget_confirmation_form" id="menu_budget_confirmation"
+              parent="account_budget_custom.main_budgets_menu" sequence="5"/>
+</odoo>

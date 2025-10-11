@@ -1,0 +1,801 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_fiscal_year
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-11 10:41+0000\n"
+"PO-Revision-Date: 2023-04-11 10:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_needaction
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_exception_decoration
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_state
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_type_icon
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__type__annual
+msgid "Annual"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_attachment_count
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__type__biannual
+msgid "Biannual"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_crossovered_budget
+msgid "Budget"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_budget.py:0
+#, python-format
+msgid ""
+"Budget date range and fiscalyear must be in\n"
+"                         the same"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_budget.py:0
+#, python-format
+msgid "Budget date range must be within fiscalyear."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__state__cancel
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__fiscalyears_periods__state__cancel
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_form
+msgid "Cancel"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.actions.act_window,help:account_fiscal_year.actions_account_fiscal_year
+msgid "Click here to create a new fiscal year."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_form
+msgid "Close"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__state__closed
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__fiscalyears_periods__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__code
+msgid "Code"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_res_company
+msgid "Companies"
+msgstr "مؤسسات"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__company_id
+msgid "Company"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+msgid "Create Periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__create_uid
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__create_date
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_line_search
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_search
+msgid "Current Fiscalyear"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_filter
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_line_filter
+msgid "Current Period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.crossovered_budget_view_form
+msgid "Date Range"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_move.py:0
+#, python-format
+msgid "Date and period must be in the same date range"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_financial_year_op__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget_lines__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__display_name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_res_company__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__state__draft
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__fiscalyears_periods__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__date_to
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__date_to
+msgid "Ending Date, included in the fiscal year."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget__fiscalyear_id
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+msgid "Fiscal Year"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_form
+msgid "Fiscal Year Period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.actions.act_window,name:account_fiscal_year.actions_account_fiscal_year
+#: model:ir.module.category,name:account_fiscal_year.module_fiscalyear_category
+#: model:ir.ui.menu,name:account_fiscal_year.fiscalyears_main_menu_fiscalyears
+#: model:ir.ui.menu,name:account_fiscal_year.fiscalyears_menu_fiscalyears
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_search
+msgid "Fiscal Years"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:res.groups,name:account_fiscal_year.group_fiscalyear_manager
+msgid "Fiscal Years Manager"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.actions.act_window,name:account_fiscal_year.fiscalyears_periods_action_window
+msgid "Fiscal Years Periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:res.groups,name:account_fiscal_year.group_fiscalyear_user
+msgid "Fiscal Years User"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__fiscalyear_id
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_line_search
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_search
+msgid "Fiscalyear"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_follower_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_channel_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_partner_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__activity_type_icon
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_financial_year_op__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move_line__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget_lines__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_res_company__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_exception_icon
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__activity_exception_icon
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_needaction
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_unread
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_needaction
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_has_error
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_has_sms_error
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_has_error
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_is_follower
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_financial_year_op____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget_lines____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods____last_update
+#: model:ir.model.fields,field_description:account_fiscal_year.field_res_company____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__write_uid
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__write_date
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_main_attachment_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "Make sure all linked moves have been posted."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_has_error
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__type__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__moves_ids
+msgid "Moves"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__my_activity_date_deadline
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__name
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__name
+msgid "Name"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_date_deadline
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_summary
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_type_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/wizard/account_opening.py:0
+#, python-format
+msgid "No Open fiscal year periods in this date."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_budget.py:0
+#, python-format
+msgid ""
+"No fiscal year for\n"
+"                         this budget date range."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_needaction_counter
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_has_error_counter
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_needaction_counter
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_has_error_counter
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__message_unread_counter
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__state__open
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__fiscalyears_periods__state__open
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_form
+msgid "Open"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__opening
+msgid "Opening"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_account_financial_year_op
+msgid "Opening Balance of Financial Year"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_bank_statement_line__period_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_financial_year_op__period_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move__period_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_move_line__period_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_payment__period_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_crossovered_budget_lines__fiscalyear_id
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_filter
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_line_filter
+msgid "Period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__periods_ids
+#: model:ir.ui.menu,name:account_fiscal_year.fiscalyears_menu_fiscalyears_periods
+msgid "Periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields.selection,name:account_fiscal_year.selection__account_fiscal_year__type__quarterly
+msgid "Quarterly"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__activity_user_id
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_has_sms_error
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__date_from
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__date_from
+msgid "Start Date, included in the fiscal year."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__state
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__state
+msgid "State"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__activity_state
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__code
+msgid "The code of the fiscalyear like start date - end date - state "
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid "The ending date must not be prior to the starting date."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_crossovered_budget_lines__fiscalyear_id
+msgid ""
+"The fiscalyear\n"
+"                                used for this budget line."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_crossovered_budget__fiscalyear_id
+msgid ""
+"The fiscalyear\n"
+"                                used for this budget."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_move_line__period_id
+msgid ""
+"The fiscalyear period\n"
+"                                used for this move line."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_bank_statement_line__period_id
+#: model:ir.model.fields,help:account_fiscal_year.field_account_move__period_id
+#: model:ir.model.fields,help:account_fiscal_year.field_account_payment__period_id
+msgid ""
+"The fiscalyear period\n"
+"                                used for this receipt."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_move.py:0
+#, python-format
+msgid "Their is no open periods for date %s"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_move.py:0
+#, python-format
+msgid "There is no openning fiscal year periods in this date."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid ""
+"This fiscal year '{fy}' overlaps with '{overlapping_fy}'.\n"
+"Please correct the start and/or end dates of your fiscal years."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.fiscalyears_periods_form
+msgid "To Draft"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__type
+msgid "Type"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__activity_exception_decoration
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_unread
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__message_unread_counter
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,field_description:account_fiscal_year.field_account_fiscal_year__website_message_ids
+#: model:ir.model.fields,field_description:account_fiscal_year.field_fiscalyears_periods__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__website_message_ids
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid "You Must Enter The Fiscalyear Type To Create Periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "You can not cancel a period linked with moves"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid "You cannot delete a fiscal year not in draft state."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "You cannot delete a period not in draft state."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "You cannot open a period where the fiscalyear not in open state."
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_move.py:0
+#, python-format
+msgid "You must enter date and period for this record"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_search
+msgid "budget in the current fiscal year"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_crossovered_budget_line_search
+msgid "budget lines in the current fiscal year"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "dates range can not cross with another period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model,name:account_fiscal_year.model_fiscalyears_periods
+msgid "fiscalyears.periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_filter
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.view_account_move_line_filter
+msgid "invoices in the current fiscal year period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__opening
+msgid "is it an opening period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "opening"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "period range must be in the fiscalyear range"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model_terms:ir.ui.view,arch_db:account_fiscal_year.account_fiscal_year_form_view
+msgid "periods"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscalyears_periods.py:0
+#, python-format
+msgid "start date must be before end date"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__periods_ids
+msgid "the date periods used to assign operations"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__date_to
+msgid "the end of the period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__moves_ids
+msgid ""
+"the moves\n"
+"                                    linked with the period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__date_from
+msgid "the start of the period"
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__state
+msgid ""
+"the state of the current\n"
+"                             fiscalyear where \n"
+" draft is the new created \n"
+"\n"
+"                             open is the current runing fiscalyear \n"
+"\n"
+"                             closed is means you can not assign any operation\n"
+"                             in this fiscalyear \n"
+" this ficalyear has been canceled "
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_fiscalyears_periods__state
+msgid ""
+"the state of the current\n"
+"                             period where \n"
+" draft is the new created \n"
+"\n"
+"                             open is the current runing period \n"
+"\n"
+"                             closed is means you can not assign any operation\n"
+"                             in this period \n"
+" this ficalyear has been\n"
+"                              canceled "
+msgstr ""
+
+#. module: account_fiscal_year
+#: model:ir.model.fields,help:account_fiscal_year.field_account_fiscal_year__type
+msgid ""
+"the type of the fiscalyear \n"
+"\n"
+"                            monthly : per month \n"
+"\n"
+"                            quarterly : every three months\n"
+"\n"
+"                            biannual : every six months\n"
+"\n"
+"                            annual : every twelve months"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid "you must close every period of this fiscal year"
+msgstr ""
+
+#. module: account_fiscal_year
+#: code:addons/account_fiscal_year/models/account_fiscal_year.py:0
+#, python-format
+msgid "you must create periods for this fiscal year"
+msgstr ""

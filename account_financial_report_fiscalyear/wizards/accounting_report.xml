@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="trial_balance_wizard" model="ir.ui.view">
+        <field name="name">Trial Balance</field>
+        <field name="model">trial.balance.report.wizard</field>
+        <field name="inherit_id" ref="account_financial_report.trial_balance_wizard"/>
+        <field name="arch" type="xml">
+        <field name="date_range_id" position="replace">
+          <field name="date_period_type"/>
+          <field name="fiscalyear_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <field name="period_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear_period')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <newline/>
+        </field>
+    </field>
+  </record>
+
+  <record id="general_ledger_wizard" model="ir.ui.view">
+        <field name="name">General Ledger</field>
+        <field name="model">general.ledger.report.wizard</field>
+        <field name="inherit_id" ref="account_financial_report.general_ledger_wizard"/>
+        <field name="arch" type="xml">
+        <field name="date_range_id" position="replace">
+          <field name="date_period_type"/>
+          <field name="fiscalyear_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <field name="period_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear_period')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <newline/>
+        </field>
+    </field>
+  </record>
+
+  <record id="journal_ledger_wizard" model="ir.ui.view">
+        <field name="name">Journal Ledger</field>
+        <field name="model">journal.ledger.report.wizard</field>
+        <field name="inherit_id" ref="account_financial_report.journal_ledger_wizard"/>
+        <field name="arch" type="xml">
+        <field name="date_range_id" position="replace">
+          <field name="date_period_type"/>
+          <field name="fiscalyear_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <field name="period_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear_period')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <newline/>
+        </field>
+    </field>
+  </record>
+
+  <record id="vat_report_wizard" model="ir.ui.view">
+        <field name="name">vat_report_wizard_view</field>
+        <field name="model">vat.report.wizard</field>
+        <field name="inherit_id" ref="account_financial_report.vat_report_wizard"/>
+        <field name="arch" type="xml">
+        <field name="date_range_id" position="replace">
+          <field name="date_period_type"/>
+          <field name="fiscalyear_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <field name="period_id" attrs="{'invisible':[('date_period_type','!=','fiscalyear_period')]}"
+                 options="{'no_create_edit': True, 'no_create': True}"/>
+          <newline/>
+        </field>
+    </field>
+  </record>
+
+</odoo>

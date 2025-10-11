@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="main_budgets_menu" model="ir.ui.menu">
+            <field name="name">Budgets</field>
+            <field name="sequence">10</field>
+            <field name="parent_id" ref="odex25_account_accountant.menu_accounting"/>
+        </record>
+        <record id="odex25_account_budget.menu_act_crossovered_budget_view" model="ir.ui.menu">
+            <field name="sequence">1</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+        <menuitem action="action_budget_confirmation_form" id="menu_budget_confirmation"
+                  parent="main_budgets_menu" sequence="5"/>
+
+        <record id="odex25_account_budget.menu_budget_post_form" model="ir.ui.menu">
+            <field name="sequence">6</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+        <record id="account.account_analytic_def_account" model="ir.ui.menu">
+            <field name="sequence">7</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+        <record id="account.account_analytic_group_menu" model="ir.ui.menu">
+            <field name="sequence">8</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+        <record id="account.account_analytic_tag_menu" model="ir.ui.menu">
+            <field name="sequence">9</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+        <record id="account.menu_analytic_default_list" model="ir.ui.menu">
+            <field name="sequence">10</field>
+            <field name="parent_id" ref="main_budgets_menu"/>
+        </record>
+
+        <menuitem id="menu_budget_operations" parent="main_budgets_menu"
+                  name="Budget Operations" groups="account_budget_custom.group_manager_budget" sequence="20"/>
+        <menuitem action="open_budget_operations" id="menu_budget_operations_form" groups="account_budget_custom.group_manager_budget"
+                  parent="menu_budget_operations"/>
+
+  <menuitem action="open_budget_unlock_restriction" id="menu_budget_unlock_restriction_form"
+              parent="menu_budget_operations" groups="account_budget_custom.group_manager_budget"/>
+
+        <menuitem id="budget_reporting_menu"
+                  name="Reports"
+                  parent="main_budgets_menu"
+                  sequence="30"/>
+        <record id="odex25_account_reports.menu_action_report_account_analytic" model="ir.ui.menu">
+            <field name="parent_id" ref="account_budget_custom.budget_reporting_menu"/>
+        </record>
+        <record id="odex25_account_budget.menu_act_crossovered_budget_lines_view" model="ir.ui.menu">
+            <field name="parent_id" ref="account_budget_custom.budget_reporting_menu"/>
+        </record>
+
+    </data>
+</odoo>

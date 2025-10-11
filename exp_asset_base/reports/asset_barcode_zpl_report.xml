@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="label_barcode_account_asset_view">
+            <t t-foreach="docs" t-as="asset">
+                <t t-translation="off">
+^XA
+^FO100,50
+^A0N,44,33^FD<t t-esc="asset.display_name"/>^FS
+<t t-if="asset.barcode">
+^FO100,100^BY3
+^BCN,100,Y,N,N
+^FD<t t-esc="asset.barcode"/>^FS
+</t>
+^XZ
+                </t>
+            </t>
+        </template>
+        <record id="label_barcode_account_asset" model="ir.actions.report">
+            <field name="name">Asset Barcode (ZPL)</field>
+            <field name="model">account.asset</field>
+            <field name="report_type">qweb-text</field>
+            <field name="report_name">exp_asset_base.label_barcode_account_asset_view</field>
+            <field name="report_file">exp_asset_base.label_barcode_account_asset_view</field>
+            <field name="binding_model_id" ref="exp_asset_base.model_account_asset"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

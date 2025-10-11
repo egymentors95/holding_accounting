@@ -1,0 +1,195 @@
+<odoo>
+    <data>
+        <!-- <record id="hr_view_budget_form_inherit" model="ir.ui.view">
+            <field name="name">hr.expense.budget.form</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_achieving_budget_pledge" type="object" string="Go to budget confirmation"
+                            class="oe_stat_button" icon="fa-bars"
+                            attrs="{'invisible': [('state', '=', 'draft')]}"/>
+
+                </xpath>
+            </field>
+        </record> -->
+<!--        <record id="view_hr_expense_sheet_form_inherit_pledge" model="ir.ui.view">-->
+<!--            <field name="name">view.hr.expense.sheet.form.inherit.pledge</field>-->
+<!--            <field name="model">hr.expense.sheet</field>-->
+<!--            <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//page[@name='other_info']/group/group/field[@name='bank_journal_id']" position="after">-->
+<!--                    <field name="available_account_payment_method_ids" invisible="1"/>-->
+<!--                    <field name="account_payment_method_id" domain="[('id', 'in', available_account_payment_method_ids)]"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="view_employee_journal_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.journal.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='attachments']" position="after">
+                    <page name="journal_information" string="Journal Information">
+                        <group>
+                            <field name="journal_id"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_payment_form_inherit" model="ir.ui.view">
+            <field name="name">account.payment.form.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_go_to_hr_request_pledge" type="object" string="Go to HR Request Pledge"
+                            groups="account_budget_custom.group_department_manager_budget"
+                            class="oe_stat_button" icon="fa-bars"
+                            attrs="{'invisible': [('hr_request_pledge', '=', False)]}"/>
+                </xpath> -->
+                <xpath expr="//field[@name='payment_type']" position="after">
+                    <field name="hr_request_pledge" invisible="1"/>
+                </xpath>
+            </field>
+
+        </record>
+        <record model="ir.ui.view" id="job_request_form_pledge_view">
+            <field name="name">Employee pledge form</field>
+            <field name="model">hr.request.pledge</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="submit" string="Submit" class="oe_highlight" type="object"
+                                states="draft" groups="employee_custody_request.group_hr_user"/>
+
+                        <button name="direct_manager" string="Payroll Officer Approve" class="oe_highlight"
+                                type="object" states="submit" groups="employee_custody_request.group_loan_manager"/>
+                        <button name="refused" string="Refuse" states="submit" type="object"
+                                class="oe_highlight" groups="employee_custody_request.group_loan_manager"/>
+
+                        <button name="hr_manager" string="HR Manager Approve" class="oe_highlight" type="object"
+                                states="direct_manager" groups="employee_custody_request.group_hr_manager"/>
+                        <button name="refused" string="Refuse" states="direct_manager" type="object"
+                                class="oe_highlight" groups="employee_custody_request.group_hr_manager"/>
+
+                        <button name="executive_manager" string="GM Manager Approve" class="oe_highlight" type="object"
+                                states="hr_manager" groups="employee_custody_request.group_general_manager"/>
+                        <button name="refused" string="Refuse" states="hr_manager" type="object"
+                                class="oe_highlight" groups="employee_custody_request.group_general_manager"/>
+
+                       <button name="financialApproval" string="Financial Approval"
+        class="oe_highlight" type="object"
+        
+        groups="employee_custody_request.group_account_manager"
+         attrs="{'invisible': ['|', 
+                              ('is_financial_impact', '!=', True), 
+                              ('state', '!=', 'executive_manager')]}"/>
+
+
+<button name="pay" string="Transfer"
+        class="oe_highlight" type="object"
+        
+        groups="employee_custody_request.group_account_manager"
+        attrs="{'invisible': ['|', 
+                              ('is_financial_impact', '!=', False), 
+                              ('state', '!=', 'executive_manager')]}"/>
+
+        
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,submit,direct_manager,hr_manager,executive_manager,pay,financial_approve,refused"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_account_payment_budget_pledge" type="object"
+                                    string="Go to account payment"
+                                    class="oe_stat_button" icon="fa-bars"
+                                    attrs="{'invisible': [('state', '!=', 'pay')]}"/>
+                        </div>
+                        <group>
+                            <group>
+                            <field name="is_financial_impact" invisible="1"/>
+
+                                <field name="code" string="Code" readonly="1"/>
+                                <field name="from_hr_depart" string="Another Employee"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="employee_id" string="Employee Name"
+                                       attrs="{'readonly':['|',('state','!=','draft'),('from_hr_depart','=',False)],'required':True}"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="emp_expect_amount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="custody_type_id"/>
+                               <field name="journal_id" attrs="{'invisible': [('id', '!=', 0)]}"/>
+
+
+                                <field name="department_id"/>
+                                <field name="job_id"/>
+                                <field name="description"/>
+                                <field name="spent_amount" readonly="1"/>
+                                <field name="custody_status" invisible="1"/>
+
+                                <field name="remaining_amount"/>
+
+
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="job_request_tree_view">
+            <field name="name">job_request_pledge_tree_view</field>
+            <field name="model">hr.request.pledge</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <!--                    <field name="from_hr_depart"/>-->
+                    <!--                    <field name="date"/>-->
+                    <field name="employee_id"/>
+                    <field name="emp_expect_amount"/>
+                </tree>
+            </field>
+        </record>
+             <record id="view_account_move_line_tree_custom" model="ir.ui.view">
+            <field name="name">account.move.line.tree.custom</field>
+            <field name="model">account.move.line</field>
+            <field name="arch" type="xml">
+                <tree string="Account Move Lines" create="false">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="debit" sum="Total"/>
+                    <field name="credit" sum="Total"/>
+                    <field name="balance" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_employee_custody_report" model="ir.actions.server">
+            <field name="name">Employee Account</field>
+            <field name="model_id" ref="model_account_move_line"/>
+            <field name="state">code</field>
+            <field name="code">action = env['account.move.line']._employee_custody_lines_view()</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="job_request_action_pledge">
+            <field name="name">Job Request pledge</field>
+            <field name="res_model">hr.request.pledge</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="job_request_pledge" name="Request pledge"
+                  action="job_request_action_pledge" parent="hr_expense.menu_hr_expense_my_expenses" sequence="10"
+                  groups="employee_custody_request.group_general_ledger_manger"/>
+
+        <menuitem id="employee_custody_report_menu" name="Employee Account Report"
+                  action="action_employee_custody_report" parent="hr_expense.menu_hr_expense_report" sequence="20"
+                  groups="employee_custody_request.group_employee_custody_report"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* budget_extra
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-14 12:37+0000\n"
+"PO-Revision-Date: 2024-08-14 12:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_account_program
+#: model:ir.model,name:budget_extra.model_budget_account_program
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__account_program_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__account_program_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_account_program
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Account Program"
+msgstr "التصنيف حسب البرنامج"
+
+#. module: budget_extra
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: budget_extra
+#: model:ir.model,name:budget_extra.model_crossovered_budget
+msgid "Budget"
+msgstr "الموازنة"
+
+#. module: budget_extra
+#: model:ir.ui.menu,name:budget_extra.menu_budget_classifications
+msgid "Budget Classifcations"
+msgstr "تصنيف"
+
+#. module: budget_extra
+#: model:ir.model,name:budget_extra.model_crossovered_budget_lines
+msgid "Budget Line"
+msgstr "بند الموازنة"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_classification
+#: model:ir.model,name:budget_extra.model_budget_classification
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__classification_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__classification_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_classification
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Classification"
+msgstr "تصنيف"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__code
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__code
+msgid "Code"
+msgstr "كود"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__create_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__create_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__create_date
+msgid "Created on"
+msgstr "انشئ في"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__display_name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_door
+#: model:ir.model,name:budget_extra.model_budget_door
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__door_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__door_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_door
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Door"
+msgstr "الباب"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_general_classification
+#: model:ir.model,name:budget_extra.model_budget_general_classification
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__general_classification_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__general_classification_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_general_classification
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "General Classification"
+msgstr "التصنيف العام"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_higher_management
+#: model:ir.model,name:budget_extra.model_budget_higher_management
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__higher_management_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__higher_management_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_higher_management
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Higher Management"
+msgstr "الإدارات العليا"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__id
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__id
+msgid "ID"
+msgstr "رقم"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program____last_update
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management____last_update
+msgid "Last Modified on"
+msgstr "تم التعديل في"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__write_uid
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__write_uid
+msgid "Last Updated by"
+msgstr "تم التعديل بواسطة"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__write_date
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__write_date
+msgid "Last Updated on"
+msgstr "تم التعديل في"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_management_classification
+#: model:ir.model,name:budget_extra.model_budget_management_classification
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__management_classification_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__management_classification_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_management_classification
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Management Classification"
+msgstr "التصنيف الاداري"
+
+#. module: budget_extra
+#: model:ir.model.fields,field_description:budget_extra.field_budget_account_program__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_classification__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_door__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_general_classification__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_higher_management__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_management_classification__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_program__name
+#: model:ir.model.fields,field_description:budget_extra.field_budget_sub_management__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_program
+#: model:ir.model,name:budget_extra.model_budget_program
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__program_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__program_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_program
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Program"
+msgstr "البرنامج"
+
+#. module: budget_extra
+#: model:ir.actions.act_window,name:budget_extra.action_budget_sub_management
+#: model:ir.model,name:budget_extra.model_budget_sub_management
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget__sub_management_id
+#: model:ir.model.fields,field_description:budget_extra.field_crossovered_budget_lines__sub_management_id
+#: model:ir.ui.menu,name:budget_extra.menu_budget_sub_management
+#: model_terms:ir.ui.view,arch_db:budget_extra.view_crossovered_budget_line_search
+msgid "Sub Management"
+msgstr "الإدارات الفرعية"

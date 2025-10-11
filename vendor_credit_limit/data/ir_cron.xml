@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="ir_cron_vendor_credit_limit" model="ir.cron">
+            <field name="name">Compute Remaining Period</field>
+            <field name="model_id" ref="vendor_credit_limit.model_vendor_limit_lines"/>
+            <field name="state">code</field>
+            <field name="code">model.calculate_remaining_period()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

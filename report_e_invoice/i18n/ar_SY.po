@@ -1,0 +1,580 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_e_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-29 08:20+0000\n"
+"PO-Revision-Date: 2021-10-29 08:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_e_invoice
+#: model:ir.actions.report,print_report_name:report_e_invoice.account_e_invoices
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>الاجمالي\n"
+"                                                    <br/>\n"
+"                                                    Amount\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<span>الجواز</span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>الخصم\n"
+"                                                    <br/>\n"
+"                                                    Discount\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<span>السجل التجاري</span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>السعر\n"
+"                                                    <br/>\n"
+"                                                    Price\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>السعر قبل الضريبة\n"
+"                                                    <br/>\n"
+"                                                    Taxable Amount\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>الضريبة\n"
+"                                                    <br/>\n"
+"                                                    VAT Rate\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>الكمية\n"
+"                                                    <br/>\n"
+"                                                    Quantity\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<span>الهوية</span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid ""
+"<span>الوصف\n"
+"                                                    <br/>\n"
+"                                                    Description\n"
+"                                                </span>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>Invoice Number</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>Source Invoice Number</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>الاسم - Name</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>الرقم الضريبي - VAT</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>الرقم الفاتورة المصدر</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>العنوان - Address</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>رقم الفاتورة</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>رقم المعرف - NUM I</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>سبب اصدار الاشعار:</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "<strong>معرف آخر - Other ID</strong>"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model,name:report_e_invoice.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "الحركة العكسية"
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Amount"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Back"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move__selection_reason__change_complete_edit
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move_reversal__selection_reason__change_complete_edit
+msgid "Change Or complete Edit"
+msgstr "تعديل قيمة التوريد المتفق عليه مسبقاً بين المورد والعميل"
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner__commercial_register
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_users__commercial_register
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__res_partner__other_id_type__cr
+msgid "Commercial Register"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model,name:report_e_invoice.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "Date of Supply:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Discount"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__display_name
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move_reversal__display_name
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: report_e_invoice
+#: model:ir.actions.report,name:report_e_invoice.account_e_invoices
+msgid "E-Invoices"
+msgstr "الفاتورة الإلكترونية"
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move__selection_reason__edit_amount
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move_reversal__selection_reason__edit_amount
+msgid "Edit Amount"
+msgstr "تعديل قيمة التوريد المتفق عليه مسبقاً بين المورد والعميل"
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move__selection_reason__edit_stop
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move_reversal__selection_reason__edit_stop
+msgid "Edit Or Stop"
+msgstr "إلغاء أو وقف التوريد بعد حدوثه كلياً أو جزئياً"
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__id
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move_reversal__id
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Id Number"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__res_partner__other_id_type__id_card
+msgid "Identity Card"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner__id_number
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_users__id_number
+msgid "Identity NO"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__purchase_ids
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__sale_ids
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__purchase_ids
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__sale_ids
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__purchase_ids
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__sale_ids
+msgid "Invoices"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "Issue Date:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model,name:report_e_invoice.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move____last_update
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move_reversal____last_update
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice_header
+#, python-format
+msgid "Logo"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_partner__other_id_type
+#: model:ir.model.fields,field_description:report_e_invoice.field_res_users__other_id_type
+msgid "Other ID"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__res_partner__other_id_type__passport
+msgid "Passport"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Percentage"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__picking_delivery_date
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__picking_delivery_date
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__picking_delivery_date
+msgid "Picking Delivery Date"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Points Spent:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Points Won:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__qr_image
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__qr_image
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__qr_image
+msgid "QR Code"
+msgstr ""
+
+#. module: report_e_invoice
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__reversal_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_bank_statement_line__selection_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__reversal_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move__selection_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_move_reversal__selection_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__reversal_reason
+#: model:ir.model.fields,field_description:report_e_invoice.field_account_payment__selection_reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: report_e_invoice
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move__selection_reason__refund_goods
+#: model:ir.model.fields.selection,name:report_e_invoice.selection__account_move_reversal__selection_reason__refund_goods
+msgid "Refund Goods"
+msgstr "عند ترجيع السلع أو الخدمات أو أي جزء منها إلى المورد وقبول المورد استرجاعها"
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "Total"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "Total Points:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "Total Without VAT"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "VAT"
+msgstr ""
+
+#. module: report_e_invoice
+#: code:addons/report_e_invoice/models/account_move.py:0
+#, python-format
+msgid "إجمالي الفاتورة:  \t \t "
+msgstr ""
+
+#. module: report_e_invoice
+#: code:addons/report_e_invoice/models/account_move.py:0
+#, python-format
+msgid "إجمالي ضريبة القيمة المضافة:  \t \t "
+msgstr ""
+
+#. module: report_e_invoice
+#: code:addons/report_e_invoice/models/account_move.py:0
+#, python-format
+msgid "اسم المورد: \t \t "
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "اشعار دائن - Credit Note"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "اشعار مدين - Refund"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الإجمالي"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "الاجمالي"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "الاجمالي بدون ضريبة"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الباقي"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الخصم العام"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الرقم الضريبي:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "السجل التجاري:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الصافي"
+msgstr ""
+
+#. module: report_e_invoice
+#: code:addons/report_e_invoice/models/account_move.py:0
+#, python-format
+msgid "الطابع الزمني للفاتورة:  \t \t "
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "العميل:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الكاشير:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الكمية"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "المبلغ"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "الوصف"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "الى - TO"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "تاريخ الاصدار:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "تاريخ التوريد:"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "خصم علي  المنتجات"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "رقم الهوية:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "رقم امر البيع:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "رقم امر الشراء:"
+msgstr ""
+
+#. module: report_e_invoice
+#: code:addons/report_e_invoice/models/account_move.py:0
+#, python-format
+msgid "رقم تسجيل ضريبة: \t \t "
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "سعر الوحدة"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "ضريبة القيمة المضافة"
+msgstr ""
+
+#. module: report_e_invoice
+#. openerp-web
+#: code:addons/report_e_invoice/static/src/xml/pos_receipt.xml:0
+#, python-format
+msgid "عنوان الفرع:"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "فاتورة ضريبية- Tax Invoice"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "قيمة الضريبة"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "مبيعات - Sale"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "مشتريات - Purchase"
+msgstr ""
+
+#. module: report_e_invoice
+#: model_terms:ir.ui.view,arch_db:report_e_invoice.report_e_invoice
+msgid "من - From"
+msgstr ""

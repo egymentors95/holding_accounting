@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <record id="action_account_asset_assignment1" model="ir.actions.act_window">
+            <field name="name">Assets Assignment</field>
+            <field name="res_model">account.asset.operation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{ 'create': False }</field>
+            <field name="domain">[('emp_asset_custody_id', '=', active_id),('type', '=', 'assignment')]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('exp_asset_custody.view_account_asset_assignment_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('exp_asset_custody.view_account_asset_operation_form')})]"/>
+        </record>
+
+        <record id="action_account_asset_release1" model="ir.actions.act_window">
+            <field name="name">Assets Release</field>
+            <field name="res_model">account.asset.operation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{ 'create': False }</field>
+            <field name="domain">[('emp_asset_custody_id', '=', active_id),('type', '=', 'release')]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('exp_asset_custody.view_account_asset_release_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('exp_asset_custody.view_account_asset_operation_form')})]"/>
+        </record>
+
+        <record model="ir.ui.view" id="employee_custody_form_view_inherit">
+        <field name="name">Employee Custody With Asset</field>
+        <field name="model">custom.employee.custody</field>
+        <field name="inherit_id" ref="exp_employee_custody.employee_custody_form_view"/>
+        <field name="arch" type="xml">
+            <button name="approve" position="after">
+                <button name="%(purchase.purchase_rfq)d" string="Purchase Request"
+                        class="oe_highlight" states="admin" type="action" groups="hr.group_hr_user"/>
+            </button>
+            <button name="done" position="attributes">
+                <attribute name="states">assign</attribute>
+            </button>
+             <xpath expr="//group[1]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" type="action"
+                            name="%(action_account_asset_assignment1)d" icon="fa-pencil"
+                            attrs="{'invisible':[('asset_assign_count','=',0)]}">
+                        <field name="asset_assign_count" string="Assignments" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" type="action"
+                            name="%(action_account_asset_release1)d" icon="fa-pencil"
+                            attrs="{'invisible':['|',('asset_release_count','=',0),('state','not in',('wait_release','done','refuse'))]}">
+                        <field name="asset_release_count" string="Releases" widget="statinfo"/>
+                    </button>
+                </div>
+            </xpath>
+<!--                                           domain="[('status', 'in', ['new','available']), ('asset_type', '=', 'purchase'),-->
+<!--                                                   ('state', '!=', 'model'), ('parent_id', '=', False)]"/>-->
+            <xpath expr="//notebook/page" position="after">
+                <page string="Asset Lines"
+                      attrs="{'invisible':[('state','in',('draft','submit','direct'))]}">
+                    <field name="asset_line_ids" nolabel="1" required="1"
+                           attrs="{'readonly': [ ('state', 'in', ('wait','assign','done'))]}">
+                        <tree string="Asset Lines" editable="top">
+                            <field name="asset_id" required="1"
+                            domain="[('status', 'in',{'assignment': ['available']}.get(type, ['new', 'available'])),('asset_type', '=', 'purchase')]"/>
+                            <field name="custody_type" attrs="{'required': [('type', '=', 'assignment')]}"/>
+                            <field name="custody_period"
+                                   attrs="{'required': [('type', '=', 'assignment')]}"/>
+                            <field name="return_date" attrs="{'required': [('custody_period', '=', 'temporary')],
+                                                    'invisible': [('custody_period', '!=', 'temporary')],
+                                                    'readonly': [ ('custody_period', '!=', 'temporary')]}"/>
+                            <field name="type" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+        </record>
+                <record id="hr_Employee_form_inherit0" model="ir.ui.view">
+            <field name="name">hr_employee.extend1.form2</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_assignment"
+                            icon="fa-file">
+                        <field string="Assignments" name="petty_cash_count1" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

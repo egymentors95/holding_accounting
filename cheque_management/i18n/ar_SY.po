@@ -1,0 +1,715 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cheque_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-10 10:16+0000\n"
+"PO-Revision-Date: 2020-11-10 10:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_minimal_layout
+msgid "&lt;!DOCTYPE html&gt;"
+msgstr "&lt;!DOCTYPE html&gt;"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "--- Attribute ---"
+msgstr "--- Attribute ---"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "<b>From: </b>"
+msgstr "<b>من: </b>"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "<br/>\n"
+"                                <b>To: </b>"
+msgstr "<br/>\n"
+"                                <b>إلى: </b>"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "<span class=\"\">Cheque Preview</span>\n"
+"                                        <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "<span class=\"\">Cheque Preview</span>\n"
+"                                        <span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "<span class=\"alert alert-info fa fa-info-circle\" style=\"margin-bottom:0px;\">\n"
+"                                            Select cheque attribute one by one then drag box on cheque image to fill all the perameters automatically and then click on update button.\n"
+"                                        </span>"
+msgstr "<span class=\"alert alert-info fa fa-info-circle\" style=\"margin-bottom:0px;\">\n"
+"                                            Select cheque attribute one by one then drag box on cheque image to fill all the perameters automatically and then click on update button.\n"
+"                                        </span>"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "<span style=\"font-size: 36px;\">\n"
+"                                        <b>\n"
+"                                            Cheque Attributes : \n"
+"                                        </b>\n"
+"                                    </span>"
+msgstr "<span style=\"font-size: 36px;\">\n"
+"                                        <b>\n"
+"                                            Cheque Attributes : \n"
+"                                        </b>\n"
+"                                    </span>"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_history_print_pdf_report
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_print_pdf_report
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_priview
+msgid "A/C Pay"
+msgstr "يصرف للمستفيد الاول فقط"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_is_ac_pay
+msgid "A/C Pay Cheque"
+msgstr "A/C Pay Cheque"
+
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Place Of Issue"
+msgstr "مكان الإصدار"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_ac_pay_visible
+msgid "A/C Pay To"
+msgstr "يصرف للمستفيد الاول فقط"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_issue_place
+msgid "Place of Issue"
+msgstr "مكان الإصدار"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Reason Of Issue"
+msgstr "السبب"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_reason
+msgid "Reason of Issue"
+msgstr "السبب"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "A/C Pay Label"
+msgstr "A/C Pay Label"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_account_number
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_active
+msgid "Active"
+msgstr "نشط"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_amount
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Amount Box"
+msgstr "صندوق القيمة"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_amount_in_words
+msgid "Amount In Words"
+msgstr "المبلغ بالحروف"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_amount_in_words_line2
+msgid "Amount In Words Line 2"
+msgstr "المبلغ بالحروف في السطر 2"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Amount Line 1 (in words)"
+msgstr "المبلغ في السطر 1 (بالحروف)"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Amount Line 2 (in words)"
+msgstr "المبلغ في السطر 2 (بالحروف)"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_attribute
+msgid "Attribute"
+msgstr "الصفة"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Attribute Name"
+msgstr "اسم الصفة"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_res_bank
+msgid "Bank"
+msgstr "البنك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_bank_cheque_id
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_bank_cheque_id
+msgid "Bank Cheque"
+msgstr "المصرف"
+
+#. module: cheque_management
+#: model:ir.ui.menu,name:cheque_management.wk_bank_cheque_management_menu
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_view_form
+msgid "Bank Cheque"
+msgstr "الشيكات المصرفية"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_bank_cheque_attribute
+msgid "Bank Cheque Attribute"
+msgstr "خصائص الشيك المصرفي"
+
+#. module: cheque_management
+#: model:ir.actions.act_window,name:cheque_management.bank_cheque_attribute_action
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_attribute_view_tree
+msgid "Bank Cheque Attributes"
+msgstr "خصائص شيك المصرف"
+
+#. module: cheque_management
+#: model:ir.actions.act_window,name:cheque_management.bank_cheque_book_action
+msgid "Bank Cheque Books"
+msgstr "قيود الشيكات المصرفية"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_tree
+msgid "Bank Cheque Template"
+msgstr "قالب الشيك المصرفي"
+
+#. module: cheque_management
+#: model:ir.actions.act_window,name:cheque_management.bank_cheque_action
+msgid "Bank Cheques"
+msgstr "المصارف"
+
+#. module: cheque_management
+#: model:ir.ui.menu,name:cheque_management.bank_cheque_menu
+msgid "Banks"
+msgstr "المصارف"
+
+#. module: cheque_management
+#: selection:issued.bank.cheque.history,state:0
+msgid "Blank"
+msgstr "فارغ"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_bottom_displacement
+msgid "Bottom displacement"
+msgstr "الإزاحة من الأسفل"
+
+#. module: cheque_management
+#: selection:res.bank,cheque_measure_unit:0
+msgid "CM"
+msgstr "CM"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_view_form
+msgid "CSS Attributes"
+msgstr "CSS Attributes"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.invoice_bank_cheque_print_form_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "Cancel Now"
+msgstr "الإلغاء الآن"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "Cancel now"
+msgstr "الإلغاء الآن"
+
+#. module: cheque_management
+#: selection:issued.bank.cheque.history,state:0
+msgid "Cancelled"
+msgstr "ملغى "
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_bank_cheque_book
+msgid "Cheque Attribute Book"
+msgstr "Cheque Attribute Book"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_bank_cheque_attribute_line
+msgid "Cheque Attribute Line"
+msgstr "Cheque Attribute Line"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_cheque_attribute_line_ids
+#: model:ir.ui.menu,name:cheque_management.bank_cheque_attribute_menu
+msgid "Cheque Attributes"
+msgstr "خصائص الشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_cheque_book_id
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_bank_cheque_book_id
+msgid "Cheque Book"
+msgstr "قيد الشيك"
+
+#. module: cheque_management
+#: model:ir.ui.menu,name:cheque_management.bank_cheque_template_menu
+msgid "Cheque Books"
+msgstr "قيود الشيكات"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_cancelled
+msgid "Cheque Cancelled"
+msgstr "ملغي"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_cheque_has_amount_line2
+msgid "Cheque Has Amount Line2"
+msgstr "الشيك لديه مبلغ في السطر 2"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_cheque_has_pay_line2
+msgid "Cheque Has Pay Line2"
+msgstr "الشيك لديه دفع في السطر 2"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_cheque_height
+msgid "Cheque Hight"
+msgstr "طول الشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_cheque_image
+msgid "Cheque Image"
+msgstr "صورة الشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_issued
+msgid "Cheque Issued"
+msgstr "الشيك مصدر"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_cheque_history_id
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_cheque_number
+msgid "Cheque Number"
+msgstr "رقم الشيك"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "Cheque Numbers"
+msgstr "ارقام الشيكات"
+
+#. module: cheque_management
+#: model:ir.actions.report,name:cheque_management.bank_cheque_print_report
+msgid "Cheque Preview"
+msgstr "المعاينة"
+
+#. module: cheque_management
+#: model:ir.actions.act_window,name:cheque_management.invoice_bank_cheque_print_action
+#: model:ir.actions.report,name:cheque_management.bank_cheque_leaf_print_report
+msgid "Cheque Print"
+msgstr "أطبع"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_cheque_width
+msgid "Cheque Width"
+msgstr "عرض الشيك"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:229
+#: code:addons/cheque_management/wizard/invoice_print_cheque_transient.py:185
+#, python-format
+msgid "Cheque has been already printed with Cheque number %s"
+msgstr "تمت طباعة الشيك مسبقا بالرقم %s"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:198
+#, python-format
+msgid "Cheque number %s is not valid. It has been already used. Please use diffrent cheque number."
+msgstr "رقم الشيك غير صالح. تم استخدامه مسبقا. الرجاء إستخدام تسلسل آخر من الأرقام"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Co-ordinate"
+msgstr "Co-ordinate"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_view_form
+msgid "Configure Attributes"
+msgstr "إعداد الخصائص"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+msgid "Create Cheque Leaves"
+msgstr "إنشاء فروع للشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_create_uid
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_create_uid
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_create_uid
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_create_uid
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_create_date
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_create_date
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_create_date
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_create_date
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_currency_id
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_partner_id
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_customer_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,date_format:0
+msgid "DD MM YYYY"
+msgstr "DD MM YYYY"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_issue_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_date_format
+msgid "Date Format"
+msgstr "تنسيق التاريخ"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_date
+msgid "Date On Cheque"
+msgstr "التاريخ على الشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_demo_data
+msgid "Demo Data For Preview"
+msgstr "تاريخ مبدئي من اجل العرض"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_demo_data_date
+msgid "Demo Date For Preview"
+msgstr "تاريخ مبدئي من اجل العرض"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_display_name
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_display_name
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_display_name
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_display_name
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:52
+#, python-format
+msgid "First you have to set bank cheque attributes. Then you will be able to configure attribute(s) values"
+msgstr "يجب عليك إدخال خصائص الشيك اولا، من ثم يمكنك التعديل على قيم هذه الخصائص"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_font_family
+msgid "Font Family"
+msgstr "عائلة الخط"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_font_size
+msgid "Font Size"
+msgstr "حجم الخط"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_height
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Height"
+msgstr "الطول"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_id
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_id
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_id
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_id
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: cheque_management
+#: selection:res.bank,cheque_measure_unit:0
+msgid "Inches"
+msgstr "Inches"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_initial_cheque_number
+msgid "Initial Cheque Number"
+msgstr "رقم الشيك المبدأي"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:210
+#, python-format
+msgid "Invalid cheque number. Cheque number should be in range %s to %s (including last number)."
+msgstr "Invalid cheque number. Cheque number should be in range %s to %s (including last number)."
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_issued_cheque_history_ids
+msgid "Issue Cheque History"
+msgstr "تاريخ الشيكات المصدرة"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_issued_bank_cheque_history
+msgid "Issued bank cheque"
+msgstr "شيك مصرفي مصدر"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_last_cheque_number
+msgid "Last Cheque Number"
+msgstr "رقم الشيك النهائي"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute___last_update
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line___last_update
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book___last_update
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard___last_update
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_write_uid
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_write_uid
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_write_uid
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_write_uid
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_write_date
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_write_date
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_write_date
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_write_date
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_cheque_book_leaves
+msgid "Leaves Count"
+msgstr "عدد الشيكات الفرعية"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Left Displacement"
+msgstr "الإزاحة من اليسار"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_left_displacement
+msgid "Left displacement"
+msgstr "الإزاحة من اليسار"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_letter_spacing
+msgid "Letter Spacing"
+msgstr "المسافة بين الحروف"
+
+#. module: cheque_management
+#: selection:res.bank,cheque_measure_unit:0
+msgid "MM"
+msgstr "MM"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,date_format:0
+msgid "MM DD YYYY"
+msgstr "MM DD YYYY"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_max_char_in_line1
+msgid "Maximum Characters"
+msgstr "أقصى عدد مسموح من الحروف"
+
+#. module: cheque_management
+#: model:ir.model.fields,help:cheque_management.field_res_bank_max_char_in_line1
+msgid "Maximum characters in 'Amount in words Line1' field.\n"
+" Aplicable if Cheque attributes has both attributes(Amount In words Line1 & Amount In words Line2)"
+msgstr "Maximum characters in 'Amount in words Line1' field.\n"
+" Aplicable if Cheque attributes has both attributes(Amount In words Line1 & Amount In words Line2)"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_res_bank_cheque_measure_unit
+msgid "Measurement Unit"
+msgstr "وحدة القياس"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_name
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_name
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_book_name
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "PX"
+msgstr "PX"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_paid_to
+msgid "Paid To"
+msgstr "مدفوع لــــ"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Pay Line 1"
+msgstr "الدفع السطر 1"
+
+#. module: cheque_management
+#: selection:bank.cheque.attribute,attribute:0
+msgid "Pay Line 2"
+msgstr "الدفع السطر 2"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_pay_name_line1
+msgid "Pay To"
+msgstr "الدفع لـــ"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_pay_name_line2
+msgid "Pay To Line2"
+msgstr "الدفع لــ في السطر 2"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:161
+#, python-format
+msgid "Please fill cheque book leaves count first."
+msgstr "الرجاء إدخال عدد الشيكات الفرعية في قيد الشيك."
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:163
+#, python-format
+msgid "Please fill staring cheque number first."
+msgstr "الرجاء إجخال رقم الشيك الإبتدائي"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_invoice_print_bank_cheque_wizard_is_preview
+msgid "Preview"
+msgstr "المعاينة"
+
+#. module: cheque_management
+#: code:addons/cheque_management/models/bank_cheque.py:243
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_template_view_form
+#: model:ir.ui.view,arch_db:cheque_management.inherit_account_payment_for_cheque_print_form
+#: model:ir.ui.view,arch_db:cheque_management.inherit_invoice_supplier_form
+#: model:ir.ui.view,arch_db:cheque_management.invoice_bank_cheque_print_form_view
+#, python-format
+msgid "Print Cheque"
+msgstr "طباعة الشيك"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.invoice_bank_cheque_print_form_view
+msgid "Print Preview"
+msgstr "معاينة الشيك"
+
+#. module: cheque_management
+#: selection:issued.bank.cheque.history,state:0
+msgid "Printed"
+msgstr "مطبوع"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Px"
+msgstr "Px"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_view_form
+msgid "Reset"
+msgstr "تنضيد"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_view_form
+msgid "Reset Values"
+msgstr "إعادة تعيين القيمة"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_right_displacement
+msgid "Right displacement"
+msgstr "الإزاحة من اليمين"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Select Check Attribute"
+msgstr "إختيار خصائص الشيك"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_issued_bank_cheque_history_state
+msgid "State"
+msgstr "الحالة"
+
+#. module: cheque_management
+#: model:ir.model.fields,help:cheque_management.field_bank_cheque_book_account_number
+msgid "This account number will print on cheque if cheque bank has account number attribute."
+msgstr "رقم الحساب سيتم طباعتة على الشيك اذا كان المصرف لديه خاصية رقم الحساب"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Top Displacement"
+msgstr "الإزاحة من الأعلى"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_top_displacement
+msgid "Top displacement"
+msgstr "الإزاحة من الأعلى"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Update"
+msgstr "تحديث"
+
+#. module: cheque_management
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Uploaded Scanned Copy :"
+msgstr "رقع نسخه مطبوعة :"
+
+#. module: cheque_management
+#: model:ir.model.fields,field_description:cheque_management.field_bank_cheque_attribute_line_width
+#: model:ir.ui.view,arch_db:cheque_management.bank_cheque_management_template
+msgid "Width"
+msgstr "العرض"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_invoice_print_bank_cheque_wizard
+msgid "invoice.print.bank.cheque.wizard"
+msgstr "invoice.print.bank.cheque.wizard"
+
+#. module: cheque_management
+#: model:ir.model,name:cheque_management.model_ir_actions_report
+msgid "ir.actions.report"
+msgstr "ir.actions.report"
+

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="account_fiscal_year_form_view" model="ir.ui.view">
+        <field name="name">Form view for account.fiscal.year</field>
+        <field name="model">account.fiscal.year</field>
+        <field name="arch" type="xml">
+            <form string="Fiscal Year">
+                <header>
+                    <button name="create_periods" states="draft" string="Create Periods" type="object"
+                            class="oe_highlight"/>
+                    <button name="open" states="draft,closed" string="Open" type="object" class="oe_highlight"/>
+                    <button name="close" states="open" string="Close" type="object" class="oe_highlight"/>
+                    <button name="cancel" states="draft,open" string="Cancel" type="object" class="oe_highlight"/>
+                    <button name="draft" states="cancel" string="To Draft" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                </header>
+                <sheet>
+                    <field name="code"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" attrs="{'required':True,'readonly':[('state','!=','draft')]}"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date_from" attrs="{'required':True,'readonly':[('state','!=','draft')]}"/>
+                            <field name="date_to" attrs="{'required':True,'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="type" attrs="{'required':True,'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="periods">
+                            <field name="periods_ids" attrs="{'required':True,'readonly':[('state','!=','draft')]}">
+                                <tree create="0">
+                                    <field name="name"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_fiscal_year_search_view" model="ir.ui.view">
+        <field name="name">Search view for account.fiscal.year</field>
+        <field name="model">account.fiscal.year</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="account_fiscal_year_tree_view" model="ir.ui.view">
+        <field name="name">Tree view for account.fiscal.year</field>
+        <field name="model">account.fiscal.year</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- fiscalyears.periods search view -->
+    <record id="fiscalyears_periods_search" model="ir.ui.view">
+        <field name="name">fiscalyears_periods search</field>
+        <field name="model">fiscalyears.periods</field>
+        <field name="arch" type="xml">
+            <search string="Fiscal Years">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="state"/>
+                <field name="fiscalyear_id"/>
+                <!-- <group expand="0" string="Group By...">
+                    <filter string="Fiscal Year" domain="[]" context="{'group_by':'fiscalyear_id'}"/>
+                </group> -->
+            </search>
+        </field>
+    </record>
+
+    <!-- fiscalyears.periods list view definition -->
+    <record model="ir.ui.view" id="fiscalyears_periods_list">
+        <field name="name">fiscalyears_periods list</field>
+        <field name="model">fiscalyears.periods</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="0">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- fiscalyears.periods form view definition -->
+    <record id="fiscalyears_periods_form" model="ir.ui.view">
+        <field name="name">fiscalyears_periods form</field>
+        <field name="model">fiscalyears.periods</field>
+        <field name="arch" type="xml">
+            <form string="Fiscal Year Period" create="0" delete="0">
+                <header>
+                    <button name="open" states="draft,closed" string="Open" type="object" class="oe_highlight"/>
+                    <button name="close" states="open" string="Close" type="object" class="oe_highlight"/>
+                    <button name="cancel" states="draft,open" string="Cancel" type="object" class="oe_highlight"/>
+                    <button name="draft" states="cancel" string="To Draft" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date_from" readonly="1"/>
+                            <field name="date_to" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions -->
+    <record id="actions_account_fiscal_year" model="ir.actions.act_window">
+        <field name="name">Fiscal Years</field>
+        <field name="res_model">account.fiscal.year</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new fiscal year.
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="fiscalyears_periods_action_window">
+        <field name="name">Fiscal Years Periods</field>
+        <field name="res_model">fiscalyears.periods</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'create':0}</field>
+    </record>
+
+    <!-- menuitem -->
+    <menuitem name="Fiscal Years"
+              id="fiscalyears_main_menu_fiscalyears"
+              parent="account.menu_finance_configuration"
+              sequence="3"
+              groups="account_fiscal_year.group_fiscalyear_manager"/>
+    <menuitem name="Fiscal Years"
+              id="fiscalyears_menu_fiscalyears"
+              parent="fiscalyears_main_menu_fiscalyears"
+              action="actions_account_fiscal_year"
+              groups="account_fiscal_year.group_fiscalyear_manager"/>
+    <menuitem name="Periods"
+              id="fiscalyears_menu_fiscalyears_periods"
+              parent="fiscalyears_main_menu_fiscalyears"
+              action="fiscalyears_periods_action_window"
+              groups="account_fiscal_year.group_fiscalyear_manager"/>
+
+</odoo>

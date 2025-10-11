@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="asset_modify_tree">
+        <field name="name">account.asset.modify.tree</field>
+        <field name="model">account.asset.modify</field>
+        <field name="arch" type="xml">
+            <tree string="Modify Asset">
+                <field name="asset_id"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="asset_modify_form">
+        <field name="name">account.asset.modify.form</field>
+        <field name="model">account.asset.modify</field>
+        <field name="arch" type="xml">
+            <form string="Modify Asset">
+                <header>
+                    <button name="act_confirm" groups='exp_asset_base.group_assets_manager' states="draft" string="Confirm" type="object" class="oe_highlight"/>
+                    <button name="act_approve" groups="exp_asset_base.group_assets_manager" states="confirm" string="Approve" type="object" class="oe_highlight"/>
+                    <button name="modify" groups="exp_asset_base.group_assets_manager" states="approve" string="Done" type="object" class="oe_highlight"/>
+                    <button name="act_draft" groups="exp_asset_base.group_assets_manager" states="confirm,approve" string="Set to Draft" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" nolabel="1" placeholder="Modification..." attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Modification">
+                            <field name="asset_id" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'form_view_ref': 'odex25_account_asset.view_account_asset_form'}"/>
+                            <field name="need_date" invisible="1"/>
+                            <field name="gain_value" invisible="1"/>
+                            <field name="name" placeholder="Modification reason" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="date" attrs="{'invisible': [('need_date', '=', False)], 'required': [('need_date', '=', True)]}"/>
+                        </group>
+                        <group string="New Values">
+                            <label for="method_number"/>
+                            <div class="o_row">
+                                <field name="method_number" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="method_period" required="1" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </div>
+                            <field name="value_residual" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="salvage_value" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group string="Increase Accounts" attrs="{'invisible': [('gain_value', '=', False)],'readonly': [('state', '!=', 'draft')]}">
+                            <field name="account_asset_id" attrs="{'required': [('gain_value', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="account_asset_counterpart_id" attrs="{'required': [('gain_value', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="account_depreciation_id" attrs="{'required': [('gain_value', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="account_depreciation_expense_id" attrs="{'required': [('gain_value', '!=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asset_modify" model="ir.actions.act_window">
+        <field name="name">Asset Modification</field>
+        <field name="res_model">account.asset.modify</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="asset_modify_menu"
+                  parent="menu_account_asset_operation"
+                  action="action_asset_modify"
+                  name="Assets Modification" sequence="1"/>
+
+</odoo>

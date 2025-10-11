@@ -1,0 +1,282 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* post_dated_cheque
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-03 15:29+0000\n"
+"PO-Revision-Date: 2022-10-03 15:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__agent_id
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__agent_id
+msgid "Agent"
+msgstr "الوكيل"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_search
+msgid "Checks"
+msgstr "الشيكات"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__cheque
+msgid "Cheque"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__payment_method_no
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__payment_method_no
+msgid "Cheque / Transfer Ref"
+msgstr "رقم الشيك"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__cheque_collection_type
+msgid "Cheque Collection Type"
+msgstr "نوع الشيك"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__clear
+msgid "Clear"
+msgstr "مسح"
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_form_inherited
+msgid "Clear Check"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_search
+msgid "Cleared Checks"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__clear_move_id
+msgid "Clearence Journal Entry"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields.selection,name:post_dated_cheque.selection__account_payment__cheque_collection_type__collection_fee
+msgid "Collection Fee"
+msgstr "رسوم التحصيل"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields.selection,name:post_dated_cheque.selection__account_payment__cheque_collection_type__collector
+msgid "Collector"
+msgstr "تحصيل"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__payment_method_date
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__payment_method_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__display_name
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__display_name
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment__id
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__id
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_needaction
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_has_error
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: post_dated_cheque
+#: code:addons/post_dated_cheque/models/account_payment.py:0
+#, python-format
+msgid "Internal Transfer"
+msgstr "مرجع داخلي"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment____last_update
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method____last_update
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_register____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields.selection,name:post_dated_cheque.selection__account_payment__cheque_collection_type__mjir
+msgid "Mijr"
+msgstr "مجير - برسم التحصيل"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_search
+msgid "Outstanding Checks"
+msgstr "شيك مستحق"
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_form_inherited
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_register_form
+msgid "PDC date"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_payment_method_type_form
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_payment_method_type_search
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_payment_method_type_tree
+msgid "Payment Method"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.actions.act_window,name:post_dated_cheque.act_open_payment_method_type_view
+#: model:ir.model,name:post_dated_cheque.model_account_payment_method
+#: model:ir.ui.menu,name:post_dated_cheque.menu_act_open_payment_method_type_view
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_account_payment_search
+msgid "Payment Methods"
+msgstr "طرق السداد"
+
+#. module: post_dated_cheque
+#: code:addons/post_dated_cheque/models/account_payment.py:0
+#, python-format
+msgid "Payment method with type cheque already exist"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model,name:post_dated_cheque.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__reason
+msgid "Reason/Justification"
+msgstr "السبب / التبرير"
+
+#. module: post_dated_cheque
+#: model:ir.model,name:post_dated_cheque.model_account_payment_register
+msgid "Register Payment"
+msgstr "تسجيل دفعة"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields.selection,name:post_dated_cheque.selection__account_payment__cheque_collection_type__return
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model_terms:ir.ui.view,arch_db:post_dated_cheque.view_payment_method_type_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields.selection,name:post_dated_cheque.selection__account_payment__cheque_collection_type__wallet
+msgid "Wallet"
+msgstr "المحفظة"
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,field_description:post_dated_cheque.field_account_payment_method__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: post_dated_cheque
+#: model:ir.model.fields,help:post_dated_cheque.field_account_payment_method__website_message_ids
+msgid "Website communication history"
+msgstr ""

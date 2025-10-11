@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_account_readonly,account.account.readonly,model_account_account,group_chart_of_account_readony,1,0,0,0
+access_account_account_full,account.account.full,model_account_account,group_chart_of_account_full,1,1,1,1
+access_account_account_deprecated,account.account.deprecated,model_account_account,group_chart_of_account_deprecated,1,1,0,0

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="account_payment_pdf">
+        <t t-call="web.html_container" t-translation="off">
+            <t t-call="hr_base.hr_layout">
+                <style>
+                    @font-face {font-family: "Sakkal Majalla"; src:
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.eot"); src:
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.eot?#iefix")
+                    format("embedded-opentype"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.woff2") format("woff2"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.woff") format("woff"),
+                    url("/employee_requests/static/fonts/ce7b5754581057e6f7444e2192850cc8.ttf") format("truetype");
+                    }
+
+                </style>
+                <div class="page" style="font-family:'Sakkal Majalla'!important;font-size:19pt;direction:rtl">
+                    <t t-foreach="docs" t-as="o">
+
+                        <div style="text-align:right;margin-right:5%;margin-left:5%;">
+                            <p style="text-align:right;font-weight: bold;font-size:17pt;">
+                                <span>جامعة نايف العربية للعلوم الأمنية</span>
+                            </p>
+                            <table class="table table-borderless"
+                                   style="border-spacing:0px;padding:0px;margin:0px;;width:70%;;font-family:'Sakkal Majalla'!important"
+                                   dir="rtl">
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:30%;padding:0px;margin:0px;font-weight: bold;">
+                                        <span>نقطة التوريد (<span>
+                                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]> </span>)
+                                        </span>
+                                    </td>
+                                    <td style="text-align:center;border:0;width:40%;padding:0px;margin:0px;font-weight: bold;">
+                                        <span>سند قبض فرعي</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+
+                            <table class="table table-borderless"
+                                   style="border-spacing:0px;padding:0px;margin:0px;;width:100%;;font-family:'Sakkal Majalla'!important"
+                                   dir="rtl">
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:30%;padding:0px;margin:0px;">
+                                        <span>ريال</span>
+                                    </td>
+                                    <td style="text-align:center;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>نقدا</span>
+                                    </td>
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>التاريخ :</span>
+                                        <span t-esc="o.date"/>
+                                    </td>
+                                </tr>
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:30%;padding:0px;margin:0px;"/>
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>رقم :</span>
+                                          <span t-esc="o.name"/>
+                                    </td>
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>الموافق :</span>
+                                        <span t-esc="o.compute_hijri_date(o.date)"/>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table class="table table-borderless"
+                                   style="border-spacing:0px;padding:1px;margin:0px;;width:100%;;font-family:'Sakkal Majalla'!important">
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>المبلغ نقدا :</span>
+                                        <span t-esc="o.amount"/>
+                                    </td>
+                                </tr>
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span>إستلمت من المكرم :</span>
+                                        <span t-esc="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+
+                                        <span> البيان :</span>
+                                          <span t-esc="o.ref"/>
+                                    </td>
+                                </tr>
+                                 <tr style="border:0;">
+                                    <td style="text-align:right;border:0;width:40%;padding:0px;margin:0px;">
+                                        <span> تفاصيل المبلغ : </span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+
+                             <table class="table table-condensed table-bordered"
+                                   style="border: 1px solid black;border-collapse:collapse;">
+                                <tr style="font-weight: bold;">
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;background:#f9ebea">
+                                        <span>المبلغ</span>
+                                    </td>
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;background:#f9ebea">
+                                        <span>المبلغ قيمة</span>
+                                    </td>
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;background:#f9ebea">
+                                        <span>وذلك عن</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;">
+                                            <span t-esc="o.amount"/>
+                                    </td>
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;">
+                                        <span t-esc="o.text_amount"/>
+                                    </td>
+                                    <td style="text-align:center;border: 1px solid black;border-collapse:collapse;">
+                                         <span t-esc="o.ref"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <tr/>
+                            <p style="text-align:left;color:black;line-height:1.1;font-weight: bold;">
+                                <span> أمين نقطة التوريد</span>
+                            </p>
+                            <p style="text-align:left;margin-left:2%;color:black;line-height:1.1;font-weight: bold;">
+                                الإسم : .................................................................
+                            </p>
+                            <p style="text-align:left;margin-left:2%;color:black;line-height:1.1;font-weight: bold;">
+التوقيع : .................................................................                            </p>
+
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- Asset Manufacturer -->
+    <record id="action_account_asset_manufacturer" model="ir.actions.act_window">
+        <field name="name">Assets Manufacturer</field>
+        <field name="res_model">account.asset.manufacturer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="asset_manufacturer_form">
+        <field name="name">account.asset.manufacturer.form</field>
+        <field name="model">account.asset.manufacturer</field>
+        <field name="arch" type="xml">
+            <form string="Asset Location">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Asset Location -->
+    <record id="action_account_asset_location" model="ir.actions.act_window">
+        <field name="name">Assets Locations</field>
+        <field name="res_model">account.asset.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.ui.view" id="asset_location_form">
+        <field name="name">account.asset.location.form</field>
+        <field name="model">account.asset.location</field>
+        <field name="arch" type="xml">
+            <form string="Asset Location">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" nolabel="1" placeholder="Location Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                    <notebook attrs="{'invisible': [('type', '!=', 'view')]}">
+                        <page string="Child Locations">
+                            <field name="child_id" nolabel="1">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="type"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Asset Register -->
+    <record id="view_account_asset_search" model="ir.ui.view">
+        <field name="name">account.asset.search</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="odex25_account_asset.view_account_asset_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">['|', ('name','ilike',self), ('barcode','ilike',self)]</attribute>
+            </field>
+            <field name="model_id" position="after">
+                <field name="responsible_dept_id"/>
+                <field name="model"/>
+                <field name="serial_no"/>
+                <field name="account_analytic_id"/>
+            </field>
+            <filter name="model" position="after">
+                <filter string="Responsible Department" name="responsible_department" domain="[]"
+                        context="{'group_by':'responsible_dept_id'}"/>
+                <filter string="Cost Center" name="cost_center" domain="[]"
+                        context="{'group_by':'account_analytic_id'}"/>
+            </filter>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_account_asset_form">
+        <field name="name">account.asset.form</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="odex25_account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button type="object" name="act_unlock"  groups='exp_asset_base.group_assets_manager' string="Unlock" states="open"/>
+                <button type="object" name="act_lock"  groups='exp_asset_base.group_assets_manager' string="Lock" states="unlock"/>
+            </header>
+
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="open_asset_adjustment" type="object" icon="fa-pencil"
+                        attrs="{'invisible': [('asset_type', '!=', 'purchase')]}">
+                    <field string="Adjustments" name="asset_adjustment_count" widget="statinfo"/>
+                </button>
+            </div>
+            <div class="oe_title" position="before">
+                <field name="asset_picture" widget="image" class="oe_avatar"
+                       attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+            </div>
+            <field name="name" position="after">
+                <span attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}">-</span>
+                <field name="barcode" placeholder="Barcode"
+                       attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+            </field>
+            <div class="oe_title" position="after">
+                <group string="Basic Info" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}">
+                    <group>
+                        <field name="responsible_user_id"
+                               attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                        <field name="limit"
+                               attrs="{'invisible': ['|',('state', '!=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="manufacturer_id"
+                               attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="serial_no" readonly="1"
+                               attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="product_id"
+                               attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                    </group>
+                    <group>
+                        <field name="responsible_dept_id" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="model" attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="receive_date" attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="note" attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}"/>
+                        <field name="status" invisible="1"/>
+                    </group>
+                </group>
+          </div>
+
+            <xpath expr="//button[@name='validate']" position="attributes">
+                <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='set_to_draft']" position="attributes">
+                <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='set_to_running']" position="attributes">
+                <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='resume_after_pause']" position="attributes">
+                <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+            </xpath>
+            <notebook position="before">
+                <group string="Warranty"
+                       attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}">
+                    <group>
+                        <field name="service_provider_id"/>
+                        <field name="next_maintenance_date"/>
+                        <field name="warranty_contract"/>
+                    </group>
+                    <group>
+                        <field name="warranty_period"/>
+                        <field name="warranty_end_date"/>
+                    </group>
+                </group>
+            </notebook>
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </sheet>
+        </field>
+    </record>
+
+    <record id="view_account_asset_asset_kanban" model="ir.ui.view">
+        <field name="name">account.asset.asset.inherit.kanban</field>
+        <field name="model">account.asset</field>
+        <field name="priority">1</field>
+        <field name="inherit_id" ref="odex25_account_asset.view_account_asset_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr='//kanban' position="inside">
+                <field name="id"/>
+                <field name="serial_no"/>
+                <field name="barcode"/>
+                <field name="status"/>
+                <field name="activity_ids"/>
+                <field name="asset_type" invisible="1"/>
+
+            </xpath>
+            <xpath expr='//kanban/templates/t/div/div[1]' position="before">
+                <div class="row mb4"
+                     attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}">
+                    <div class="col-6">
+                        <div class="o_kanban_image">
+                            <img t-att-src="kanban_image('account.asset', 'asset_picture', record.id.raw_value)"/>
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <strong>
+                            <span>
+                                <field name="status"/>
+                            </span>
+                        </strong>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr='//kanban/templates/t/div/div[1]' position="after">
+                <div class="row mb4"
+                     attrs="{'invisible': ['|',('state', '=', 'model'),('asset_type', '!=', 'purchase')]}">
+                    <div class="col-6">
+                        <strong>
+                            <span>
+                                <field name="serial_no"/>
+                            </span>
+                        </strong>
+                    </div>
+                    <div class="col-6 text-right">
+                        <strong>
+                            <field name="barcode"/>
+                        </strong>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr='//kanban/templates/t/div' position="inside">
+                <div class="oe_kanban_content">
+                    <div class="o_kanban_record_bottom">
+                        <div class="oe_kanban_bottom_left">
+                            <field name="activity_ids" widget="kanban_activity"/>
+                        </div>
+                        <div class="oe_kanban_bottom_right">
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_asset_asset_purchase_tree" model="ir.ui.view">
+        <field name="name">account.asset.inherit.tree</field>
+        <field name="model">account.asset</field>
+        <field name="priority">1</field>
+        <field name="inherit_id" ref="odex25_account_asset.view_account_asset_purchase_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="barcode"/>
+                <field name="serial_no"/>
+            </field>
+            <field name="state" position="before">
+                <field name="status" string="Custody Status"/>
+            </field>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="odex25_account_asset.action_account_asset_form">
+        <field name="name">Assets</field>
+        <field name="res_model">account.asset</field>
+        <field name="domain">[('asset_type', '=', 'purchase'), ('state', '!=', 'model'), ('parent_id', '=', False)]
+        </field>
+        <field name="context">{'asset_type': 'purchase', 'default_asset_type': 'purchase'}</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_account_asset_asset_kanban')}),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_account_asset_asset_purchase_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('odex25_account_asset.view_account_asset_form')})]"/>
+    </record>
+
+    <!-- Asset Analysis -->
+    <record id="view_account_asset_pivot" model="ir.ui.view">
+        <field name="name">account.asset.pivot</field>
+        <field name="model">account.asset</field>
+        <field name="arch" type="xml">
+            <pivot string="Assets Analysis">
+<!--                -->
+                <field name="name" type="row"/>
+                <field name="original_value" type="measure"/>
+                <field name="book_value" type="measure"/>
+                <field name="value_residual"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="view_account_asset_graph" model="ir.ui.view">
+        <field name="name">account.asset.graph</field>
+        <field name="model">account.asset</field>
+        <field name="arch" type="xml">
+            <graph string="Assets Analysis" type="bar">
+                <field name="name" type="row"/>
+<!--                -->
+                <field name="original_value" type="measure"/>
+                <field name="book_value" type="measure"/>
+                <field name="value_residual" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="action_account_asset_graph" model="ir.actions.act_window">
+        <field name="name">Assets Analysis</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id" ref="view_account_asset_graph"/>
+        <field name="res_model">account.asset</field>
+    </record>
+
+    <!--  Depreciation Analysis -->
+    <record id="view_account_asset_depreciation_pivot" model="ir.ui.view">
+        <field name="name">account.asset.depreciation.pivot</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <pivot string="Depreciation Analysis">
+                <field name="date" string="Depreciation Date" interval="year" type="row"/>
+                <field name="amount_total" string="Depreciation" type="measure"/>
+                <field name="asset_depreciated_value" type="measure"/>
+                <field name="asset_remaining_value" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <record id="view_account_asset_depreciation_graph" model="ir.ui.view">
+        <field name="name">account.asset.graph</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <graph string="Depreciation Analysis" type="bar">
+                <field name="date" string="Depreciation Date" interval="year" type="row"/>
+                <field name="amount_total" string="Depreciation" type="measure"/>
+                <field name="asset_depreciated_value" type="measure"/>
+                <field name="asset_remaining_value" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="action_account_asset_depreciation_analysis" model="ir.actions.act_window">
+        <field name="name">Depreciation Analysis</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id" ref="view_account_asset_depreciation_graph"/>
+        <field name="res_model">account.move</field>
+        <field name="domain">[('asset_id', '!=', False)]</field>
+    </record>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_expense_view_form_hr_expense" model="ir.ui.view">
+        <field name="name">hr.expense.view.form.inherit</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <field name="tax_ids" position="attributes">
+                <attribute name="groups"></attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="hr_expense.menu_hr_expense_root">
+        <field name="groups_id" eval="[(6,0,[ref('hr_expense_custom.show_hr_expense_module')])]"/>
+    </record>
+
+</odoo>

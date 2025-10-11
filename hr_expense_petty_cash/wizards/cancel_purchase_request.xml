@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_request_cancel_wizard_view_form" model="ir.ui.view">
+        <field name="name">petty.cash.cancel.wizard.form</field>
+        <field name="model">petty.cash.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Check If There Are Petty Cash">
+                <separator string="Check If There Are Petty Cash"/>
+                <strong>This Employee Already has Petty Cash  called"
+                <field name="reason" readonly="1"/>
+                </strong>
+                <footer>
+                    <button string='Continue' name="request_cancel_reason" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+           </form>
+        </field>
+    </record>
+</odoo>

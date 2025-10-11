@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="convert_to_contract_po_wizard" model="ir.ui.view">
+        <field name="name">convert.po.contract.wizard.form</field>
+        <field name="model">convert.po.contract.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Convert To Contract">
+                <separator string="Contract Information"/>
+                <group>
+                 <field name="purchase_id" invisible="1"/>
+                <field name="contract_name" required="1"/>
+                <field name="responsible_id" required="1"/>
+                <field name="start_date" required="1"/>
+                <field name="end_date" required="1"/>
+                
+                <field name="auto_notification"/>
+                <field name="notify_before" string="Notify Before End" attrs="{'invisible':[('auto_notification','=', False)],'required':[('auto_notification','=', True),]}"/>
+
+                <field name="period_type" attrs="{'invisible':[('auto_notification','=', False)],'required':[('auto_notification','=', True),]}"/>
+                    
+                </group>
+               
+                <footer>
+                    <button string='Save' name="action_create_contract" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+           </form>
+        </field>
+    </record>
+<!--  
+    <record id="action_convert_to_contract_po" model="ir.actions.act_window">
+        <field name="name">Purchase To Contract</field>
+        <field name="res_model">convert.po.contract.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="convert_to_contract_po_wizard"/>
+        <field name="target">new</field>
+    </record>
+-->
+
+</odoo>

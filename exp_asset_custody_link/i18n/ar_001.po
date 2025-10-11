@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* exp_asset_custody_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-31 13:21+0000\n"
+"PO-Revision-Date: 2023-01-31 13:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__asset_id
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__asset_assign_count
+msgid "Asset Assignment"
+msgstr "إسناد أصل"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__asset_custody_line
+msgid "Asset Custody Line"
+msgstr "بند أصل"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__asset_line_ids
+msgid "Asset Line"
+msgstr "بند الأصول"
+
+#. module: exp_asset_custody_link
+#: model_terms:ir.ui.view,arch_db:exp_asset_custody_link.employee_custody_form_view_inherit
+msgid "Asset Lines"
+msgstr "بند الأصول"
+
+#. module: exp_asset_custody_link
+#: model:ir.model,name:exp_asset_custody_link.model_account_asset_operation
+msgid "Asset Operation"
+msgstr "عمليات الأصول"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__asset_release_count
+msgid "Asset Release"
+msgstr "إرجاع عهدة"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/account_asset_operation.py:0
+#, python-format
+msgid "Asset is required to confirm this operation."
+msgstr "الأصل مطلوب لتأكيد هذه العملية"
+
+#. module: exp_asset_custody_link
+#: model:ir.actions.act_window,name:exp_asset_custody_link.action_account_asset_assignment1
+msgid "Assets Assignment"
+msgstr "إسناد عهدة"
+
+#. module: exp_asset_custody_link
+#: model:ir.actions.act_window,name:exp_asset_custody_link.action_account_asset_release1
+msgid "Assets Release"
+msgstr "إرجاع عهدة"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__asset_custody_line__type__assignment
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__assign
+#, python-format
+msgid "Assignment"
+msgstr "إسناد"
+
+#. module: exp_asset_custody_link
+#: model_terms:ir.ui.view,arch_db:exp_asset_custody_link.employee_custody_form_view_inherit
+msgid "Assignments"
+msgstr "الإسناد"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__custody_period
+msgid "Custody Period"
+msgstr "فترة العهدة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__custody_type
+msgid "Custody Type"
+msgstr "نوع العهدة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__direct
+#, python-format
+msgid "Direct Manager"
+msgstr "المدير المباشر"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_account_asset_operation__display_name
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__display_name
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__display_name
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_mail_followers__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: exp_asset_custody_link
+#: model:ir.model,name:exp_asset_custody_link.model_mail_followers
+msgid "Document Followers"
+msgstr "متابعو المستند"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__draft
+#, python-format
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_account_asset_operation__emp_asset_custody_id
+msgid "Emp Asset Custody"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: model:ir.model,name:exp_asset_custody_link.model_custom_employee_custody
+msgid "Employee custody"
+msgstr "العهد الغير مالية"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__asset_custody_line__custody_type__general
+msgid "General"
+msgstr "عام"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__admin
+#, python-format
+msgid "Human Resources Manager"
+msgstr "تصديق الموارد البشرية"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_account_asset_operation__id
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__id
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__id
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_mail_followers__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_account_asset_operation____last_update
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line____last_update
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody____last_update
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_mail_followers____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__asset_custody_line__custody_period__permanent
+msgid "Permanent"
+msgstr "مستديمة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__asset_custody_line__custody_type__personal
+msgid "Personal"
+msgstr "شخصية"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#, python-format
+msgid "Please Select an asset"
+msgstr "الرجاء إختيار أصل"
+
+#. module: exp_asset_custody_link
+#: model_terms:ir.ui.view,arch_db:exp_asset_custody_link.employee_custody_form_view_inherit
+msgid "Purchase Request"
+msgstr "طلب شراء"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__refuse
+#, python-format
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: exp_asset_custody_link
+#: model_terms:ir.ui.view,arch_db:exp_asset_custody_link.employee_custody_form_view_inherit
+msgid "Releases"
+msgstr "رفض"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__return_date
+msgid "Return Date"
+msgstr "تاريخ الإرجاع"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__done
+#, python-format
+msgid "Return Done"
+msgstr "تم ارجاع العهده"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_custom_employee_custody__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__asset_custody_line__custody_period__temporary
+msgid "Temporary"
+msgstr "موقتة"
+
+#. module: exp_asset_custody_link
+#: model:ir.model.fields,field_description:exp_asset_custody_link.field_asset_custody_line__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__wait
+#, python-format
+msgid "Wait Assignment"
+msgstr "إنتظار الإرجاع"
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__wait_release
+#, python-format
+msgid "Wait Release"
+msgstr "إنتظار الإسناد"
+
+#. module: exp_asset_custody_link
+#: model:ir.model,name:exp_asset_custody_link.model_asset_custody_line
+msgid "asset.custody.line"
+msgstr ""
+
+#. module: exp_asset_custody_link
+#: code:addons/exp_asset_custody_link/models/employee_custody.py:0
+#: model:ir.model.fields.selection,name:exp_asset_custody_link.selection__custom_employee_custody__state__submit
+#, python-format
+msgid "send"
+msgstr "إرسال"

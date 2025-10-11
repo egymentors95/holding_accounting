@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_hr_expense_sheet_form_inherit" model="ir.ui.view">
+        <field name="name">view.hr.expense.sheet.form.inherit</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+<!--            todo start -->
+
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="parent_id"/>
+            </xpath>
+<!--            todo end -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_payments"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        type="object"
+                        string="Payments"
+                        attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}">
+                </button>
+                <button name="action_open_invoice"
+                        class="oe_stat_button"
+                        icon="fa-bars"
+                        type="object"
+                        string="Invoices"
+                        attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='payment_mode']" position="after">
+                <field name="type" invisible="1"/>
+                <field name="address_id" invisible="1"/>
+                <field name="petty_cash_id" attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}"/>
+                <field name="petty_cash_limit" attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}"/>
+                <field name="petty_cash_balance" attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}"/>
+                <field name="petty_cash_remaining" attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_residual']" position="after">
+                <field name="payment_amount"
+                       class="oe_subtotal_footer_separator"
+                       attrs="{'invisible': ['|','|',('state', 'not in', ('post', 'done')),('payment_mode', '!=', 'petty_cash'),('payment_amount', '=', 0.0)]}"/>
+            </xpath>
+<!--            todo strt -->
+            <xpath expr="//button[@name='%(hr_expense.hr_expense_refuse_wizard_action)d']" position="attributes">
+                <attribute name="groups">hr_expense_petty_cash.group_petty_cash_manager</attribute>
+            </xpath>
+<!--            todo end -->
+            <field name="amount_residual" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('state', 'not in', ('post', 'done')),('payment_mode', '=',
+                    'petty_cash')]}
+                </attribute>
+            </field>
+            <xpath expr="//button[@name='action_register_payment']" position="after">
+                <button name="action_register_payment"
+                        type="object"
+                        class="oe_highlight o_expense_sheet_pay"
+                        attrs="{'invisible': ['|','|','|',('state', '!=', 'post'),('payment_mode', '!=', 'petty_cash'),('payment_amount', '=', 0.0),('clearance_type','=','transfer')]}"
+                        string="Register Payment"
+                        groups="account.group_account_invoice"/>
+                <button name="action_done"
+                        type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': ['|','|','|',('state', '!=', 'post'),('payment_mode', '!=', 'petty_cash'),('payment_amount', '&lt;=', 0.0),('clearance_type', '!=', 'transfer')]}"
+                        string="Done"
+                        groups="account.group_account_invoice"/>
+            </xpath>
+            <button name="action_register_payment" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('state', 'not in', ('post')),('payment_mode', '=',
+                    'petty_cash')]}
+                </attribute>
+            </button>
+            <field name="journal_id" position="attributes">
+                <attribute name="attrs">{'invisible': [('payment_mode', 'not in', ['own_account', 'petty_cash'])]}
+                </attribute>
+            </field>
+            <xpath expr="//tree/field[@name='is_refused']" position="after">
+                <button name="%(hr_expense.hr_expense_refuse_wizard_action)d" states="reported"
+                        context="{'hr_expense_refuse_model':'hr.expense'}" string="Refuse" type="action"/>
+            </xpath>
+            <xpath expr="//group[@name='employee_details']" position="after">
+                <group name="expense" string="Petty Cash Clearance">
+                    <field name="petty_cash_type"
+                           attrs="{'invisible': ['|',('payment_mode', '!=', 'petty_cash'),('type', '!=', 'continuous')], 'required': [('payment_mode', '=', 'petty_cash'), ('type', '=', 'continuous')], 'readonly':[('state','not in', ('draft', 'submit'))]}"/>
+                    <field name="clearance_type"
+                           attrs="{'invisible': ['|',('payment_mode', '!=', 'petty_cash'), ('petty_cash_type', '=', 'continuous')], 'required': [('payment_mode', '=', 'petty_cash'), ('petty_cash_id', '!=', False), ('petty_cash_type', '!=', 'continuous')], 'readonly':[('state','not in', ('draft', 'submit'))]}"/>
+                    <field name="transfer_petty_id"
+                           attrs="{'invisible': ['|',('payment_mode', '!=', 'petty_cash'),('clearance_type', '!=', 'transfer')],'required':[('clearance_type', '=', 'transfer')],'readonly':[('state','not in', ('draft', 'submit'))]}"
+                           domain="[('state','in',('draft', 'submitted')), ('id','!=', petty_cash_id)]"/>
+                    <field name="salary_rule_id"
+                           attrs="{'invisible': ['|',('payment_mode', '!=', 'petty_cash'),('clearance_type', '!=', 'payroll')]}"/>
+                    <field name="salary" invisible="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='account_move_id']" position="after">
+                <field name="transfer_move_id"
+                       attrs="{'invisible': [('transfer_move_id', '=', False)],'readonly':True}"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- Add Petty Cash filter -->
+    <record id="hr_expense_sheet_view_search_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.search.inherit</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_sheet_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <filter
+                        string="Petty Cash"
+                        name="petty_cash"
+                        domain="[('payment_mode', '=', 'petty_cash')]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='state']" position="after">
+                <filter
+                        string="Petty Cash Holder"
+                        domain="[('payment_mode', '=', 'petty_cash')]"
+                        context="{'group_by': 'petty_cash_id'}"
+                        name="petty_cash_holder"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_hr_expense_sheet_petty_cash" model="ir.actions.act_window">
+        <field name="name">Expenses sheet</field>
+        <field name="res_model">hr.expense.sheet</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,activity</field>
+        <field name="search_view_id" ref="hr_expense.hr_expense_sheet_view_search"/>
+        <field name="domain">[('payment_mode', '=', 'petty_cash')]</field>
+        <field name="context">{'default_payment_mode': 'petty_cash','petty_cash':True}</field>
+    </record>
+
+    <!-- Tree & Kanban view for "Expenses sheet" with header -->
+    <!-- <record id="action_hr_expense_sheet_petty_cash_tree" model="ir.actions.act_window.view">
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_hr_expense_sheet_dashboard_tree_header"/>
+        <field name="act_window_id" ref="action_hr_expense_sheet_petty_cash"/>
+    </record>
+
+    <record id="action_hr_expense_sheet_petty_cash_kanban" model="ir.actions.act_window.view">
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_hr_expense_sheet_kanban_header"/>
+        <field name="act_window_id" ref="action_hr_expense_sheet_petty_cash"/>
+    </record> -->
+
+    <menuitem id="menu_expense_sheet_root" parent="menu_petty_cash_root" name="Expenses sheet" sequence="3"/>
+    <menuitem id="menu_expense_sheet" parent="menu_expense_sheet_root" name="Expenses sheet"
+              action="action_hr_expense_sheet_petty_cash" sequence="1"/>
+
+</odoo>

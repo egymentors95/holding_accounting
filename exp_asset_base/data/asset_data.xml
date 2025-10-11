@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="asset_sequence" model="ir.sequence">
+            <field name="name">Asset Sequence</field>
+            <field name="code">asset.seq</field>
+            <field name="prefix">ASS/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">6</field>
+        </record>
+        <!--record id="asset_operation_sequence" model="ir.sequence">
+            <field name="name">Asset Operation Sequence</field>
+            <field name="code">asset.operation.seq</field>
+            <field name="prefix">ASS OP/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">6</field>
+        </record>
+        <record id="asset_multi_operation_sequence" model="ir.sequence">
+            <field name="name">Asset Multi Operation Sequence</field>
+            <field name="code">asset.multi.operation.seq</field>
+            <field name="prefix">ASS MOP/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">6</field>
+        </record-->
+        <record id="asset_state" model="asset.state2">
+            <field name="name">Good</field>
+        </record>
+        <record id="asset_state2" model="asset.state2">
+            <field name="name">Scarp</field>
+        </record>
+    </data>
+</odoo>

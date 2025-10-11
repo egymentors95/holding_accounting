@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_account_asset_management_main"
+                  name="Assets Management" groups="exp_asset_base.group_assets_manager,exp_asset_base.group_assets_user"
+                  sequence="11" web_icon="exp_asset_base,static/description/assets.png"/>
+        <!-- Asset Register -->
+        <menuitem id="odex25_account_asset.menu_action_account_asset_form"
+                  parent="menu_account_asset_management_main"
+                  action="odex25_account_asset.action_account_asset_form"
+                  name="Assets Register" sequence="1"
+                  groups="account.group_account_readonly"/>
+        <!-- Asset Adjustment -->
+        <menuitem id="menu_account_asset_adjustment"
+                  parent="menu_account_asset_management_main"
+                  action="action_asset_adjustment"
+                  name="Assets Adjustment"
+                  sequence="4"/>
+        <!-- Asset Operation -->
+        <menuitem id="menu_account_asset_operation_main"
+                  name="Assets Operations"
+                  parent="menu_account_asset_management_main"
+                  sequence="3"/>
+        <menuitem id="menu_account_asset_operation"
+                  name="Assets Operations"
+                  parent="menu_account_asset_operation_main"
+                  sequence="4"/>
+        <!-- Asset Reporting -->
+        <menuitem id="menu_account_asset_reporting_main"
+                  parent="menu_account_asset_management_main"
+                  name="Reporting"
+                  sequence="5"/>
+        <menuitem id="menu_account_asset_graph"
+                  parent="menu_account_asset_reporting_main"
+                  action="action_account_asset_graph"
+                  name="Assets Analysis"
+                  sequence="1"/>
+        <menuitem id="menu_account_Depreciation_graph"
+                  parent="menu_account_asset_reporting_main"
+                  action="action_account_asset_depreciation_analysis"
+                  name="Depreciation Analysis"
+                  sequence="2"/>
+        <menuitem id="odex25_account_asset.menu_action_account_report_assets" name="Depreciation Schedule"
+                  action="odex25_account_asset.action_account_report_assets"
+                  parent="menu_account_asset_reporting_main"
+                  sequence="3"/>
+        <!--
+        <menuitem id="menu_report_asset_register"
+                  parent="menu_account_asset_reporting_main"
+                  action="act_report_asset_register"
+                  sequence="4"/-->
+
+        <!-- Asset Configurations -->
+        <menuitem id="menu_account_asset_configuration_main"
+                  parent="menu_account_asset_management_main"
+                  name="Configurations"
+                  sequence="7"/>
+        <menuitem id="odex25_account_asset.menu_action_account_asset_model_form"
+                  parent="menu_account_asset_configuration_main"
+                  action="odex25_account_asset.action_account_asset_model_form"
+                  groups="account.group_account_manager"
+                  sequence="1" />
+        <menuitem id="menu_account_asset_location"
+                  parent="menu_account_asset_configuration_main"
+                  action="action_account_asset_location"
+                  name="Assets Locations"
+                  sequence="2"/>
+        <menuitem id="menu_account_manufacturer"
+                  parent="menu_account_asset_configuration_main"
+                  action="action_account_asset_manufacturer"
+                  name="Manufacturer"
+                  sequence="3"/>
+<!--        <menuitem id="menu_account_asset_vendors"-->
+<!--                  parent="menu_account_asset_configuration_main"-->
+<!--                  action="base.action_partner_supplier_form"-->
+<!--                  name="Vendors"-->
+<!--                  sequence="4"/>-->
+        <menuitem id="menu_account_asset_products"
+                  parent="menu_account_asset_configuration_main"
+                  action="product.product_normal_action"
+                  name="Products"
+                  sequence="5"/>
+    </data>
+</odoo>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Asset Operations -->
+    <record id="view_account_asset_operation_search" model="ir.ui.view">
+        <field name="name">account.asset.operation.search</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <search string="Asset Account">
+                <field name="barcode"/>
+                <field name="asset_id"/>
+                <field name="model_id"/>
+                <field name="user_id"/>
+                <field name="department_id"/>
+                <field name="new_location_id"/>
+                <field name="new_employee_id"/>
+                <field name="new_department_id"/>
+                <field name="type"/>
+                <field name="date"/>
+                <field name="asset_statuso" invisible="1"/>
+                <filter string="Done" name="done" domain="[('state','=', 'done')]"
+                        help="Asset Operations in done state"/>
+                <group expand="0" string="Group By...">
+                    <filter string="Barcode" name="group_by_barcode" context="{'group_by':'barcode'}"/>
+                    <filter string="Asset" name="group_by_asset" context="{'group_by':'asset_id'}"/>
+                    <filter string="Model" name="group_by_model" context="{'group_by':'model_id'}"/>
+                    <filter string="Responsible User" name="group_by_user" context="{'group_by':'user_id'}"/>
+                    <filter string="Responsible Department" name="group_by_department"
+                            context="{'group_by': 'department_id'}"/>
+                    <filter string="Location" name="group_by_location" context="{'group_by':'new_location_id'}"/>
+                    <filter string="Employee" name="group_by_employee" context="{'group_by':'new_employee_id'}"/>
+                    <filter string="Department" name="group_by_department" context="{'group_by':'new_department_id'}"/>
+                    <filter string="Type" name="group_by_type" context="{'group_by': 'type'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'date'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_asset_operation_tree">
+        <field name="name">account.asset.operation.tree</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="date"/>
+                <field name="asset_id"/>
+                <field name="barcode"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_asset_operation_form">
+        <field name="name">account.asset.operation.form</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                    <button name="act_submit" string="Submit" type="object"
+                            class="oe_highlight" states="draft"/>
+                    <button name="act_confirm" groups='exp_asset_base.group_assets_manager' string="Confirm" states="submit"
+                            type="object" class="oe_highlight"/>
+                    <button name="act_reject" groups="exp_asset_base.group_assets_manager" string="Reject" type="object" states="draft"/>
+                    <button name="act_draft" groups="exp_asset_base.group_assets_manager" states="cancel" string="Set to Draft"
+                            type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="type" readonly="1"/>
+                            -
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="product_id" invisible="1"/>
+                            <field name="asset_id" attrs="{'required': [('type', 'not in', ['assignment', 'release'])],
+                                                           'readonly': [('state', 'not in', ['draft', 'submit'])]}"
+                                   domain="[('asset_type', '=', 'purchase'),
+                                            ('status', 'in', {'receive': ['new'], 'assignment': ['new','available'], 'release': ['assigned'], 'transfer': ['assigned']}.get(type, ['new', 'available', 'assigned', 'scrap']))]"/>
+                            <field name="department_id" readonly="1"/>
+                        </group>
+                    </group>
+
+
+                    <group string="Assignment Info" attrs="{'invisible': [('type', '!=', 'assignment')]}">
+                        <group>
+                            <field name="custody_type" attrs="{'required': [('type', '=', 'assignment')]}"/>
+                            <field name="custody_period" attrs="{'required': [('type', '=', 'assignment')]}"/>
+                            <field name="return_date"
+                                   attrs="{'invisible': [('custody_period', '!=', 'temporary')],'readonly': ['|',('state', '!=', 'draft'), ('custody_period', '!=', 'temporary')]}"/>
+                        </group>
+                        <group>
+                            <field name="new_location_id"/>
+                            <field name="new_employee_id"
+                                   attrs="{'required': [('custody_type', '=', 'personal')]}"/>
+                            <field name="new_department_id"
+                                   attrs="{'required': [('custody_type', '=', 'general')]}"/>
+                        </group>
+                    </group>
+
+                    <group attrs="{'invisible': [('type', '!=', 'release')]}">
+                        <group string="Current Info">
+                            <field name="current_employee_id"  force_save="1"/>
+                            <field name="current_department_id"  force_save="1"/>
+                            <field name="current_location_id"  force_save="1"/>
+                        </group>
+                        <group string="Release Info">
+                            <field name="new_location_id" string="Release Location"
+                                   attrs="{'required': [('type', '=', 'release')]}"/>
+                            <field name="asset_status2" attrs="{'required': [('type', '=', 'release')]}"/>
+                            <field name="asset_status" invisible="1"/>
+                            <field name="amount" groups="exp_asset_base.group_asset_assessment"/>
+                        </group>
+                    </group>
+
+                    <group attrs="{'invisible': [('type', '!=', 'transfer')]}">
+                        <group>
+                            <field name="custody_type" attrs="{'required': [('type', '=', 'transfer')]}"/>
+                        </group>
+                        <group>
+                        </group>
+                        <group string="Current">
+                            <field name="current_employee_id" readonly="1" force_save="1"/>
+                            <field name="current_department_id" readonly="1" force_save="1"/>
+                            <field name="current_location_id" readonly="1" force_save="1"/>
+                        </group>
+                        <group string="New">
+                            <field name="new_employee_id"
+                                   attrs="{'required': [('custody_type', '=', 'personal')]}"/>
+                            <field name="new_department_id"
+                                   attrs="{'required': [('custody_type', '=', 'general')]}"/>
+                            <field name="new_location_id"/>
+                        </group>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Note">
+                            <field name="note" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_account_asset_assignment_tree">
+        <field name="name">account.asset.assignment.tree</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" readonly="1"/>
+                <field name="date"/>
+                <field name="product_id"/>
+                <field name="asset_id" attrs="{'required': [('state', '!=', 'draft')],
+                                               'readonly': [('state', 'not in', ['submit'])]}"
+                       domain="[('status', 'in', ['new','available']),('asset_type', '=', 'purchase')]"/>
+                <field name="type" invisible="1"/>
+                <field name="custody_type" required="1"/>
+                <field name="custody_period" required="1"/>
+                <field name="return_date"
+                       attrs="{'required': [('custody_period', '=', 'temporary')],
+                               'readonly': ['|',('state', '!=', 'draft'), ('custody_period', '!=', 'temporary')]}"/>
+                <field name="new_location_id"/>
+                <field name="new_employee_id"
+                       attrs="{'required': [('custody_type', '=', 'personal')]}"/>
+                <field name="new_department_id"
+                       attrs="{'required': [('custody_type', '=', 'general')]}"/>
+                <field name="state" readonly="1"/>
+                <!--                <button name="act_submit" states="draft" string="Submit" type="object" class="oe_highlight"/>-->
+                <!--                <button name="act_confirm" states="submit" string="Confirm" type="object" class="oe_highlight"/>-->
+                <!--                <button name="act_cancel" states="done" string="Cancel" type="object"/>-->
+                <!--                <button name="act_draft" states="cancel" string="Set to Draft" type="object"/>-->
+                <!--                <button name="action_read_operation" type="object" string="Setup" class="float-right btn-secondary"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="action_account_asset_assignment" model="ir.actions.act_window">
+        <field name="name">Assets Assignment</field>
+        <field name="res_model">account.asset.operation</field>
+        <field name="view_mode">tree,form</field>
+        <!--        <field name="view_id" ref="view_account_asset_assignment_tree"/>-->
+        <field name="context">
+            {'default_type': 'assignment', 'default_custody_type': 'personal', 'default_custody_period': 'permanent'}
+        </field>
+        <field name="domain">[('type', '=', 'assignment')]</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_asset_release_tree">
+        <field name="name">account.asset.release.tree</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" readonly="1"/>
+                <field name="date"/>
+                <field name="asset_id" required="1"
+                       attrs="{'readonly': [('state', 'not in', ['draft'])]}"
+                       domain="[('status', 'in', ['assigned']),('asset_type', '=', 'purchase')]"/>
+                <field name="type" invisible="1"/>
+                <field name="current_employee_id" readonly="1" force_save="1"/>
+                <field name="current_department_id" readonly="1" force_save="1"/>
+                <field name="current_location_id" readonly="1" force_save="1"/>
+                <field name="new_location_id" string="Release Location" required="1"/>
+                <field name="asset_status2"/><field name="asset_status" invisible="1"/>
+                <field name="amount" groups="exp_asset_base.group_asset_assessment"/>
+                <field name="state" readonly="1"/>
+                <!--                <button name="act_confirm" states="draft" string="Confirm" type="object" class="oe_highlight"/>-->
+                <!--                <button name="act_cancel" states="done" string="Cancel" type="object"/>-->
+                <!--                <button name="act_draft" states="cancel" string="Set to Draft" type="object"/>-->
+                <!--                <button name="action_read_operation" type="object" string="Setup" class="float-right btn-secondary"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="action_account_asset_release" model="ir.actions.act_window">
+        <field name="name">Assets Release</field>
+        <field name="res_model">account.asset.operation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_account_asset_release_tree"/>
+        <field name="context">{'default_type': 'release'}</field>
+        <field name="domain">[('type', '=', 'release')]</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_asset_transfer_tree">
+        <field name="name">account.asset.transfer.tree</field>
+        <field name="model">account.asset.operation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" readonly="1"/>
+                <field name="date"/>
+                <field name="asset_id" required="1"
+                       attrs="{'readonly': [('state', 'not in', ['draft'])]}"
+                       domain="[('status', 'in', ['assigned']),('asset_type', '=', 'purchase')]"/>
+                <field name="type" invisible="1"/>
+                <field name="current_employee_id" readonly="1" force_save="1"/>
+                <field name="current_department_id" readonly="1" force_save="1"/>
+                <field name="current_location_id" readonly="1" force_save="1"/>
+                <field name="custody_type" required="1"/>
+                <field name="custody_period" required="1"/>
+                <field name="return_date"
+                       attrs="{'required': [('custody_period', '=', 'temporary')],
+                               'readonly': ['|',('state', '!=', 'draft'), ('custody_period', '!=', 'temporary')]}"/>
+                <field name="new_location_id" string="New Location"/>
+                <field name="new_employee_id" string="New Employee"
+                       attrs="{'required': [('custody_type', '=', 'personal')]}"/>
+                <field name="new_department_id" string="New Department"
+                       attrs="{'required': [('custody_type', '=', 'general')]}"/>
+                <field name="state" readonly="1"/>
+                <!--                <button name="act_confirm" states="draft" string="Confirm" type="object" class="oe_highlight"/>-->
+                <!--                <button name="act_cancel" states="done" string="Cancel" type="object"/>-->
+                <!--                <button name="act_draft" states="cancel" string="Set to Draft" type="object"/>-->
+                <!--                <button name="action_read_operation" type="object" string="Setup" class="float-right btn-secondary"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="action_account_asset_transfer" model="ir.actions.act_window">
+        <field name="name">Assets Transfer</field>
+        <field name="res_model">account.asset.operation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_account_asset_transfer_tree"/>
+        <field name="context">{'default_type': 'transfer'}</field>
+        <field name="domain">[('type', '=', 'transfer')]</field>
+    </record>
+
+
+    <!-- Operation Analysis -->
+    <record id="action_account_asset_operation_analysis" model="ir.actions.act_window">
+        <field name="name">Operation Analysis</field>
+        <field name="view_mode">graph,pivot,tree</field>
+        <field name="search_view_id" ref="view_account_asset_operation_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'graph'}),
+            (0, 0, {'view_mode': 'pivot'}),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('view_account_asset_operation_tree')})]"/>
+        <field name="res_model">account.asset.operation</field>
+        <field name="context">{'search_default_group_by_type': True}</field>
+    </record>
+            <record id="asset_operation_view_form3" model="ir.ui.view">
+                <field name="name">asset_operation_form3.extend</field>
+                <field name="model">account.asset.multi.operation</field>
+                <field name="inherit_id" ref="exp_asset_custody.view_account_asset_multi_transfer_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//button[@name='act_confirm']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='act_reject']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='act_draft']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                </field>
+            </record>
+            <record id="asset_operation_view_form5" model="ir.ui.view">
+                <field name="name">asset_operation_form5.extend</field>
+                <field name="model">account.asset.operation</field>
+                <field name="inherit_id" ref="exp_asset_custody.view_account_asset_operation_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//button[@name='act_confirm']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='act_reject']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='act_draft']" position="attributes">
+                        <attribute name="groups">exp_asset_base.group_assets_manager</attribute>
+                    </xpath>
+                </field>
+            </record>
+
+</odoo>

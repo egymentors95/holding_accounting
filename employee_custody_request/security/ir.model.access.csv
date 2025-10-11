@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_request_pledge_user,access_hr_request_pledge_user,model_hr_request_pledge,,1,1,1,1
+
+access_custody_types_manager,custody.types.manager,model_custody_types,,1,1,1,1

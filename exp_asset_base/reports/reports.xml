@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report id="action_report_asset_register_xlsx"
+        model="account.asset"
+        name="report_asset_register_xlsx"
+        file="report_asset_register_xlsx"
+        string="Asset register XLSX"
+        report_type="xlsx"
+        menu="True"/>
+
+    <!--report id="action_report_asset_depr_register_xlsx"
+        model="report_asset_register"
+        name="asset_depreciation_report_xlsx"
+        file="asset depreciation report"
+        string="Asset Depreciation register XLSX"
+        report_type="xlsx"
+        menu="True"/-->
+</odoo>

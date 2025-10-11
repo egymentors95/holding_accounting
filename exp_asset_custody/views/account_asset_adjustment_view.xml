@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="asset_adjustment_form">
+        <field name="name">account.asset.adjustment.form</field>
+        <field name="model">account.asset.adjustment</field>
+        <field name="inherit_id" ref="exp_asset_base.asset_adjustment_form"/>
+        <field name="arch" type="xml">
+            <field name="model_id" position="after">
+                <field name="department_id"
+                       attrs="{'invisible': [('type', '!=', 'department')],
+                               'required': [('type', '=', 'department')]}"/>
+                <field name="employee_id"
+                       attrs="{'invisible': [('type', '!=', 'employee')],
+                               'required': [('type', '=', 'employee')]}"/>
+                <field name="location_id"
+                       attrs="{'invisible': [('type', '!=', 'location')],
+                               'required': [('type', '=', 'location')]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

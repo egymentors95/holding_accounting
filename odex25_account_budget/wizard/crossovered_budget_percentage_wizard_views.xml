@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model='ir.ui.view' id='crossovered_budget_percentage_wizard_form'>
+            <field name="name">crossovered.budget.percentage.wizard.form</field>
+            <field name="model">crossovered.budget.percentage.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h3>Please Select Budgetary Positions Percentage</h3>
+                        <group>
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="budget_post_id"/>
+                                    <field name="percentage"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="copy_lines" string="Copy" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Discard" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model='ir.actions.act_window' id='crossovered_budget_percentage_wizard_action'>
+            <field name="name">Copy Budgetary Positions</field>
+            <field name="res_model">crossovered.budget.percentage.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="crossovered_budget_percentage_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!--        <menuitem id="crossovered_budget_percentage_wizard_menu" name="Account Authentication"-->
+        <!--                  parent="account.menu_finance_reports"-->
+        <!--                  action="crossovered_budget_percentage_wizard_action"-->
+        <!--                  sequence="10"/>-->
+    </data>
+</odoo>

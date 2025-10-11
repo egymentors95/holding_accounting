@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="report_tax_details_xlsx"
+                model="tax.report.wiz"
+                string="Tax report"
+                report_type="xlsx"
+                name="tax_report_detailed.report_tax_details_xlsx"
+                file="VAT Return"
+                attachment_use="False"
+
+        />
+    </data>
+</odoo>

@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20190819\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account
+#: model:ir.model.fields,help:account.field_account_invoice_partner_bank_id
+msgid ""
+"Bank Account Number to which the invoice will be paid. A Company bank "
+"account if this is a Customer Invoice or Vendor Credit Note, otherwise a "
+"Partner bank account number."
+msgstr ""
+"Bank Account Number to which the invoice will be paid. A Company bank "
+"account if this is a Customer Invoice or Vendor Debit Note, otherwise a "
+"Partner bank account number."
+
+#. module: account
+#: model:ir.actions.act_window,help:account.action_invoice_in_refund
+msgid "Click to record a new vendor credit note."
+msgstr "Click to record a new vendor debit note."
+
+#. module: account
+#: selection:account.invoice,type:0 selection:account.invoice.report,type:0
+#: code:addons/account/models/account_invoice.py:445
+#: code:addons/account/models/account_payment.py:680
+#: model:ir.ui.view,arch_db:account.portal_invoice_page
+#: model:ir.ui.view,arch_db:account.report_invoice_document
+#, python-format
+msgid "Vendor Credit Note"
+msgstr "Vendor Debit Note"
+
+#. module: account
+#: code:addons/account/models/account_invoice.py:446
+#, python-format
+msgid "Vendor Credit Note - %s"
+msgstr "Vendor Debit Note - %s"
+
+#. module: account
+#: model:ir.actions.act_window,name:account.action_invoice_in_refund
+#: model:ir.ui.menu,name:account.menu_action_invoice_in_refund
+msgid "Vendor Credit Notes"
+msgstr "Vendor Debit Notes"
+
+#. module: account
+#: code:addons/account/models/account_invoice.py:1217
+#, python-format
+msgid "Vendor Credit note"
+msgstr "Vendor Debit note"
+
+#. module: account
+#: model:ir.ui.view,arch_db:account.invoice_supplier_form
+msgid "Draft Credit Note"
+msgstr "Draft Debit Note"
+
+#. module: account
+#: model:ir.ui.view,arch_db:account.invoice_supplier_form
+msgid "Ask for a Credit Note"
+msgstr "Ask for a Debit Note"
+
+#. module: account
+#: selection:account.invoice.refund,filter_refund:0
+msgid "Create a draft credit note"
+msgstr "Create a draft debit/credit note"
+
+#. module: account
+#: model:ir.ui.view,arch_db:account.invoice_form
+#: model:ir.ui.view,arch_db:account.view_account_invoice_refund
+msgid "Add Credit Note"
+msgstr "Add Debit/Credit Note"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_account_invoice_refund_date_invoice
+msgid "Credit Note Date"
+msgstr "Debit/Credit Note Date"
+
+#. module: odex25_account_reports
+#: code:addons/odex25_account_reports/models/account_followup_report.py:30
+#: code:addons/odex25_account_reports/models/account_general_ledger.py:30
+#, python-format
+msgid "Communication"
+msgstr "Description"
