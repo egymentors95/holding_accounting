@@ -32,6 +32,20 @@ class AccountPayment(models.Model):
 
     state_history = fields.Char(string='State History', default='draft')
     analytic_account_id = fields.Many2one(comodel_name='account.analytic.account', string='Analytic Account', copy=True)
+    payment_type = fields.Selection([
+        ('outbound', 'Send Money'),
+        ('inbound', 'Receive Money'),
+    ], string='Payment Type', default='inbound', required=False, readonly=True)
+
+    invoices_ids = fields.Many2many(
+        'account.move',
+        'account_payment_invoice_rel',  # اسم جدول وسيط جديد
+        'payment_id',  # العمود اللي بيشاور على account.payment
+        'invoice_id',  # العمود اللي بيشاور على account.move
+        string='Partner Invoices',
+        domain="[('partner_id', '=', partner_id), ('move_type', 'in', ('out_invoice','in_invoice')), ('state','=','posted'), ('payment_state','!=','paid')]"
+    )
+    pay_invoice = fields.Boolean(string="Payment Invoices")
 
     @api.model
     def create(self, vals):
@@ -48,23 +62,7 @@ class AccountPayment(models.Model):
             group_name = self.env.ref(group_xml_id).name
             raise AccessError(_("You do not have the necessary permissions (%s) to perform this action.") % group_name)
 
-    # def action_post(self):
-    #     if self.payment_type == 'outbound':
-    #         self._check_permission('odex25_account_payment_fix.group_posted')
-    #     res = super(AccountPayment, self).action_post()
-        
-        
-       
 
-    #     for payment in self:
-    #         payment.invalidate_cache()
-    #         payment.state = 'posted'
-    #         if payment.analytic_account_id and payment.move_id:
-                
-    #             for line in payment.move_id.line_ids:
-    #                 if line.account_id.id == payment.destination_account_id.id:
-    #                     line.analytic_account_id = payment.analytic_account_id.id
-    #     return res
     def action_post(self):
       if self.payment_type == 'outbound':
          self._check_permission('odex25_account_payment_fix.group_posted')
@@ -73,18 +71,78 @@ class AccountPayment(models.Model):
 
       for payment in self:
           payment.state = 'posted'
-
           if payment.analytic_account_id and payment.move_id:
+              target_lines = payment.move_id.line_ids.filtered(
+                  lambda line: line.account_id.id == payment.destination_account_id.id
+              )
 
-            target_lines = payment.move_id.line_ids.filtered(
-                lambda line: line.account_id.id == payment.destination_account_id.id
-            )
+              target_lines.write({'analytic_account_id': payment.analytic_account_id.id})
 
-          
-            target_lines.write({'analytic_account_id': payment.analytic_account_id.id})
+              target_lines.invalidate_cache()
+              target_lines.read(['analytic_account_id'])
 
-            target_lines.invalidate_cache()
-            target_lines.read(['analytic_account_id'])
+          if payment.payment_type != 'inbound':
+              continue
+
+              # اجمالي مبلغ الدفع
+          amount_to_pay = payment.amount
+
+          # -----------------------------------
+          # 1) نحدد الفواتير المراد الدفع لها
+          # -----------------------------------
+          if payment.pay_invoice:
+              # الدفع تلقائي (أقدم → أحدث)
+              invoices = self.env['account.move'].search([
+                  ('partner_id', '=', payment.partner_id.id),
+                  ('move_type', 'in', ('out_invoice', 'in_invoice')),
+                  ('state', '=', 'posted'),
+                  ('payment_state', '!=', 'paid'),
+              ], order='invoice_date asc')
+          else:
+              # الدفع للفواتير المختارة فقط
+              invoices = payment.invoice_ids
+
+          # لو مفيش فواتير
+          if not invoices:
+              continue
+
+          # حساب مجموع المبالغ المتبقية في الفواتير
+          total_residual = sum(invoices.mapped('amount_residual'))
+
+          # -----------------------------------
+          # 2) لو المبلغ أكبر من المتبقي في الفواتير → Error
+          # -----------------------------------
+          if amount_to_pay > total_residual:
+              raise UserError(
+                  "❌ المبلغ المدفوع أكبر من إجمالي قيمة الفواتير المتبقية.\n"
+                  f"إجمالي المتبقي: {total_residual}\n"
+                  f"المبلغ المدفوع: {amount_to_pay}"
+              )
+
+          # -----------------------------------
+          # 3) تنفيذ الدفع (assign outstanding line)
+          # -----------------------------------
+          pay_line = payment.move_id.line_ids.filtered(
+              lambda l: l.credit > 0 or l.debit > 0
+          )[0]
+
+          for inv in invoices:
+
+              if amount_to_pay <= 0:
+                  break
+
+              residual = inv.amount_residual
+
+              # لو المبلغ يغطي الفاتورة
+              if amount_to_pay >= residual:
+                  inv.js_assign_outstanding_line(pay_line.id)
+                  amount_to_pay -= residual
+
+              # لو المبلغ أقل → دفع جزئي
+              else:
+                  inv.js_assign_outstanding_line(pay_line.id)
+                  amount_to_pay = 0
+                  break
 
       return res
 

@@ -71,6 +71,13 @@
                            statusbar_visible="draft,posted" attrs="{'invisible': [('payment_type', '=', 'outbound')]}"/>
                 </header>
             </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="invoices_ids" widget="many2many_tags"/>
+                <field name="pay_invoice" />
+            </xpath>
+            <xpath expr="//field[@name='partner_type']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
 
         </field>
     </record>
