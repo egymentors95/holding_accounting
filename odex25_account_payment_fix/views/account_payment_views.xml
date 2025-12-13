@@ -72,10 +72,28 @@
                 </header>
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
-                <field name="invoices_ids" widget="many2many_tags"/>
+                <field name="invoices_ids" widget="many2many_tags" options="{'no_create': True}"/>
                 <field name="pay_invoice" />
             </xpath>
             <xpath expr="//field[@name='partner_type']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_type']" position="replace">
+                <field name="payment_type" invisible="1"/>
+                <label for="payment_type"/>
+                <div class="o_row">
+                    <span style="font-weight: bold; color: green;">Receive Money</span>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="replace">
+
+            </xpath>
+            <xpath expr="//form/sheet" position="inside">
+                <group>
+                    <field name="ref" string="Description"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='destination_account_id']" position="attributes">
                 <attribute name="readonly">1</attribute>
             </xpath>
 

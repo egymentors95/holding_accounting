@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 from odoo.exceptions import AccessError, ValidationError, Warning, UserError
+import json
 
 
 class AccountMove(models.Model):
@@ -32,10 +33,6 @@ class AccountPayment(models.Model):
 
     state_history = fields.Char(string='State History', default='draft')
     analytic_account_id = fields.Many2one(comodel_name='account.analytic.account', string='Analytic Account', copy=True)
-    payment_type = fields.Selection([
-        ('outbound', 'Send Money'),
-        ('inbound', 'Receive Money'),
-    ], string='Payment Type', default='inbound', required=False, readonly=True)
 
     invoices_ids = fields.Many2many(
         'account.move',
@@ -62,89 +59,116 @@ class AccountPayment(models.Model):
             group_name = self.env.ref(group_xml_id).name
             raise AccessError(_("You do not have the necessary permissions (%s) to perform this action.") % group_name)
 
-
     def action_post(self):
-      if self.payment_type == 'outbound':
-         self._check_permission('odex25_account_payment_fix.group_posted')
+        if self.payment_type == 'outbound':
+            self._check_permission('odex25_account_payment_fix.group_posted')
 
-      res = super(AccountPayment, self).action_post()
+        res = super(AccountPayment, self).action_post()
 
-      for payment in self:
-          payment.state = 'posted'
-          if payment.analytic_account_id and payment.move_id:
-              target_lines = payment.move_id.line_ids.filtered(
-                  lambda line: line.account_id.id == payment.destination_account_id.id
-              )
+        for payment in self:
+            payment.state = 'posted'
 
-              target_lines.write({'analytic_account_id': payment.analytic_account_id.id})
+            # -----------------------------
+            # 1) analytic account
+            # -----------------------------
+            if payment.analytic_account_id and payment.move_id:
+                target_lines = payment.move_id.line_ids.filtered(
+                    lambda line: line.account_id.id == payment.destination_account_id.id
+                )
+                target_lines.write({'analytic_account_id': payment.analytic_account_id.id})
 
-              target_lines.invalidate_cache()
-              target_lines.read(['analytic_account_id'])
+            # -----------------------------
+            # 2) only inbound payments
+            # -----------------------------
+            if payment.payment_type != 'inbound':
+                continue
 
-          if payment.payment_type != 'inbound':
-              continue
+            remaining = payment.amount
 
-              # اجمالي مبلغ الدفع
-          amount_to_pay = payment.amount
+            # -----------------------------
+            # 3) get invoices
+            # -----------------------------
+            if payment.pay_invoice:
+                invoices = self.env['account.move'].search([
+                    ('partner_id', '=', payment.partner_id.id),
+                    ('move_type', 'in', ('out_invoice', 'in_invoice')),
+                    ('state', '=', 'posted'),
+                    ('payment_state', '!=', 'paid'),
+                ], order='invoice_date asc')
+            else:
+                invoices = payment.invoices_ids
 
-          # -----------------------------------
-          # 1) نحدد الفواتير المراد الدفع لها
-          # -----------------------------------
-          if payment.pay_invoice:
-              # الدفع تلقائي (أقدم → أحدث)
-              invoices = self.env['account.move'].search([
-                  ('partner_id', '=', payment.partner_id.id),
-                  ('move_type', 'in', ('out_invoice', 'in_invoice')),
-                  ('state', '=', 'posted'),
-                  ('payment_state', '!=', 'paid'),
-              ], order='invoice_date asc')
-          else:
-              # الدفع للفواتير المختارة فقط
-              invoices = payment.invoice_ids
+            if not invoices:
+                continue
 
-          # لو مفيش فواتير
-          if not invoices:
-              continue
+            # -----------------------------
+            # 4) loop invoices oldest → latest
+            # -----------------------------
+            for inv in invoices:
 
-          # حساب مجموع المبالغ المتبقية في الفواتير
-          total_residual = sum(invoices.mapped('amount_residual'))
+                if remaining <= 0:
+                    break
 
-          # -----------------------------------
-          # 2) لو المبلغ أكبر من المتبقي في الفواتير → Error
-          # -----------------------------------
-          if amount_to_pay > total_residual:
-              raise UserError(
-                  "❌ المبلغ المدفوع أكبر من إجمالي قيمة الفواتير المتبقية.\n"
-                  f"إجمالي المتبقي: {total_residual}\n"
-                  f"المبلغ المدفوع: {amount_to_pay}"
-              )
+                # -----------------------------
+                # Load widget safely
+                # -----------------------------
+                widget = inv.invoice_outstanding_credits_debits_widget
 
-          # -----------------------------------
-          # 3) تنفيذ الدفع (assign outstanding line)
-          # -----------------------------------
-          pay_line = payment.move_id.line_ids.filtered(
-              lambda l: l.credit > 0 or l.debit > 0
-          )[0]
+                if not widget:
+                    continue
 
-          for inv in invoices:
+                # Convert JSON string → dict
+                if isinstance(widget, str):
+                    widget = json.loads(widget)
 
-              if amount_to_pay <= 0:
-                  break
+                if 'content' not in widget:
+                    continue
 
-              residual = inv.amount_residual
+                # find payment line inside widget
+                line_to_assign = None
+                for line in widget['content']:
+                    if line.get('move_id') == payment.move_id.id:
+                        line_to_assign = line
+                        break
 
-              # لو المبلغ يغطي الفاتورة
-              if amount_to_pay >= residual:
-                  inv.js_assign_outstanding_line(pay_line.id)
-                  amount_to_pay -= residual
+                if not line_to_assign:
+                    continue
 
-              # لو المبلغ أقل → دفع جزئي
-              else:
-                  inv.js_assign_outstanding_line(pay_line.id)
-                  amount_to_pay = 0
-                  break
+                residual = inv.amount_residual
 
-      return res
+                # -----------------------------
+                # 5) Error if payment > invoice
+                # -----------------------------
+                if remaining > residual:
+                    # allowed → Odoo will reconcile and remainder goes to next invoice
+                    pass
+                elif remaining < residual:
+                    # allowed → partial reconcile
+                    pass
+                else:
+                    pass
+
+                # Do actual reconcile
+                inv.js_assign_outstanding_line(line_to_assign['id'])
+
+                # deduct remaining
+                if remaining >= residual:
+                    remaining -= residual
+                else:
+                    remaining = 0
+                    break
+
+            # -----------------------------
+            # 6) إذا لسه باقي جزء من المبلغ
+            # يعني الدفع أكبر من كل الفواتير
+            # -----------------------------
+            if remaining > 0:
+                raise UserError(
+                    "❌ المبلغ المدفوع أكبر من قيمة الفواتير.\n"
+                    f"المبلغ المتبقي بعد الدفع: {remaining}"
+                )
+
+        return res
 
     def action_cancel(self):
         payment_state = self.state
