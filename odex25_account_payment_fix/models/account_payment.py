@@ -33,16 +33,53 @@ class AccountPayment(models.Model):
 
     state_history = fields.Char(string='State History', default='draft')
     analytic_account_id = fields.Many2one(comodel_name='account.analytic.account', string='Analytic Account', copy=True)
+    payments_methods = fields.Selection(selection=[
+        ('all', 'تنازلي على الفواتير'),
+        ('help', 'شاشة مساعدة على الفواتير'),
+        ('down_payment', 'دفعة مقدمة'),
+    ], string='طرق السداد')
 
     invoices_ids = fields.Many2many(
         'account.move',
-        'account_payment_invoice_rel',  # اسم جدول وسيط جديد
-        'payment_id',  # العمود اللي بيشاور على account.payment
-        'invoice_id',  # العمود اللي بيشاور على account.move
+        'account_payment_invoice_rel',
+        'payment_id',
+        'invoice_id',
         string='Partner Invoices',
         domain="[('partner_id', '=', partner_id), ('move_type', 'in', ('out_invoice','in_invoice')), ('state','=','posted'), ('payment_state','!=','paid')]"
     )
     pay_invoice = fields.Boolean(string="Payment Invoices")
+    invoice_line_ids = fields.One2many(
+        'account.payment.invoice.line',
+        'payment_id',
+        string='Invoice Lines'
+    )
+
+    @api.onchange('invoices_ids')
+    def _onchange_invoices_ids(self):
+        for rec in self:
+            rec.invoice_line_ids = [(5, 0, 0)]
+
+            lines = []
+            for invoice in rec.invoices_ids:
+                lines.append((0, 0, {
+                    'invoice_id': invoice.id,
+                    'name': invoice.name,
+                }))
+
+            rec.invoice_line_ids = lines
+
+    @api.onchange('payments_methods')
+    def _onchange_payments_methods(self):
+        if self.payments_methods == 'all':
+            self.pay_invoice = True
+            self.invoices_ids = False
+        elif self.payments_methods == 'help':
+            self.pay_invoice = False
+        else:
+            self.pay_invoice = False
+            self.invoices_ids = False
+
+
 
     @api.model
     def create(self, vals):

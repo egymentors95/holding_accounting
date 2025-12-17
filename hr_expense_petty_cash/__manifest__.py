@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     'author': 'Expert Co. Ltd.',
     'website': 'http://www.exp-sa.com',
-    "depends": ["hr_expense", "exp_payroll_custom",'hr'],
+    "depends": ["hr_expense", "exp_payroll_custom",'hr', 'editable_sale'],
     "data": [
         "security/security.xml",
         "data/petty_cash_data.xml",

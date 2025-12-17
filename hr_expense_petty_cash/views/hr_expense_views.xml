@@ -11,19 +11,45 @@
                 <field name="address_id" invisible="1"/>
             </field>
             <field name="tax_ids" position="after">
-                <field name = "petty_cash_limit" attrs="{'invisible': [('petty_cash_id', '=', False)]}"/>
+<!--                <field name = "petty_cash_limit" attrs="{'invisible': [('petty_cash_id', '=', False)]}"/>-->
+                <field name="tax_ids" widget="many2many_tags" groups="editable_sale.group_editable_sale_order_user" readonly="1"/>
             </field>
-            <xpath expr="//field[@name='payment_mode']" position="after">
-                <div attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}">
-                    <field
-                            name="petty_cash_id"
-                            domain="[
-                            ('partner_id', '=', address_id),('is_paid', '=', True), ('state', '=', 'running')]"
-                            attrs="{'required': [('payment_mode', '=', 'petty_cash')]}"
-                            class="oe_inline"
-                    />
-                </div>
+            <xpath expr="//field[@name='payment_mode']" position="attributes">
+            <attribute name="invisible">1</attribute>
+<!--                <div attrs="{'invisible': [('payment_mode', '!=', 'petty_cash')]}">-->
+<!--                    <field-->
+<!--                            name="petty_cash_id"-->
+<!--                            domain="[-->
+<!--                            ('partner_id', '=', address_id),('is_paid', '=', True), ('state', '=', 'running')]"-->
+<!--                            attrs="{'required': [('payment_mode', '=', 'petty_cash')]}"-->
+<!--                            class="oe_inline"-->
+<!--                    />-->
+<!--                </div>-->
                 
+            </xpath>
+            <xpath expr="//field[@name='tax_ids']" position="attributes">
+                <attribute name="groups">editable_sale.group_editable_sale_order</attribute>
+            </xpath>
+              <xpath expr="//field[@name='account_id']" position="after">
+                  <field name="account_id" readonly="1" groups="editable_sale.group_editable_sale_order_user"/>
+            </xpath>
+             <xpath expr="//field[@name='account_id']" position="attributes">
+                 <attribute name="groups">editable_sale.group_editable_sale_order</attribute>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                  <attribute name="readonly">1</attribute>
+            </xpath>
+             <xpath expr="//field[@name='currency_id']" position="attributes">
+                  <attibute name="readonly">1</attibute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="attributes">
+                  <attibute name="readonly">1</attibute>
+            </xpath>
+            <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                  <attibute name="groups">editable_sale.group_editable_sale_order</attibute>
+            </xpath>
+            <xpath expr="//field[@name='analytic_account_id']" position="after">
+                  <field name="analytic_account_id" readonly="1" groups="editable_sale.group_editable_sale_order_user"/>
             </xpath>
         </field>
     </record>
@@ -40,14 +66,14 @@
                         domain="[('payment_mode', '=', 'petty_cash')]"
                 />
             </xpath>
-            <xpath expr="//filter[@name='status']" position="after">
-                <filter
-                        string="Petty Cash Holder"
-                        domain="[('payment_mode', '=', 'petty_cash')]"
-                        context="{'group_by': 'petty_cash_id'}"
-                        name="petty_cash_holder"
-                />
-            </xpath>
+<!--            <xpath expr="//filter[@name='status']" position="after">-->
+<!--                <filter-->
+<!--                        string="Petty Cash Holder"-->
+<!--                        domain="[('payment_mode', '=', 'petty_cash')]"-->
+<!--                        context="{'group_by': 'petty_cash_id'}"-->
+<!--                        name="petty_cash_holder"-->
+<!--                />-->
+<!--            </xpath>-->
         </field>
     </record>
 

@@ -72,16 +72,20 @@
                 </header>
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
-                <field name="invoices_ids" widget="many2many_tags" options="{'no_create': True}"/>
-                <field name="pay_invoice" />
+                <field name="payments_methods"/>
+                <field name="invoices_ids" widget="many2many_tags" options="{'no_create': True}"
+                       attrs="{'invisible': [('payments_methods', '!=', 'help')]}"/>
+                <field name="pay_invoice" attrs="{'invisible': [('payments_methods', '!=', 'all')]}"/>
+
+
             </xpath>
             <xpath expr="//field[@name='partner_type']" position="attributes">
                 <attribute name="readonly">1</attribute>
             </xpath>
             <xpath expr="//field[@name='payment_type']" position="replace">
                 <field name="payment_type" invisible="1"/>
-                <label for="payment_type"/>
-                <div class="o_row">
+                <label for="payment_type" attrs="{'invisible': [('payment_type', '!=', 'inbound')]}"/>
+                <div class="o_row" attrs="{'invisible': [('payment_type', '!=', 'inbound')]}">
                     <span style="font-weight: bold; color: green;">Receive Money</span>
                 </div>
             </xpath>
@@ -95,6 +99,36 @@
             </xpath>
             <xpath expr="//field[@name='destination_account_id']" position="attributes">
                 <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='currency_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_bank_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_id']" position="attributes">
+                <attribute name="options">{'no_open': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="attributes">
+                <attribute name="options">{'no_open': True}</attribute>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Invoices Details" attrs="{'invisible': [('payment_type', '!=', 'inbound')]}">
+                        <field name="invoice_line_ids" readonly="1">
+                            <tree >
+                                <field name="invoice_id"/>
+                                <field name="invoice_date"/>
+                                <field name="amount_total"/>
+                                <field name="amount_residual"/>
+                            </tree>
+                        </field>
+
+                    </page>
+                </notebook>
+            </xpath>
+            <xpath expr="//field[@name='is_internal_transfer']" position="attributes">
+                <attribute name="attrs">{'invisible': [('payment_type', '!=', 'outbound')]}</attribute>
             </xpath>
 
         </field>
