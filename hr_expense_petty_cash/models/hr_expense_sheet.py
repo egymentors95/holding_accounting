@@ -26,6 +26,8 @@ class HrExpenseSheet(models.Model):
             journal = petty_cash_id.journal_id.id or journal
         return journal
 
+    name = fields.Char('Expense Report Summary', required=False, tracking=True)
+
     petty_cash_id = fields.Many2one(
         string="Petty cash holder",
         comodel_name="petty.cash",
