@@ -12,7 +12,7 @@ class ProductCategory(models.Model):
         'res.company',
         string='Company',
         default=lambda self: self.env.company,
-        required=True,
+        required=False,
     )
 
 
