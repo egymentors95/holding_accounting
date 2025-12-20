@@ -51,8 +51,14 @@ class AccountPayment(models.Model):
     invoice_line_ids = fields.One2many(
         'account.payment.invoice.line',
         'payment_id',
-        string='Invoice Lines'
+        string='Invoice Lines',
+        store=True,
+
     )
+    payment_type_selection = fields.Selection([
+        ('manual', 'Manual'),
+        ('automatic', 'Automatic'),
+    ],default='automatic')
 
     @api.onchange('invoices_ids')
     def _onchange_invoices_ids(self):
@@ -206,6 +212,7 @@ class AccountPayment(models.Model):
                 )
 
         return res
+
 
     def action_cancel(self):
         payment_state = self.state
