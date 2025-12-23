@@ -12,8 +12,14 @@ class AccountPaymentInvoiceLine(models.Model):
     amount_residual = fields.Monetary(string='Amount Residual', compute='_get_amount_residual', store=True)
     invoice_date = fields.Date(string='Invoice Date', compute='_get_invoice_date', store=True)
     currency_id = fields.Many2one('res.currency', string='Currency', compute='_get_currency_id', store=True)
-    payment = fields.Float(string="Payment")
+    payment = fields.Float(string="Payment", compute='_get_payment', store=True)
 
+
+    @api.depends('amount_total', 'amount_residual')
+    def _get_payment(self):
+        for rec in self:
+            if rec.amount_total and rec.amount_residual:
+                rec.payment = rec.amount_total - rec.amount_residual
 
     @api.depends('invoice_id', 'invoice_id.amount_total')
     def _get_amount_total(self):

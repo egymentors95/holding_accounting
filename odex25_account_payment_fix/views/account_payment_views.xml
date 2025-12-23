@@ -75,7 +75,6 @@
                 <field name="payments_methods"/>
                 <field name="invoices_ids" widget="many2many_tags" options="{'no_create': True}"
                        attrs="{'invisible': [('payments_methods', '!=', 'help')]}"/>
-                <field name="payment_type_selection" attrs="{'invisible': [('payments_methods', '!=', 'help')]}"/>
                 <field name="pay_invoice" attrs="{'invisible': [('payments_methods', '!=', 'all')]}"/>
 
 
