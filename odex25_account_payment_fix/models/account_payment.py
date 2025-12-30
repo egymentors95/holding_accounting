@@ -134,7 +134,9 @@ class AccountPayment(models.Model):
                     ('payment_state', '!=', 'paid'),
                 ], order='id asc')
             else:
-                invoices = payment.invoices_ids.sorted(key=lambda m: m.id)
+                invoices = payment.invoices_ids.sorted(
+                    key=lambda m: (m.invoice_date or m.date or m.create_date)
+                )
 
             if not invoices:
                 continue

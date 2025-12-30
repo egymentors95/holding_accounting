@@ -7,8 +7,8 @@ from odoo.exceptions import UserError
 class StockMove(models.Model):
     _inherit = "stock.move"
 
-    def _account_entry_move(self, qty, description, svl_id, cost):
-        pass
+    # def _account_entry_move(self, qty, description, svl_id, cost):
+    #     pass
 
 
 class MrpProduction(models.Model):
