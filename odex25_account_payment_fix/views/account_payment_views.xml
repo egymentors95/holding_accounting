@@ -92,6 +92,9 @@
             <xpath expr="//field[@name='ref']" position="replace">
 
             </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create': True,}</attribute>
+            </xpath>
             <xpath expr="//form/sheet" position="inside">
                 <group>
                     <field name="ref" string="Description"/>
