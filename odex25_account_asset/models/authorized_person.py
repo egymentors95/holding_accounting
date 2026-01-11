@@ -5,8 +5,13 @@ class AuthorizedPerson(models.Model):
     _name = 'authorized.person'
     _description = 'Authorized Person'
     _rec_name = 'name'
+
     name = fields.Char(string='Name', required=True)
     signature = fields.Binary(string='Signature',widget='signature',)
+    partner_id = fields.Many2one(
+        'res.partner', string='Partner',
+        help='The partner associated with this authorized person',
+         index=True)
 
 
 class ResPartner(models.Model):

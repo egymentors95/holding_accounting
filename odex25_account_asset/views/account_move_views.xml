@@ -35,7 +35,9 @@
             </xpath>
             <xpath expr="//group[@id='header_left_group']" position="inside">
                 <group>
-                    <field name="authorized_person_id" attrs="{'invisible':[('move_type','=','entry')]}"/>
+                    <field name="authorized_person_id" attrs="{'invisible':[('move_type','=','entry')]}"
+                           domain="[('partner_id','=',partner_id)]"
+                           options="{'no_create': True}"/>
                     <field name="authorized_signature" widget="signature"
                            attrs="{'invisible':[('move_type','=','entry')]}"/>
                     <field name="journal_type_id" attrs="{'invisible':[('move_type','!=','entry')]}"/>
@@ -79,7 +81,9 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="vat" position="after">
-                <field name="authorized_person_id"/>
+                <field name="authorized_person_id" domain="[('partner_id','=',id)]"
+                       context="{'default_partner_id': id}"/>
+
                 <field name="signature" widget="signature"/>
             </field>
             <xpath expr="//field[@name='category_id']" position="before">
