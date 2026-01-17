@@ -258,7 +258,7 @@ class AccountEdiDocument(models.Model):
         edi_documents = self.search([
             ('state', 'in', ('to_send', 'to_cancel')),
             ('move_id.state', '=', 'posted'),
-            ('move_id.not_zatca', '=', False),  # تجاهل الفواتير اللي مش عايز تبعتها
+            ('move_id.not_zatca', '=', False),
         ])
         nb_remaining_jobs = edi_documents._process_documents_web_services(job_count=job_count)
 
