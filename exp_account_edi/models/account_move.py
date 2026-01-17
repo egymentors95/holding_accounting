@@ -23,12 +23,6 @@ class AccountTax(models.Model):
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    not_zatca = fields.Boolean()
-
-    def set_not_zatca_true(self):
-        for rec in self:
-            rec.not_zatca = True
-
     def _collect_tax_cash_basis_values(self):
         ''' Collect all information needed to create the tax cash basis journal entries:
         - Determine if a tax cash basis journal entry is needed.
@@ -625,38 +619,16 @@ class AccountMove(models.Model):
         return not bool(edi_documents_to_send)
 
     def _post(self, soft=True):
+        """ Override posting to prevent any EDI/ZATCA processing """
         posted = super()._post(soft=soft)
-
-        edi_document_vals_list = []
         for move in posted:
-            if move.not_zatca:
-                continue  # لو not_zatca True, لا يتم إنشاء أي مستند EDI
-
-            for edi_format in move.journal_id.edi_format_ids:
-                is_edi_needed = move.is_invoice(include_receipts=False) and edi_format._is_required_for_invoice(move)
-
-                if is_edi_needed:
-                    errors = edi_format._check_move_configuration(move)
-                    if errors:
-                        raise UserError(_("Invalid invoice configuration:\n\n%s") % '\n'.join(errors))
-
-                    existing_edi_document = move.edi_document_ids.filtered(lambda x: x.edi_format_id == edi_format)
-                    if existing_edi_document:
-                        existing_edi_document.write({
-                            'state': 'to_send',
-                            'attachment_id': False,
-                        })
-                    else:
-                        edi_document_vals_list.append({
-                            'edi_format_id': edi_format.id,
-                            'move_id': move.id,
-                            'state': 'to_send',
-                        })
-
-        self.env['account.edi.document'].create(edi_document_vals_list)
-        # فقط الفواتير غير not_zatca يتم إرسالها أو معالجتها
-        self.filtered(lambda m: not m.not_zatca).edi_document_ids._process_documents_no_web_services()
-        self.env.ref('exp_account_edi.ir_cron_edi_network')._trigger()
+            # Cancel all EDI documents if they exist
+            if move.edi_document_ids:
+                move.edi_document_ids.write({
+                    'state': 'cancelled',
+                    'error': False,
+                    'blocking_level': False
+                })
         return posted
 
     def button_cancel(self):
@@ -750,16 +722,12 @@ class AccountMove(models.Model):
     ####################################################
 
     def button_process_edi_web_services(self):
-        self.action_process_edi_web_services(with_commit=False)
+        """ Skip sending any invoice to ZATCA """
+        return True
 
     def action_process_edi_web_services(self, with_commit=True):
-        # فقط المستندات الخاصة بالفواتير غير not_zatca
-        docs = self.edi_document_ids.filtered(
-            lambda d: d.state in ('to_send', 'to_cancel')
-                      and d.blocking_level != 'error'
-                      and not d.move_id.not_zatca
-        )
-        docs._process_documents_web_services(with_commit=with_commit)
+        """ Skip processing EDI web services """
+        return True
 
     def _retry_edi_documents_error_hook(self):
         ''' Hook called when edi_documents are retried. For example, when it's needed to clean a field.
