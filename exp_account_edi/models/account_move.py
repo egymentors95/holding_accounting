@@ -625,15 +625,22 @@ class AccountMove(models.Model):
 
         edi_document_vals_list = []
         for move in posted:
+            # 🔴 أهم سطر
+            if not move.company_id.is_zatca:
+                continue
+
             for edi_format in move.journal_id.edi_format_ids:
-                is_edi_needed = move.is_invoice(include_receipts=False) and edi_format._is_required_for_invoice(move)
+                is_edi_needed = move.is_invoice(include_receipts=False) \
+                                and edi_format._is_required_for_invoice(move)
 
                 if is_edi_needed:
                     errors = edi_format._check_move_configuration(move)
                     if errors:
                         raise UserError(_("Invalid invoice configuration:\n\n%s") % '\n'.join(errors))
 
-                    existing_edi_document = move.edi_document_ids.filtered(lambda x: x.edi_format_id == edi_format)
+                    existing_edi_document = move.edi_document_ids.filtered(
+                        lambda x: x.edi_format_id == edi_format
+                    )
                     if existing_edi_document:
                         existing_edi_document.write({
                             'state': 'to_send',
@@ -645,7 +652,6 @@ class AccountMove(models.Model):
                             'move_id': move.id,
                             'state': 'to_send',
                         })
-
         self.env['account.edi.document'].create(edi_document_vals_list)
         posted.edi_document_ids._process_documents_no_web_services()
         self.env.ref('exp_account_edi.ir_cron_edi_network')._trigger()
@@ -748,8 +754,20 @@ class AccountMove(models.Model):
         self.action_process_edi_web_services(with_commit=False)
 
     def action_process_edi_web_services(self, with_commit=True):
-        docs = self.edi_document_ids.filtered(lambda d: d.state in ('to_send', 'to_cancel') and d.blocking_level != 'error')
-        docs._process_documents_web_services(with_commit=with_commit)
+        for record in self:
+            company = record.company_id.sudo()
+
+            # لو الشركة مش ZATCA → امنع الإرسال تمامًا
+            if not company.is_zatca:
+                continue
+
+            docs = record.edi_document_ids.filtered(
+                lambda d: d.state in ('to_send', 'to_cancel')
+                          and d.blocking_level != 'error'
+            )
+
+            if docs:
+                docs._process_documents_web_services(with_commit=with_commit)
 
     def _retry_edi_documents_error_hook(self):
         ''' Hook called when edi_documents are retried. For example, when it's needed to clean a field.
