@@ -25,9 +25,7 @@ class AccountMove(models.Model):
 
     not_zatca = fields.Boolean()
 
-    def set_not_zatca_true(self):
-        for rec in self:
-            rec.not_zatca = True
+
 
     def _collect_tax_cash_basis_values(self):
         ''' Collect all information needed to create the tax cash basis journal entries:

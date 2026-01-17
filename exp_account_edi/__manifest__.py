@@ -12,7 +12,7 @@ governements, etc.)
     """,
     'version' : '1.0',
     'category': 'E-invoicing Zatca / Accounting',
-    'depends' : ['account'],
+    'depends' : ['account', 'ksa_zatca_integration'],
     "author": "Expert Company - Abuzar",
     "website": "https://exp-sa.com",
     'icon': '/exp_l10n_sa/static/description/icon.png',
