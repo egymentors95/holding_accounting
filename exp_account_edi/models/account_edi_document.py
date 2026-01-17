@@ -254,13 +254,13 @@ class AccountEdiDocument(models.Model):
 
     @api.model
     def _cron_process_documents_web_services(self, job_count=None):
-        ''' Method called by the EDI cron processing all web-services.
-
-        :param job_count: Limit explicitely the number of web service calls. If not provided, process all.
-        '''
-        edi_documents = self.search([('state', 'in', ('to_send', 'to_cancel')), ('move_id.state', '=', 'posted')])
+        ''' Method called by the EDI cron processing all web-services. '''
+        edi_documents = self.search([
+            ('state', 'in', ('to_send', 'to_cancel')),
+            ('move_id.state', '=', 'posted'),
+            ('move_id.not_zatca', '=', False),  # تجاهل الفواتير اللي مش عايز تبعتها
+        ])
         nb_remaining_jobs = edi_documents._process_documents_web_services(job_count=job_count)
 
-        # Mark the CRON to be triggered again asap since there is some remaining jobs to process.
         if nb_remaining_jobs > 0:
             self.env.ref('exp_account_edi.ir_cron_edi_network')._trigger()
