@@ -11,7 +11,7 @@ import json
 
 class FinancialReportController(http.Controller):
 
-    @http.route('/account_reports', type='http', auth='user', methods=['POST'], csrf=False)
+    @http.route('/account_reports', type='http', auth='user', methods=['GET', 'POST'], csrf=False)
     def get_report(self, model, options, output_format, token, financial_id=None, **kw):
         uid = request.session.uid
         account_report_model = request.env['account.report']
