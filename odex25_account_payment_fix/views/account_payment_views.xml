@@ -40,7 +40,7 @@
                             attrs="{'invisible': ['|',
                               ('payment_type', '!=', 'outbound'),
                               ('state', 'not in', ['general_manager'])]}"
-                            groups="odex25_account_payment_fix.module_category_payment_access" class="oe_highlight"/>
+                            groups="odex25_account_payment_fix.group_general_manager" class="oe_highlight"/>
                     <button name="action_cancel" type="object" string="Cancel"
                             attrs="{'invisible': ['|',
                               ('payment_type', '!=', 'outbound'),
@@ -53,7 +53,7 @@
                             attrs="{'invisible': ['|',
                               ('payment_type', '=', 'outbound'),
                               ('state', 'not in', ['cancel'])]}" class="oe_highlight"/>
-                    <button name="action_post" type="object" string="Posted" groups="odex25_account_payment_fix.module_category_payment_access"
+                    <button name="action_post" type="object" string="Posted" groups="odex25_account_payment_fix.group_general_manager"
                             attrs="{'invisible': ['|',
                               ('payment_type', '=', 'outbound'),
                               ('state', 'not in', ['draft'])]}" class="oe_highlight"/>
