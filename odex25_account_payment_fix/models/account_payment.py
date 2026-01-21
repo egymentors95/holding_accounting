@@ -124,47 +124,45 @@ class AccountPayment(models.Model):
             remaining = payment.amount
 
             # -----------------------------
-            # 3) get invoices
+            # 3) get invoices - المرحلة الأولى: not_paid & partial
             # -----------------------------
             if payment.pay_invoice:
-                invoices = self.env['account.move'].search([
+                # المرحلة الأولى: جلب الفواتير المدفوعة جزئيًا أو غير المدفوعة
+                invoices_unpaid = self.env['account.move'].search([
                     ('partner_id', '=', payment.partner_id.id),
                     ('move_type', 'in', ('out_invoice', 'in_invoice')),
                     ('state', '=', 'posted'),
-                    ('payment_state', '!=', 'paid'),
-                ], order='id asc')
+                    ('payment_state', 'in', ['not_paid', 'partial']),
+                ], order='invoice_date asc, date asc, id asc')
             else:
-                invoices = payment.invoices_ids.sorted(
-                    key=lambda m: (m.invoice_date or m.date or m.create_date)
-                )
-
-            if not invoices:
-                continue
+                invoices_unpaid = payment.invoices_ids.filtered(
+                    lambda inv: inv.payment_state in ['not_paid', 'partial']
+                ).sorted(key=lambda m: (m.invoice_date or m.date or m.create_date, m.id))
 
             # -----------------------------
-            # 4) loop invoices oldest → latest
+            # 4) loop على الفواتير غير المدفوعة / الجزئية
             # -----------------------------
-            for inv in invoices:
-
+            for inv in invoices_unpaid:
                 if remaining <= 0:
                     break
 
-                # -----------------------------
-                # Load widget safely
-                # -----------------------------
-                widget = inv.invoice_outstanding_credits_debits_widget
+                residual = inv.amount_residual
+                if residual <= 0:
+                    continue
 
+                widget = inv.invoice_outstanding_credits_debits_widget
                 if not widget:
                     continue
 
-                # Convert JSON string → dict
                 if isinstance(widget, str):
-                    widget = json.loads(widget)
+                    try:
+                        widget = json.loads(widget)
+                    except:
+                        continue
 
-                if 'content' not in widget:
+                if not isinstance(widget, dict) or 'content' not in widget:
                     continue
 
-                # find payment line inside widget
                 line_to_assign = None
                 for line in widget['content']:
                     if line.get('move_id') == payment.move_id.id:
@@ -174,39 +172,70 @@ class AccountPayment(models.Model):
                 if not line_to_assign:
                     continue
 
-                residual = inv.amount_residual
+                amount_to_pay = min(remaining, residual)
 
-                # -----------------------------
-                # 5) Error if payment > invoice
-                # -----------------------------
-                if remaining > residual:
-                    # allowed → Odoo will reconcile and remainder goes to next invoice
-                    pass
-                elif remaining < residual:
-                    # allowed → partial reconcile
-                    pass
-                else:
-                    pass
+                try:
+                    inv.js_assign_outstanding_line(line_to_assign['id'])
+                except Exception as e:
+                    continue
 
-                # Do actual reconcile
-                inv.js_assign_outstanding_line(line_to_assign['id'])
-
-                # deduct remaining
-                if remaining >= residual:
-                    remaining -= residual
-                else:
-                    remaining = 0
-                    break
+                remaining -= amount_to_pay
 
             # -----------------------------
-            # 6) إذا لسه باقي جزء من المبلغ
-            # يعني الدفع أكبر من كل الفواتير
+            # 5) لو لسه فاضل مبلغ - المرحلة الثانية: كل الفواتير
             # -----------------------------
-            if remaining > 0:
-                raise UserError(
-                    "❌ المبلغ المدفوع أكبر من قيمة الفواتير.\n"
-                    f"المبلغ المتبقي بعد الدفع: {remaining}"
-                )
+            if float_compare(remaining, 0.0, precision_rounding=payment.currency_id.rounding) > 0:
+                if payment.pay_invoice:
+                    # جلب باقي الفواتير (حتى المدفوعة)
+                    invoices_all = self.env['account.move'].search([
+                        ('partner_id', '=', payment.partner_id.id),
+                        ('move_type', 'in', ('out_invoice', 'in_invoice')),
+                        ('state', '=', 'posted'),
+                        ('payment_state', '=', 'paid'),  # الفواتير المدفوعة بالكامل
+                    ], order='invoice_date asc, date asc, id asc')
+                else:
+                    invoices_all = payment.invoices_ids.filtered(
+                        lambda inv: inv.payment_state == 'paid'
+                    ).sorted(key=lambda m: (m.invoice_date or m.date or m.create_date, m.id))
+
+                # loop على الفواتير المدفوعة
+                for inv in invoices_all:
+                    if remaining <= 0:
+                        break
+
+                    widget = inv.invoice_outstanding_credits_debits_widget
+                    if not widget:
+                        continue
+
+                    if isinstance(widget, str):
+                        try:
+                            widget = json.loads(widget)
+                        except:
+                            continue
+
+                    if not isinstance(widget, dict) or 'content' not in widget:
+                        continue
+
+                    line_to_assign = None
+                    for line in widget['content']:
+                        if line.get('move_id') == payment.move_id.id:
+                            line_to_assign = line
+                            break
+
+                    if not line_to_assign:
+                        continue
+
+                    try:
+                        inv.js_assign_outstanding_line(line_to_assign['id'])
+                        # في حالة الفواتير المدفوعة، Odoo هيعمل credit للعميل
+                        remaining = 0
+                        break
+                    except Exception as e:
+                        continue
+
+            # -----------------------------
+            # 6) المبلغ المتبقي (إن وجد) يبقى كـ credit للعميل
+            # -----------------------------
 
         return res
 
