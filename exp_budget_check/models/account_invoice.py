@@ -54,13 +54,13 @@ class AccountMove(models.Model):
     state_a = fields.Selection(related='state')
     state_b = fields.Selection(related='state')
 
-    is_budget = fields.Boolean(defaul=True)
+    is_budget = fields.Boolean(default=True)
     state_bill = fields.Selection(related='state')
     budget_check = fields.Boolean(string="Check Budget", default=False, readonly=True)
-    exceed_budget = fields.Boolean(defaul=False)
-    is_check = fields.Boolean(defaul=False)
-    is_approve = fields.Boolean(defaul=False)
-    hide_budget = fields.Boolean(defaul=False,copy=False)
+    exceed_budget = fields.Boolean(default=False)
+    is_check = fields.Boolean(default=False)
+    is_approve = fields.Boolean(default=False)
+    hide_budget = fields.Boolean(default=False,copy=False)
     rec_payment_count = fields.Integer(compute='_compute_rec_payment_count', string='# Payments')
 
     def _compute_rec_payment_count(self):
